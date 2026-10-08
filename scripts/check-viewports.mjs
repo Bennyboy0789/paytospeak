@@ -102,6 +102,16 @@ for (const route of routes) {
     if (!ok) failures++;
     console.log(`${ok ? "ok  " : "FAIL"} ${route} @ ${width}px  scrollWidth=${scrollWidth}${ok ? "" : "  " + offenders.join(", ")}`);
     if (shots) {
+      // Force lazy images to load, then wait for them.
+      await send("Runtime.evaluate", {
+        awaitPromise: true,
+        expression: `(async () => {
+          document.querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = "eager"; });
+          const loaded = Promise.all([...document.images].map(img => img.complete ? null : new Promise(r => { img.onload = img.onerror = r; })));
+          await Promise.race([loaded, new Promise(r => setTimeout(r, 5000))]); // hidden lazy images never load
+          await new Promise(r => setTimeout(r, 300));
+        })()`,
+      });
       const { cssContentSize } = await send("Page.getLayoutMetrics");
       const { data } = await send("Page.captureScreenshot", {
         captureBeyondViewport: true,
