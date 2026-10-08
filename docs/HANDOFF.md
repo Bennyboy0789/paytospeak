@@ -1,7 +1,8 @@
-# Pay to Speak — Build Handoff
+# Paid to $peak — Build Handoff
 
 **Client:** Dr. Kevin C. Snyder
-**Site:** paytospeak.biz (speaker-coaching brand)
+**Site:** paidtospeak.biz (speaker-coaching brand: **Paid to $peak**)
+**Name note:** earlier drafts said "Pay to Speak" / paytospeak.biz — that domain does not exist. Repo and staging keep the `paytospeak` name.
 **Repo:** github.com/Bennyboy0789/paytospeak
 **Staging:** paytospeak.stagmkt.dev
 **Owner:** Ben Jarosz / Stag Marketing
@@ -11,9 +12,9 @@
 
 ## 1. The one-paragraph brief
 
-Rebuild **paytospeak.biz** — currently a bloated Wix site — as a fast, modern Next.js site
+Rebuild **paidtospeak.biz** — currently a bloated Wix site — as a fast, modern Next.js site
 that reads as the **coaching arm of kevincsnyder.com**. Same brand, same typography, same
-color system; only the *Pay to Speak* logo differs. The site sells Kevin's speaker-coaching
+color system; only the *Paid to $peak* logo differs. The site sells Kevin's speaker-coaching
 program to **aspiring and emerging speakers** and feeds his MailChimp audience list. It is
 NOT a page for event planners looking to book a keynote — that's kevincsnyder.com's job.
 
@@ -58,7 +59,7 @@ be genuinely good, not vendor-good.
 So: **study kevincsnyder.com and match it.** Specifically match:
 
 - Typography scale and the Inter / Inter Tight pairing
-- Navy + gold color system
+- Near-black + blue + amber color system (pulled from the live site — see `BRAND.md`)
 - Button treatment, card treatment, section rhythm
 - The overall "cinematic keynote" feel — dark, confident, high-contrast
 
@@ -79,7 +80,7 @@ speakers), so the *information architecture* differs. Match the **visual languag
 ### In scope
 1. Home page
 2. Coaching program page(s) — the core offer
-3. **Pay to Speak 2.0 book page** — standalone, with placeholder cover. Kevin's book
+3. **Paid to $peak 2.0 book page** — standalone, with placeholder cover. Kevin's book
    outline exists and is ~1/3 drafted; release is ~1-2 months out. This page must be
    live before the book is, and the cover must be swappable in one edit.
 4. About / Kevin's story (coaching-framed — *not* a duplicate of the keynote bio)
@@ -140,8 +141,8 @@ That license covers **tone, structure, and clarity**. It does **not** cover fact
 
 ## 7. Design direction
 
-Kevin's site is dark, high-contrast, and cinematic — stage photography, gold accents,
-generous vertical rhythm. Pay to Speak should feel like **the same world, one room over**:
+Kevin's site is dark, high-contrast, and cinematic — stage photography, blue and amber accents,
+generous vertical rhythm. Paid to $peak should feel like **the same world, one room over**:
 still premium and confident, but warmer and more instructional, because the reader is
 a peer learning a craft rather than an attendee being sold a keynote.
 
@@ -161,9 +162,9 @@ aspiring speaker believe that Kevin's system is the reason his peers get booked.
 These are marked `TODO(kc):` in the content file. Do not guess.
 
 1. **Coaching offer structure** — is there one program or tiers? Price points?
-2. **Pay to Speak logo** — Kevin said he'd send the logo file. Not yet received.
-   Build the header/footer to accept a swappable SVG+lockup so it drops in cleanly.
-3. **Book cover** — *Pay to Speak 2.0* has no cover yet. Placeholder needed,
+2. **Paid to $peak logo** — raster copy pulled from the Wix site (`docs/reference/`); we rebuild
+   it as SVG. Still ask Kevin for the vector source — it must drop in as a one-file swap.
+3. **Book cover** — *Paid to $peak 2.0* has no cover yet. Placeholder needed,
    designed to be replaced in one file.
 4. **MailChimp** — list ID, and whether opt-in is single or double.
 5. **Existing video** — Kevin has coaching video from ~2022. He may want to reuse it.

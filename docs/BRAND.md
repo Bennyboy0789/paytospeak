@@ -1,52 +1,95 @@
-# Brand — Pay to Speak
+# Brand — Paid to $peak
 
-Pay to Speak is the **coaching brand of Dr. Kevin C. Snyder**. It is not a separate
+Paid to $peak is the **coaching brand of Dr. Kevin C. Snyder**. It is not a separate
 identity. Treat it as a sub-brand that inherits the parent's visual system and swaps
 only its logo lockup.
 
-**Parent brand:** kevincsnyder.com — dark, cinematic, navy + gold, stage photography.
+**Parent brand:** kevincsnyder.com — near-black, cinematic, electric blue + amber,
+stage photography.
+
+> Tokens below were pulled from the **live** kevincsnyder.com stylesheet
+> (`/assets/styles-CMp3SVWE.css`, October 2026). An earlier draft of this file
+> described navy + gold; that was wrong and does not match the parent site.
+> If the parent site changes, re-pull from the live site — never from staging.
+
+---
+
+## Name
+
+- Display name: **Paid to $peak** — with the dollar sign, matching the logo.
+- Plain-text name: **Paid to Speak** — use in `alt`, `aria-label`, and anywhere a
+  screen reader or search engine reads the name. "$peak" reads aloud as
+  "dollar peak" and doesn't match searches for "speak".
+- Domain: **paidtospeak.biz**. (`paytospeak.biz` does not exist. The repo and the
+  staging subdomain keep their old `paytospeak` names — those are infrastructure,
+  not brand.)
 
 ---
 
 ## Color
 
 Defined once, in `src/app/globals.css` under `@theme`. Never hardcode hex values in
-components — always reference the token.
+components — always reference the token. Names mirror the parent site's tokens so
+the two codebases read the same.
 
 | Token | Hex | Use |
 |---|---|---|
-| `--color-navy-900` | `#06182B` | Page background, deepest surface |
-| `--color-navy-800` | `#0B2A4A` | **Primary brand color.** Cards, sections |
-| `--color-navy-700` | `#123A5F` | Elevated surfaces, hover states |
-| `--color-gold-500` | `#C9A227` | **Accent.** CTAs, rules, key emphasis |
-| `--color-gold-400` | `#E0BB4A` | Gold hover / lighter contrast on dark |
-| `--color-ink-100` | `#F5F7FA` | Primary text on dark |
-| `--color-ink-300` | `#B9C4D1` | Secondary text on dark |
-| `--color-white` | `#FFFFFF` | Reversed text on gold |
+| `--color-background` | `#010407` | Page background |
+| `--color-ink` | `#000103` | Deepest band, footer |
+| `--color-card` | `#040A11` | Cards, raised sections |
+| `--color-secondary` | `#0E1721` | Elevated surfaces, hover fills |
+| `--color-muted` | `#0B121A` | Quiet fills, inputs |
+| `--color-foreground` | `#F6F9FC` | Primary text |
+| `--color-muted-foreground` | `#95A0AB` | Secondary text |
+| `--color-primary` | `#00A8E6` | **Blue.** Highlighted headline phrases, links, focus ring |
+| `--color-accent` | `#F7A224` | **Amber.** Primary CTAs, rules, key emphasis |
+| `--color-accent-foreground` | `#140801` | Text on amber |
+| `--color-border` | `rgb(255 255 255 / 0.10)` | Card and divider borders |
+| `--color-input` | `rgb(255 255 255 / 0.12)` | Form field borders |
 
-**Contrast:** `ink-100` on `navy-800` passes AA. Gold `#C9A227` on navy `#0B2A4A` is
-~6.4:1 — passes AA for normal text, but **do not** use gold text below 16px. Gold
-in small sizes should be bold or paired with a dark plate.
+**Contrast (WCAG, on `background`):**
+
+| Pair | Ratio | |
+|---|---|---|
+| `foreground` | 19.5:1 | AAA |
+| `muted-foreground` | 7.7:1 | AAA |
+| `primary` blue | 7.6:1 | AAA |
+| `accent` amber | 9.9:1 | AAA |
+| `accent-foreground` on `accent` | 9.5:1 | AAA |
+
+The Paid to $peak logo's own colors (blue `#056BDA`, amber rule `#F4B13E`) sit
+inside this system already; that's why the two brands read as one. On the dark site
+the logo uses `#0676F2` — the exact blue of Kevin's own logo on kevincsnyder.com
+(4.8:1 on `background`) — so the two marks match side by side. Logo colors live in
+the SVG files only; they are not theme tokens.
 
 ---
 
 ## Typography
 
-Loaded via `next/font/google`, self-hosted, no layout shift.
+Loaded via `next/font/google`, self-hosted, no layout shift. Same pairing and
+weights as the parent site.
 
 | Role | Family | Weight | Notes |
 |---|---|---|---|
-| Display / headlines | **Inter Tight** | 700–900 | Tight tracking (`-0.02em`), sentence case |
-| Body | **Inter** | 400 / 500 | `leading-relaxed` |
-| Eyebrow / label | **Inter** | 600 | UPPERCASE, `letter-spacing: 0.12em`, small |
+| Display / headlines | **Inter Tight** | 900 (`font-black`) | `tracking-tight`, `leading-[1.05]`, `text-balance` |
+| Hero headline | **Inter Tight** | 900 | `tracking-tighter`, `leading-[0.9]` |
+| Body | **Inter** | 400 / 500 | `leading-relaxed`, `text-foreground/80` for long copy |
+| Eyebrow / label | **Inter** | 600 | UPPERCASE, `tracking-widest`, `text-xs` |
 
-**Scale (desktop → mobile):**
-- Display: `clamp(2.75rem, 6vw, 4.5rem)`
-- H2: `clamp(2rem, 4vw, 3rem)`
-- H3: `clamp(1.25rem, 2.5vw, 1.75rem)`
-- Body: `1.0625rem` → `1rem`
+**Scale (parent site's breakpoints):**
+- Hero: `text-5xl sm:text-6xl lg:text-7xl xl:text-8xl`
+- H2: `text-4xl lg:text-5xl` (up to `lg:text-6xl` for section openers)
+- H3: `text-xl lg:text-2xl`
+- Body: `text-lg` in intros, `text-base` elsewhere
 
-Headlines are **sentence case**. Not Title Case. Not ALL CAPS (except eyebrows).
+**Headline pattern:** sentence case, short, one key phrase highlighted in
+`text-primary`. This is the parent site's signature move — use it, but once per
+headline at most. Example:
+
+> You already have the story. **Now build the system.**
+
+Not ALL CAPS (except eyebrows and buttons).
 
 ---
 
@@ -75,34 +118,59 @@ generous — the guy who tells you the truth because he wants you booked.
 
 ## Components
 
+Matched to the parent site's live markup.
+
 ### Buttons
-- **Primary:** gold fill, navy text, `rounded-md`, generous horizontal padding.
-- **Secondary:** transparent, 1px gold border, gold text.
-- **Tertiary:** text + arrow, gold.
-- Never a gradient. Never a drop shadow heavier than `shadow-lg`.
+- **Primary:** amber fill (`bg-accent text-accent-foreground`), `rounded-full`,
+  `uppercase tracking-wide font-semibold text-sm`, `px-7 py-3.5`, soft amber glow
+  shadow, `hover:brightness-110`.
+- **Secondary:** transparent, 1px `border-border`, `rounded-full`, foreground text;
+  border shifts to amber on hover.
+- **Tertiary:** text + arrow, `text-primary`.
+- Never a gradient fill.
 
 ### Cards
-- `navy-800` fill on `navy-900` page, or `navy-700` on `navy-800` section.
-- 1px border at `rgba(255,255,255,0.08)`.
-- `rounded-xl`. Padding generous: `p-6` mobile → `p-8` desktop.
-- Hover: border shifts toward gold, `transition-colors`.
+- `bg-card` on `bg-background`, 1px `border-border`.
+- `rounded-2xl`, `p-7` (`lg:p-8`). Feature panels: `rounded-3xl p-8 lg:p-14`.
+- Hover: border shifts toward amber, `transition-colors`.
 
 ### Section rhythm
-- Vertical padding: `py-20` mobile → `py-32` desktop.
-- Alternate `navy-900` / `navy-800` to separate sections.
+- Vertical padding: `py-20` mobile → `py-28`/`py-32` desktop.
+- Alternate `background` / `card` / `ink` bands to separate sections.
 - Eyebrow label above every major section headline.
+
+### Focus
+- Visible focus ring in `primary` blue, 2px, offset from the element.
 
 ---
 
 ## Logo
 
-**Not yet received from client.** (`TODO(kc)`)
+**Source:** the current Wix site. Original saved at
+`docs/reference/paid-to-speak-logo-wix-original.jpg` (872×744 JPG).
 
-Kevin said he'd send the Pay to Speak logo. Until then:
-- Build `<Logo />` in `src/components/` reading from `public/logo-paytospeak.svg`.
-- Ship a typographic placeholder: "PAY TO SPEAK" in Inter Tight 800, gold, with the
-  word "TO" in `ink-300` at 70% size for the lockup detail.
-- Swapping the real file must require changing **one** file, zero components.
+That file is not usable as-is: white background (the site is dark), no vector,
+and the tagline "Launch a successful speaking business!" is baked in (it breaks
+the no-exclamation rule).
+
+Rebuilt as SVG, without the tagline. Same mark, not a redesign:
+- Wordmark set in **Raleway 900** ("TO" in Raleway 500), letters converted to
+  outlines, slightly tightened — the closest match to the original (Montserrat
+  was compared and is too wide). Microphone redrawn as a vector "I".
+- `public/logo-paidtospeak.svg` — horizontal, for the header.
+- `public/logo-paidtospeak-stacked.svg` — stacked with amber rule, for the footer
+  and anywhere square-ish.
+- Both are generated by `npm run logo` (`scripts/logo/generate.mjs`) — edit the
+  script, not the SVGs.
+- `<Logo />` in `src/components/Logo.tsx` is the only place the files are referenced;
+  its `alt` is "Paid to Speak".
+- `TODO(kc):` ask Kevin for the original vector source; if it exists, it replaces
+  our rebuild in one file, zero components.
+
+Parent logo for reference: `docs/reference/kevincsnyder-logo.png`.
+
+**Do not use** the book mockup on the Wix site (`PAID to $PEAK` 3D cover): it is an
+unpurchased Fiverr preview with watermarks.
 
 ---
 

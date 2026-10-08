@@ -1,4 +1,4 @@
-# Content — Pay to Speak
+# Content — Paid to $peak
 
 **Canonical copy lives here.** Components read from `src/content/*.ts`, which mirrors
 this file. If the two disagree, **this file wins**.
@@ -23,7 +23,7 @@ this file. If the two disagree, **this file wins**.
 - **20 years** speaking professionally
 - **1,500+** audiences, **1M+** people reached
 - Four books: *Think Differently*, *PURE Vulnerability*, *PAID to $PEAK*, *Speechless*
-- Fifth book in progress: *Pay to Speak 2.0* (systems & strategies for speakers)
+- Fifth book in progress: *Paid to $peak 2.0* (systems & strategies for speakers)
 - Coaches aspiring and emerging speakers
 - ~2,000 opted-in subscribers to a bi-weekly speaker-tip email
 - Involved with NSA (National Speakers Association)
@@ -34,7 +34,7 @@ this file. If the two disagree, **this file wins**.
 - Any specific coaching price, tier, or enrollment count
 - Any testimonial quote or named client
 - Specific income or booking results attributed to coaching
-- The Pay to Speak logo file (not yet received)
+- The Paid to $peak logo **vector** file (not yet received — a raster copy was pulled from the Wix site, see `docs/BRAND.md`)
 
 ---
 
@@ -90,9 +90,9 @@ it into a system other speakers can learn.
 > Note: this must **not** duplicate the keynote bio on kevincsnyder.com. Same person,
 > different frame — here he's a *teacher*, there he's a *performer*.
 
-### Section — Book (Pay to Speak 2.0)
+### Section — Book (Paid to $peak 2.0)
 **Eyebrow:** NEW BOOK
-**Headline:** Pay to Speak 2.0
+**Headline:** Paid to $peak 2.0
 
 Systems and strategies for turning what you know into a speaking career.
 
@@ -128,12 +128,12 @@ Kevin sends one practical idea for building a speaking career. No fluff.
 
 ---
 
-## Books — Pay to Speak 2.0 page
+## Books — Paid to $peak 2.0 page
 
 Standalone page. Cover placeholder, swappable in one file.
 
 **Eyebrow:** COMING SOON
-**Headline:** Pay to Speak 2.0
+**Headline:** Paid to $peak 2.0
 **Sub:** The systems and strategies behind a speaking career — from someone who's
 been booked 1,500 times.
 
@@ -177,7 +177,8 @@ Sections:
 > should route to email, MailChimp, or a form service.
 
 **Headline:** Tell Kevin where you are.
-Fields: name, email, where you are in your speaking journey (textarea),
+Fields: name, email, "Where are you with speaking right now?" (textarea —
+reworded from "where you are in your speaking journey"; "journey" is banned),
 link to a talk or your site (optional).
 
 ---
@@ -192,11 +193,67 @@ link to a talk or your site (optional).
 - **Apply** (button)
 
 ### Footer
-- Pay to Speak logo
-- Parent-brand line: "Pay to Speak is the coaching practice of Dr. Kevin C. Snyder."
+- Paid to $peak logo
+- Parent-brand line: "Paid to $peak is the coaching practice of Dr. Kevin C. Snyder."
 - Links: Coaching · The Book · About · Blog · Contact
 - Link to kevincsnyder.com (parent site)
 - Social: Facebook, X, LinkedIn, Instagram (reuse his handles from kevincsnyder.com)
 - `TODO(kc):` Confirm contact email and phone to display — kevincsnyder.com shows
   `kevin@kevincsnyder.com` and `+1 (919) 633-9931`. Confirm these are the right
   ones for the coaching brand, or whether there's a separate address.
+
+---
+
+## Draft copy written during the build — `DRAFT(kc)`
+
+Kevin's license to rewrite covers tone and structure, so the build filled these
+gaps with new copy. **None of it introduces a fact** — every claim is from the
+verified list above. All of it needs Kevin's read before launch. Search the code
+for `DRAFT(kc)` to find each instance.
+
+### Coaching page
+**Hero sub:** Coaching for speakers who are good in the room and ready to build the
+business behind the talk — from someone who has spent 20 years doing exactly that.
+**Image caption:** The view Kevin works toward with every speaker he coaches.
+
+**Who this is for** — *Honest about the fit. Before you apply.*
+- This is for you if:
+  - You've spoken — at work, at a conference, in your community — and people told you it landed.
+  - You want speaking to be part of how you earn a living, not something you do once a year.
+  - You're willing to do the unglamorous half: materials, outreach, follow-up.
+  - You want direct feedback, including the parts that are hard to hear.
+- Probably not a fit if:
+  - You want a guaranteed number of bookings. Nobody can honestly promise that.
+  - You want a script handed to you. Kevin helps you find your message, not borrow his.
+  - You aren't ready to put your talk in front of real audiences yet.
+
+**What we work on headline:** Four parts of a speaking career. All of them, properly.
+
+**Why Kevin** — *Coached by someone still doing the work.*
+Kevin has spent 20 years on professional stages — corporate, college, and youth
+audiences. He is an NSA Certified Speaking Professional and a Toastmasters
+Accredited Speaker — one of only nine people worldwide to hold both. The advice
+you get is what he does on Monday.
+
+**Apply panel:** A short application so Kevin can see where you are and what you need next.
+
+### Book page
+**Notify:** Leave your email and you'll hear when the book is available.
+**Where it started:** Kevin first wrote about the speaking business in *PAID to
+$PEAK: How to Become a Professional Speaker*. Paid to $peak 2.0 is his new book on
+the systems and strategies behind a speaking career.
+`TODO(kc):` confirm how 2.0 relates to the first book. (Subtitle is from the
+first edition's cover on kevincsnyder.com.)
+
+### About page
+Each chapter carries one or two sentences built only from verified facts, plus a
+visible `TODO(kc)` asking for Kevin's own account:
+1. **The kid who didn't believe in himself.** Grew up in North Carolina; childhood depression.
+2. **A game show, a stage, and a question about belief.** `TODO(kc):` show name, year, research detail.
+3. **ShiftThinker™.** `TODO(kc):` one or two sentences in Kevin's words.
+4. **Why he coaches.** Credentials + "Now he coaches aspiring and emerging speakers
+   on the system behind that career." `TODO(kc):` why, in his words.
+
+### Blog post footer
+Want Kevin in your corner? Coaching for aspiring and emerging speakers.
+
