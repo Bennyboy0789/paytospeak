@@ -1,11 +1,11 @@
-# AGENTS.md — Pay to Speak
+# AGENTS.md — Paid to $peak
 
 Repo guidance for AI coding agents (Claude Code, Codex, Cursor) working in this repository.
 
 ## What this is
 
-Marketing site for **Pay to Speak**, the speaker-coaching brand of **Dr. Kevin C. Snyder**
-(paytospeak.biz). It is a **sibling site** to kevincsnyder.com and must read as the same
+Marketing site for **Paid to $peak**, the speaker-coaching brand of **Dr. Kevin C. Snyder**
+(paidtospeak.biz). It is a **sibling site** to kevincsnyder.com and must read as the same
 brand — same typography, same color system, same tone. Only the logo lockup differs.
 
 This is a **marketing site**, not an app. There is no database, no auth, no user accounts.
@@ -33,12 +33,13 @@ Full detail in `docs/BRAND.md`. The short version:
 
 | Token | Value |
 |---|---|
-| Primary | `#0B2A4A` (deep navy) |
-| Accent | `#C9A227` (gold) |
+| Background | `#010407` (near-black) |
+| Primary | `#00A8E6` (blue) |
+| Accent | `#F7A224` (amber) |
 | Body type | Inter |
 | Display type | Inter Tight |
 
-- **Never** invent a new accent color. Gold on navy is the brand.
+- **Never** invent a new accent color. Blue and amber on near-black is the brand — matched to the live kevincsnyder.com.
 - **Never** use emoji as UI decoration.
 - Headlines are sentence-case and confident. No exclamation marks.
 - Copy speaks to *aspiring and emerging speakers*, not to event planners.

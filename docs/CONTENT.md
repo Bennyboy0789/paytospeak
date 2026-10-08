@@ -1,4 +1,4 @@
-# Content — Pay to Speak
+# Content — Paid to $peak
 
 **Canonical copy lives here.** Components read from `src/content/*.ts`, which mirrors
 this file. If the two disagree, **this file wins**.
@@ -23,7 +23,7 @@ this file. If the two disagree, **this file wins**.
 - **20 years** speaking professionally
 - **1,500+** audiences, **1M+** people reached
 - Four books: *Think Differently*, *PURE Vulnerability*, *PAID to $PEAK*, *Speechless*
-- Fifth book in progress: *Pay to Speak 2.0* (systems & strategies for speakers)
+- Fifth book in progress: *Paid to $peak 2.0* (systems & strategies for speakers)
 - Coaches aspiring and emerging speakers
 - ~2,000 opted-in subscribers to a bi-weekly speaker-tip email
 - Involved with NSA (National Speakers Association)
@@ -34,7 +34,7 @@ this file. If the two disagree, **this file wins**.
 - Any specific coaching price, tier, or enrollment count
 - Any testimonial quote or named client
 - Specific income or booking results attributed to coaching
-- The Pay to Speak logo file (not yet received)
+- The Paid to $peak logo **vector** file (not yet received — a raster copy was pulled from the Wix site, see `docs/BRAND.md`)
 
 ---
 
@@ -90,9 +90,9 @@ it into a system other speakers can learn.
 > Note: this must **not** duplicate the keynote bio on kevincsnyder.com. Same person,
 > different frame — here he's a *teacher*, there he's a *performer*.
 
-### Section — Book (Pay to Speak 2.0)
+### Section — Book (Paid to $peak 2.0)
 **Eyebrow:** NEW BOOK
-**Headline:** Pay to Speak 2.0
+**Headline:** Paid to $peak 2.0
 
 Systems and strategies for turning what you know into a speaking career.
 
@@ -128,12 +128,12 @@ Kevin sends one practical idea for building a speaking career. No fluff.
 
 ---
 
-## Books — Pay to Speak 2.0 page
+## Books — Paid to $peak 2.0 page
 
 Standalone page. Cover placeholder, swappable in one file.
 
 **Eyebrow:** COMING SOON
-**Headline:** Pay to Speak 2.0
+**Headline:** Paid to $peak 2.0
 **Sub:** The systems and strategies behind a speaking career — from someone who's
 been booked 1,500 times.
 
@@ -192,8 +192,8 @@ link to a talk or your site (optional).
 - **Apply** (button)
 
 ### Footer
-- Pay to Speak logo
-- Parent-brand line: "Pay to Speak is the coaching practice of Dr. Kevin C. Snyder."
+- Paid to $peak logo
+- Parent-brand line: "Paid to $peak is the coaching practice of Dr. Kevin C. Snyder."
 - Links: Coaching · The Book · About · Blog · Contact
 - Link to kevincsnyder.com (parent site)
 - Social: Facebook, X, LinkedIn, Instagram (reuse his handles from kevincsnyder.com)

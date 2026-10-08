@@ -13,8 +13,8 @@ Entry point for Claude Code in this repository.
 
 ## The short version
 
-Rebuild **paytospeak.biz** — Dr. Kevin C. Snyder's speaker-coaching site, currently on Wix.
-It must look like the sibling of **kevincsnyder.com**: same navy + gold, same Inter /
+Rebuild **paidtospeak.biz** (brand: **Paid to $peak**) — Dr. Kevin C. Snyder's speaker-coaching site, currently on Wix.
+It must look like the sibling of **kevincsnyder.com**: same near-black + blue + amber, same Inter /
 Inter Tight pairing, same cinematic confidence. Only the logo lockup differs.
 
 Stack: **Next.js 16.4 (App Router) · React 19 · TypeScript · Tailwind v4 · Vercel**
@@ -64,4 +64,4 @@ Our reference for visual language is the live site:
 - Its staging build has drifted from the live site and carries stale vendor-uploaded
   OG images; neither is authoritative for *copy*.
 
-Kevin's current Wix site (to be replaced): https://paytospeak.biz
+Kevin's current Wix site (to be replaced): https://www.paidtospeak.biz
