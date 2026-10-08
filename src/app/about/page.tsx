@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import ballroom from "@/assets/images/kevin-stage-ballroom.jpg";
 import studentSelfie from "@/assets/images/kevin-student-selfie.jpg";
 import { ButtonLink } from "@/components/Button";
 import { Heading } from "@/components/Heading";
 import { Placeholder } from "@/components/Placeholder";
 import { Container, Eyebrow, Section } from "@/components/Section";
+import { StageLights } from "@/components/StageLights";
 import { about } from "@/content/about";
 import { site } from "@/lib/site";
 
@@ -24,27 +26,35 @@ const photos: Record<number, { src: typeof ballroom; alt: string }> = {
 export default function AboutPage() {
   return (
     <>
-      <section aria-labelledby="about-title">
-        <Container className="py-16 lg:py-28">
-          <Eyebrow>{about.hero.eyebrow}</Eyebrow>
-          <Heading as="h1" id="about-title" size="page" headline={about.hero.headline} className="mt-6 max-w-5xl" />
-          <p className="mt-8 max-w-2xl text-xl leading-relaxed text-foreground/80">{about.hero.sub}</p>
+      <section aria-labelledby="about-title" className="relative -mt-18 overflow-hidden pt-18">
+        <StageLights preset="hero" />
+        <Container className="relative py-20 lg:py-36">
+          <div className="enter">
+            <Eyebrow>{about.hero.eyebrow}</Eyebrow>
+          </div>
+          <Heading as="h1" id="about-title" size="page" headline={about.hero.headline} animate className="mt-7 max-w-6xl" />
+          <p className="enter mt-10 max-w-2xl text-xl leading-relaxed text-foreground/80" style={{ "--d": "900ms" } as CSSProperties}>
+            {about.hero.sub}
+          </p>
         </Container>
       </section>
 
       <Section tone="card" className="border-y border-border">
-        <ol className="space-y-20 lg:space-y-28">
+        <ol className="chapters relative space-y-24 lg:space-y-36">
+          <li aria-hidden="true" className="absolute inset-y-0 left-[1.75rem] hidden w-px bg-border lg:block">
+            <span className="draw-y absolute inset-0 bg-gradient-to-b from-accent via-accent to-primary" />
+          </li>
           {about.chapters.map((chapter, i) => (
             <li key={chapter.eyebrow}>
-              <article className="grid gap-6 lg:grid-cols-[14rem_1fr] lg:gap-16">
-                <div>
-                  <span aria-hidden="true" className="font-display text-6xl font-black tracking-tight text-accent">
+              <article className="reveal grid gap-6 lg:grid-cols-[16rem_1fr] lg:gap-16">
+                <div className="lg:sticky lg:top-32 lg:self-start lg:pl-16">
+                  <span aria-hidden="true" className="numeral fill-in-view font-display text-7xl font-black leading-none tracking-tight lg:text-8xl">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{chapter.eyebrow}</p>
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">{chapter.eyebrow}</p>
                 </div>
                 <div className="max-w-2xl">
-                  <h2 className="font-display text-3xl font-black tracking-tight text-balance lg:text-4xl">{chapter.title}</h2>
+                  <h2 className="font-display text-3xl font-black tracking-tight text-balance lg:text-5xl">{chapter.title}</h2>
                   {chapter.body.map((para) => (
                     <p key={para} className="mt-5 text-lg leading-relaxed text-foreground/85">
                       {para}
@@ -58,8 +68,8 @@ export default function AboutPage() {
                 </div>
               </article>
               {photos[i] && (
-                <div className="relative mt-20 aspect-[16/9] overflow-hidden rounded-3xl border border-border lg:mt-28 lg:aspect-[21/9]">
-                  <Image src={photos[i].src} alt={photos[i].alt} fill placeholder="blur" sizes="(min-width: 1152px) 72rem, 100vw" className="object-cover" />
+                <div className="reveal-clip parallax relative mt-24 aspect-[16/9] overflow-hidden rounded-3xl lg:mt-36 lg:aspect-[21/9]">
+                  <Image src={photos[i].src} alt={photos[i].alt} fill placeholder="blur" sizes="(min-width: 1280px) 80rem, 100vw" className="object-cover" />
                 </div>
               )}
             </li>
@@ -68,13 +78,15 @@ export default function AboutPage() {
       </Section>
 
       <Section labelledBy="about-cta-title">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+        <div className="reveal flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <Heading id="about-cta-title" headline={about.cta.headline} />
-          <ButtonLink href="/coaching">{about.cta.label}</ButtonLink>
+          <ButtonLink href="/coaching" magnetic>
+            {about.cta.label}
+          </ButtonLink>
         </div>
         <p className="mt-12 border-t border-border pt-8 text-muted-foreground">
           {about.keynoteLink.text}{" "}
-          <a href={site.parent.url} className="text-primary underline underline-offset-4 hover:text-foreground">
+          <a href={site.parent.url} className="text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground">
             {about.keynoteLink.label}
           </a>
           .

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { Placeholder } from "@/components/Placeholder";
-import { Container, Eyebrow } from "@/components/Section";
+import { Eyebrow } from "@/components/Section";
 import { formatDate, getPost, posts } from "@/content/posts";
 import { site } from "@/lib/site";
 
@@ -44,11 +45,12 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           mainEntityOfPage: `${site.url}/blog/${post.slug}`,
         }}
       />
-      <Container className="max-w-3xl py-16 lg:py-24">
-        <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground">
-          <span aria-hidden="true">&larr;</span> All posts
+      <div aria-hidden="true" className="read-progress" />
+      <div className="mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 lg:py-24">
+        <Link href="/blog" className="group enter inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
+          <span aria-hidden="true" className="transition-transform duration-500 ease-out-expo group-hover:-translate-x-1">&larr;</span> All posts
         </Link>
-        <div className="mt-10">
+        <div className="enter mt-10" style={{ "--d": "120ms" } as CSSProperties}>
           <Eyebrow>
             <time dateTime={post.date}>{formatDate(post.date)}</time>
           </Eyebrow>
@@ -69,14 +71,14 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
         <div className="mt-6">
           <Body />
         </div>
-        <footer className="mt-16 rounded-2xl border border-border bg-card p-7 lg:p-10">
+        <footer className="reveal border-beam mt-20 rounded-3xl bg-card p-8 lg:p-12">
           <p className="font-display text-2xl font-black tracking-tight">Want Kevin in your corner?</p>
           <p className="mt-2 text-foreground/80">Coaching for aspiring and emerging speakers.</p>
           <ButtonLink href="/coaching" variant="tertiary" className="mt-5">
             See the coaching program
           </ButtonLink>
         </footer>
-      </Container>
+      </div>
     </article>
   );
 }

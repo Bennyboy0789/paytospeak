@@ -8,7 +8,7 @@ const initial: FormState = { status: "idle", message: "" };
 const { fields } = apply;
 
 const inputClass =
-  "w-full rounded-xl border border-input bg-muted px-5 py-3.5 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none aria-invalid:border-red-400";
+  "w-full rounded-xl border border-input bg-muted px-5 py-3.5 text-base text-foreground placeholder:text-muted-foreground transition duration-300 hover:border-white/25 focus:border-primary focus:shadow-[0_0_0_4px_rgb(0_168_230/0.15)] focus:outline-none aria-invalid:border-red-400";
 
 export function ApplyForm() {
   const [state, action, pending] = useActionState(applyAction, initial);
@@ -53,7 +53,7 @@ export function ApplyForm() {
         <button
           type="submit"
           disabled={pending}
-          className="rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition hover:brightness-110 disabled:opacity-60"
+          className="btn-shine cursor-pointer rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition duration-500 ease-out-expo hover:-translate-y-0.5 hover:shadow-amber-lg disabled:opacity-60"
         >
           {pending ? "Sending…" : fields.submit}
         </button>
