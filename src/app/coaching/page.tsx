@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import ballroom from "@/assets/images/kevin-stage-ballroom.jpg";
 import viewFromStage from "@/assets/images/kevin-view-from-stage.jpg";
 import { ButtonLink } from "@/components/Button";
@@ -8,8 +9,11 @@ import { Heading } from "@/components/Heading";
 import { Pillars } from "@/components/Pillars";
 import { Placeholder } from "@/components/Placeholder";
 import { Container, Eyebrow, Section } from "@/components/Section";
+import { StageLights } from "@/components/StageLights";
 import { coaching, type Offer } from "@/content/coaching";
 import { applyHref } from "@/lib/site";
+
+const delay = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
 export const metadata: Metadata = {
   title: coaching.meta.title,
@@ -22,21 +26,28 @@ const { hero, fit, pillars, how, why, apply } = coaching;
 export default function CoachingPage() {
   return (
     <>
-      <section aria-labelledby="coaching-title" className="relative overflow-hidden">
-        <Container className="grid items-center gap-12 py-16 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-28">
+      <section aria-labelledby="coaching-title" className="relative -mt-18 overflow-hidden pt-18">
+        <StageLights preset="hero" />
+        <Container className="relative grid items-center gap-14 py-16 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:py-32">
           <div>
-            <Eyebrow>{hero.eyebrow}</Eyebrow>
-            <Heading as="h1" id="coaching-title" size="hero" headline={hero.headline} className="mt-6" />
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-foreground/80">{hero.sub}</p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <ButtonLink href={applyHref}>{apply.cta}</ButtonLink>
-              <ButtonLink href="#how" variant="secondary">
+            <div className="enter">
+              <Eyebrow>{hero.eyebrow}</Eyebrow>
+            </div>
+            <Heading as="h1" id="coaching-title" size="hero" headline={hero.headline} animate className="mt-7" />
+            <p className="enter mt-8 max-w-xl text-lg leading-relaxed text-foreground/80 lg:text-xl" style={delay(450)}>
+              {hero.sub}
+            </p>
+            <div className="enter mt-10 flex flex-wrap gap-4" style={delay(600)}>
+              <ButtonLink href={applyHref} magnetic>
+                {apply.cta}
+              </ButtonLink>
+              <ButtonLink href="#how" variant="secondary" magnetic>
                 {how.eyebrow}
               </ButtonLink>
             </div>
           </div>
-          <figure>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border sm:aspect-[4/3] lg:aspect-[4/5]">
+          <figure className="enter" style={delay(250)}>
+            <div className="zoom-on-hover relative aspect-[4/5] overflow-hidden rounded-3xl border border-border sm:aspect-[4/3] lg:aspect-[4/5]">
               <Image
                 src={viewFromStage}
                 alt="Kevin on stage, seen from behind, facing a full ballroom audience"
@@ -44,7 +55,7 @@ export default function CoachingPage() {
                 priority
                 placeholder="blur"
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
+                className="ken-burns object-cover"
               />
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
             </div>
@@ -57,12 +68,12 @@ export default function CoachingPage() {
 
       {/* Fit */}
       <Section labelledBy="fit-title">
-        <div className="max-w-3xl">
+        <div className="reveal max-w-3xl">
           <Eyebrow>{fit.eyebrow}</Eyebrow>
           <Heading id="fit-title" headline={fit.headline} className="mt-5" />
         </div>
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1.25fr_1fr]">
-          <div className="rounded-2xl border border-accent/40 bg-card p-7 lg:p-10">
+        <div className="reveal-stagger mt-14 grid gap-5 lg:grid-cols-[1.25fr_1fr]">
+          <div data-spotlight className="glow-card spotlight rounded-3xl border border-accent/40 bg-card p-8 lg:p-12">
             <h3 className="font-display text-2xl font-black tracking-tight">This is for you if</h3>
             <ul className="mt-6 space-y-5">
               {fit.yes.map((line) => (
@@ -73,7 +84,7 @@ export default function CoachingPage() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-border p-7 lg:p-10">
+          <div data-spotlight className="glow-card spotlight rounded-3xl border border-border p-8 lg:p-12 [--spot-color:rgb(0_168_230/0.07)]">
             <h3 className="font-display text-2xl font-black tracking-tight text-foreground/80">Probably not a fit if</h3>
             <ul className="mt-6 space-y-5">
               {fit.no.map((line) => (
@@ -89,7 +100,7 @@ export default function CoachingPage() {
 
       {/* Pillars */}
       <Section tone="card" labelledBy="pillars-title" className="border-y border-border">
-        <div className="max-w-3xl">
+        <div className="reveal max-w-3xl">
           <Eyebrow>{pillars.eyebrow}</Eyebrow>
           <Heading id="pillars-title" headline={pillars.headline} className="mt-5" />
         </div>
@@ -105,19 +116,21 @@ export default function CoachingPage() {
 
       {/* How it works */}
       <Section id="how" labelledBy="how-title" className="scroll-mt-20">
-        <Eyebrow>{how.eyebrow}</Eyebrow>
-        <Heading id="how-title" headline={how.headline} className="mt-5" />
+        <div className="reveal">
+          <Eyebrow>{how.eyebrow}</Eyebrow>
+          <Heading id="how-title" headline={how.headline} className="mt-6" />
+        </div>
         <div className="mt-12">{how.offer ? <OfferDetails offer={how.offer} /> : <OfferPlaceholder />}</div>
       </Section>
 
       {/* Why Kevin */}
       <section aria-labelledby="why-title" className="relative overflow-hidden border-y border-border bg-ink">
-        <div className="relative h-64 sm:h-80 lg:absolute lg:inset-y-0 lg:left-0 lg:h-auto lg:w-1/2">
+        <div className="parallax relative h-72 overflow-hidden sm:h-96 lg:absolute lg:inset-y-0 lg:left-0 lg:h-auto lg:w-1/2">
           <Image src={ballroom} alt="Kevin speaking to a ballroom audience, arms raised" fill placeholder="blur" sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover object-[62%_center]" />
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink to-transparent lg:bg-gradient-to-l" />
         </div>
         <Container className="relative py-16 lg:py-32">
-          <div className="lg:ml-auto lg:w-1/2 lg:pl-16">
+          <div className="reveal lg:ml-auto lg:w-1/2 lg:pl-20">
             <Eyebrow>{why.eyebrow}</Eyebrow>
             <Heading id="why-title" headline={why.headline} className="mt-5" />
             <p className="mt-6 text-lg leading-relaxed text-foreground/80">{why.body}</p>
@@ -130,13 +143,15 @@ export default function CoachingPage() {
 
       {/* Apply */}
       <Section labelledBy="apply-title">
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-card px-7 py-14 text-center lg:px-14 lg:py-20">
-          <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
+        <div className="reveal border-beam rounded-[2rem] bg-card px-7 py-16 text-center lg:px-14 lg:py-24">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[inherit]">
+            <div className="absolute -bottom-40 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
+          </div>
           <div className="relative mx-auto max-w-2xl">
-            <Eyebrow>{apply.eyebrow}</Eyebrow>
+            <Eyebrow className="justify-center">{apply.eyebrow}</Eyebrow>
             <Heading id="apply-title" headline={apply.headline} className="mt-5" />
             <p className="mt-6 text-lg leading-relaxed text-foreground/80">{apply.body}</p>
-            <ButtonLink href={applyHref} className="mt-10">
+            <ButtonLink href={applyHref} className="mt-10" magnetic>
               {apply.cta}
             </ButtonLink>
           </div>
@@ -174,7 +189,7 @@ function OfferDetails({ offer }: { offer: Offer }) {
       <p className="text-lg text-muted-foreground">{offer.format}</p>
       <div className={`mt-8 grid gap-6 ${single ? "" : "md:grid-cols-2 lg:grid-cols-3"}`}>
         {offer.tiers.map((tier) => (
-          <article key={tier.name} className="flex flex-col rounded-2xl border border-border bg-card p-7 lg:p-8">
+          <article key={tier.name} data-spotlight className="glow-card spotlight flex flex-col rounded-3xl border border-border bg-card p-8 hover:-translate-y-1 lg:p-10">
             <h3 className="font-display text-2xl font-black tracking-tight">{tier.name}</h3>
             {tier.price && (
               <p className="mt-4 font-display text-4xl font-black tracking-tight">

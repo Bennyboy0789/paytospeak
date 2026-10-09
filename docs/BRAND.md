@@ -144,6 +144,39 @@ Matched to the parent site's live markup.
 
 ---
 
+## Motion
+
+Stage lighting is the idea: things are lit, rise into place, and settle. Slow
+in, fast out — never bouncy. All of it lives in `src/app/globals.css`, plus one
+pointer listener (`src/components/PointerFX.tsx`).
+
+| Effect | Where | How |
+|---|---|---|
+| Word-by-word rise | Page `<h1>`s (`<Heading animate>`) | CSS on load |
+| Fade-up entrance | Hero copy and CTAs (`.enter`, `--d` delay) | CSS on load |
+| Swaying stage beams | Hero backgrounds (`<StageLights>`) | CSS loop |
+| Reveal on scroll | Sections, cards (`.reveal`, `.reveal-stagger`, `.reveal-clip`) | Scroll-driven CSS |
+| Word-by-word light-up | Big statements (`<ScrubText>`) | Scroll-driven CSS |
+| Odometer stats | Credentials strip | Scroll-driven CSS |
+| Glass header | Header | Scroll-driven CSS |
+| Cursor light, border glow | Cards and rows (`data-spotlight`, `.glow-card`) | PointerFX |
+| 3D book tilt | `<BookCover>` (`data-tilt`) | PointerFX |
+| Magnetic CTAs | Hero buttons (`magnetic` prop) | PointerFX |
+| Page transitions | Every route (`src/app/template.tsx`) | React `<ViewTransition>` |
+
+**Rules:**
+- **Content is never hidden without the animation.** Scroll-driven effects are
+  inside `@supports (animation-timeline: view())`; where unsupported, the page is
+  static and fully visible. No JS gates visibility.
+- **`prefers-reduced-motion: reduce` stills everything.** Hover colour changes stay.
+- **Pointer effects are mouse/trackpad only** (`hover: hover` and `pointer: fine`).
+- **Easing:** `ease-out-expo` for entrances and hovers; 0.5–1.1s.
+- **Prefer `transform` and `opacity`** (plus colour, and `clip-path` for photo reveals). Nothing that
+  triggers layout. Lighthouse mobile performance must stay ≥ 90.
+- Buttons stay solid amber. The hover sheen is a light sweep, not a gradient fill.
+
+---
+
 ## Logo
 
 **Source:** the current Wix site. Original saved at

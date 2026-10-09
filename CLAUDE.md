@@ -51,7 +51,8 @@ Perf ≥ 90, A11y ≥ 95, SEO ≥ 95.
 
 ## Workflow
 
-Branch → build → PR → Ben reviews → merge. **Never** deploy to a live domain.
+Until launch: build, check, commit and push straight to `main` (Ben, 2026-10-08).
+After launch: branch → build → PR → Ben reviews → merge. **Never** deploy to a live domain.
 Staging is `paytospeak.stagmkt.dev`.
 
 If a design or content decision is ambiguous enough that you'd be building 12 files

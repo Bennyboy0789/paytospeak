@@ -45,12 +45,12 @@ export function SubscribeForm({ list, submitLabel }: SubscribeFormProps) {
           placeholder="you@example.com"
           aria-invalid={emailError ? true : undefined}
           aria-describedby={`${id}-status`}
-          className="min-h-13 flex-1 rounded-full border border-input bg-muted px-6 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none aria-invalid:border-red-400"
+          className="min-h-13 flex-1 rounded-full border border-input bg-muted px-6 text-base text-foreground placeholder:text-muted-foreground transition duration-300 hover:border-white/25 focus:border-primary focus:shadow-[0_0_0_4px_rgb(0_168_230/0.15)] focus:outline-none aria-invalid:border-red-400"
         />
         <button
           type="submit"
           disabled={pending}
-          className="min-h-13 rounded-full bg-accent px-7 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition hover:brightness-110 disabled:opacity-60"
+          className="btn-shine min-h-13 cursor-pointer rounded-full bg-accent px-7 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition duration-500 ease-out-expo hover:-translate-y-0.5 hover:shadow-amber-lg disabled:opacity-60"
         >
           {pending ? "Sending…" : submitLabel}
         </button>

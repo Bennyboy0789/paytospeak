@@ -3,6 +3,7 @@ import { Inter, Inter_Tight } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { PointerFX } from "@/components/PointerFX";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -62,6 +63,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <div aria-hidden="true" className="grain" />
+        <PointerFX />
         <Analytics />
       </body>
     </html>
