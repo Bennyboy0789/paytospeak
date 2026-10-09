@@ -176,7 +176,8 @@ These are marked `TODO(kc):` in the content file. Do not guess.
 
 ## 9. Working agreement
 
-- Build on a branch, open a PR. Ben reviews before merge.
+- Until launch, commit and push straight to `main` (Ben, 2026-10-08). After
+  launch: build on a branch, open a PR, Ben reviews before merge.
 - Never deploy to a live domain. Staging is `paytospeak.stagmkt.dev`.
 - If a decision is genuinely ambiguous and blockable, stop and ask — do not
   pick a direction and build 12 files on top of it.
