@@ -1,0 +1,7 @@
+{
+  "_note": "Wix lazy-loads some video embeds, so their YouTube IDs aren't in the page HTML. Found by loading each post in a browser (Oct 2026). IDs are listed in the order the unresolved videos appear in the post.",
+  "breakout2020": ["TypoQbnCduI"],
+  "leadgenerationstrategiesforspeaking": ["q5LNbKujTGU"],
+  "onsite-speaker-tips-just-as-i-am-about-to-be-introduced-video-of-standing-ovation": ["MexsR-7b5BA"],
+  "what-my-4-year-old-s-first-dive-and-flip-into-the-pool-taught-me-about-commitment-for-speakers": ["2hMU-OPH2P0"]
+}

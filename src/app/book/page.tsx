@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import { BookCover } from "@/components/BookCover";
+import { ButtonLink } from "@/components/Button";
 import { Heading } from "@/components/Heading";
 import { JsonLd } from "@/components/JsonLd";
+import { Placeholder } from "@/components/Placeholder";
 import { Container, Eyebrow, Section } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { book } from "@/content/book";
+import { firstEdition as firstBook } from "@/content/book-first-edition";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -75,7 +78,54 @@ export default function BookPage() {
               The first book
             </h2>
             <p className="mt-5 font-display text-2xl font-bold leading-snug tracking-tight lg:text-3xl">{firstEdition.body}</p>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/80">
+              {firstBook.body.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              {firstBook.formats.map((f) =>
+                f.href ? (
+                  <ButtonLink key={f.format} href={f.href} target="_blank" rel="noopener" variant="secondary" size="sm">
+                    {f.format} on Amazon
+                  </ButtonLink>
+                ) : null,
+              )}
+            </div>
           </div>
+        </div>
+
+        {/* The five modules, carried over from the Wix book pages */}
+        <ol className="reveal-stagger mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {firstBook.modules.map((m) => (
+            <li key={m.number} className="rounded-2xl border border-border bg-background p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Module {m.number}</p>
+              <h3 className="mt-3 font-display text-lg font-black leading-snug tracking-tight">{m.title}</h3>
+              <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
+                {m.topics.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+        <div className="reveal mt-10 flex flex-wrap gap-x-10 gap-y-4">
+          <ButtonLink href={firstBook.worksheets.href} variant="tertiary">
+            {firstBook.worksheets.label}
+          </ButtonLink>
+          <ButtonLink href={firstBook.course.href} variant="tertiary">
+            {firstBook.course.label}
+          </ButtonLink>
+        </div>
+
+        <div className="mt-16">
+          <Placeholder title="First edition, carried over from the Wix site: Kevin to confirm">
+            <ul className="list-disc space-y-1 pl-5">
+              {firstBook.todo.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </Placeholder>
         </div>
       </Section>
     </>

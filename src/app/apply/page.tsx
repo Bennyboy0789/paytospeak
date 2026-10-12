@@ -5,6 +5,7 @@ import { Heading } from "@/components/Heading";
 import { Container, Eyebrow } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
 import { apply } from "@/content/apply";
+import { calendly } from "@/content/programs/types";
 import { credentials, stats } from "@/content/shared";
 
 export const metadata: Metadata = {
@@ -28,6 +29,29 @@ export default function ApplyPage() {
           <p className="enter mt-8 text-lg leading-relaxed text-foreground/80" style={delay(500)}>
             {apply.hero.sub}
           </p>
+          <div className="enter mt-10 border-t border-border pt-8" style={delay(600)}>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">{apply.values.heading}</h2>
+            <p className="mt-3 font-display text-xl font-bold tracking-tight">{apply.values.items.join(" · ")}</p>
+            <p className="mt-2 text-sm text-muted-foreground">{apply.values.note}</p>
+          </div>
+          <dl className="enter mt-8 grid gap-5 text-sm sm:grid-cols-2" style={delay(650)}>
+            <div>
+              <dt className="text-muted-foreground">{apply.contact.emailLabel}</dt>
+              <dd className="mt-1">
+                <a href={`mailto:${apply.contact.email}`} className="link-draw font-semibold text-primary">
+                  {apply.contact.email}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-muted-foreground">{apply.contact.callLabel}</dt>
+              <dd className="mt-1">
+                <a href={calendly.strategy} target="_blank" rel="noopener" className="link-draw font-semibold text-primary">
+                  {apply.contact.callCta}
+                </a>
+              </dd>
+            </div>
+          </dl>
           <ul className="enter mt-10 space-y-2 border-t border-border pt-8 text-sm text-muted-foreground" style={delay(650)}>
             <li>CSP &middot; AS &middot; {credentials.rarity}</li>
             <li>{stats.map((s) => `${s.value} ${s.label}`).join(" · ")}</li>

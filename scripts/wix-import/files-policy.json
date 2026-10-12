@@ -1,0 +1,36 @@
+{
+  "_note": "How files linked from Wix content are handled. 'rename' re-hosts under /files/<new name>. 'link' does not re-host and points the link elsewhere. Reviewed Oct 2026: see docs/WIX-MIGRATION.md. The sample coaching program PDFs are not published: one prints a home address and both promise results (a guarantee), which the site rules forbid.",
+  "rename": {
+    "d46abc_0fdc10c558eb46bc938ca2375ced0ca9.pdf": "Speaking_Business_Checklist.pdf",
+    "d46abc_bf7e38c47543431795ea98014c72ade3.pdf": "Speaking_Business_Checklist.pdf",
+    "d46abc_c227b1134f034f67887f6baf919c8c16.pdf": "Virtual_Studio_Equipment_List_for_Speakers.pdf",
+    "d46abc_f5af3d1bde414d47bc6c5517f50414d1.pdf": "Virtual_Studio_Equipment_List.pdf",
+    "d46abc_548322d9a5a646038b77ba8d02c31eae.pdf": "Sample_TEDx_Application.pdf",
+    "d46abc_887d51e8e6eb4d79b68edf75884fc780.pdf": "Introduction_for_Kevin.pdf",
+    "d46abc_7f5299aa0e254fa99816ccceb74f219c.pdf": "Sample_One_Sheet_CAMPUSPEAK.pdf",
+    "d46abc_b20cf2ff3a3843e691128e7f62b0497e.pdf": "Sample_One_Sheet_Faculty_and_Staff.pdf",
+    "d46abc_68e03161ce554eb78eb61e6f83082747.pdf": "Speaking_Business_Checklist.pdf",
+    "d46abc_0462e79e3ac9408b842e65a4cae052ad.pdf": "Virtual_Studio_Equipment_List.pdf",
+    "d46abc_69611132c45b4b83a7df91656b08a895.pdf": "PAID_to_PEAK_Module_1_Worksheet.pdf",
+    "d46abc_1ba9e3220ea544e6ae77d92e2e05e75e.docx": "PAID_to_PEAK_Module_1_Worksheet.docx",
+    "d46abc_f8311a014a2b477398bbeaca627a1548.pdf": "PAID_to_PEAK_Module_2_Worksheet.pdf",
+    "d46abc_4c4ad5542e604fa0965c6e6318eca48e.pdf": "PAID_to_PEAK_Module_2_Worksheet.pdf",
+    "d46abc_067fb79e61a841e7a6af7b87f9bd85aa.pdf": "PAID_to_PEAK_Module_3_Worksheet.pdf",
+    "d46abc_a0b0950f17174177b14bf84eb4c26eaa.pdf": "PAID_to_PEAK_Module_3_Worksheet.pdf",
+    "d46abc_7364ccd342eb499fb90ea064c5c333ea.pdf": "PAID_to_PEAK_Module_4_Worksheet.pdf",
+    "d46abc_fa17530d31ef4f1d8294f3ca1cec6772.pdf": "PAID_to_PEAK_Module_4_Worksheet.pdf",
+    "d46abc_536d001ced6f479eab9c19decbe90ac1.pdf": "PAID_to_PEAK_Module_5_Worksheet.pdf",
+    "d46abc_07b0538a28754f14b85dbc6df69ca09b.pdf": "PAID_to_PEAK_Module_5_Worksheet.pdf",
+    "d46abc_f562e221d06b4e5cace87c98f44d8a01.pdf": "Speech_Review_Feedback_Form.pdf"
+  },
+  "link": {
+    "Private_PAID_to_PEAK_Coaching_Program.pdf": "/coaching",
+    "d46abc_5bb83ca695cc470787125c92df396555.pdf": "/coaching",
+    "d46abc_2653ab786d644a0884a06bcf17788f01.pdf": "/coaching",
+    "d46abc_87309f5032cb4b80a953141482556001.pdf": "/coaching",
+    "d46abc_f68d604cb7404dad9bd385863873d1d7.pdf": "/coaching",
+    "2023_State_of_Industry.pdf": "https://speakerflow.com/",
+    "d46abc_2ca3fb49f7f443b087d409dd7a318dac.pdf": "https://www.toastmasters.org/membership/accredited-speaker",
+    "SAMPLE_Private_PAID_to_PEAK_Coaching_Program.pdf": "/coaching"
+  }
+}

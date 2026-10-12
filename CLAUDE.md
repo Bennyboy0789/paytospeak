@@ -66,3 +66,5 @@ Our reference for visual language is the live site:
   OG images; neither is authoritative for *copy*.
 
 Kevin's current Wix site (to be replaced): https://www.paidtospeak.biz
+Everything on it has been carried over; see `docs/WIX-MIGRATION.md` for where each page,
+post and file went, what was held back and why, and how to re-run the blog import.

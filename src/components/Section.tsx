@@ -12,11 +12,13 @@ type SectionProps = {
   id?: string;
   className?: string;
   labelledBy?: string;
+  /** Tighter vertical rhythm, for long pages made of many sections. */
+  compact?: boolean;
 };
 
-export function Section({ children, tone = "background", id, className = "", labelledBy }: SectionProps) {
+export function Section({ children, tone = "background", id, className = "", labelledBy, compact }: SectionProps) {
   return (
-    <section id={id} aria-labelledby={labelledBy} className={`relative ${tones[tone]} py-24 lg:py-40 ${className}`}>
+    <section id={id} aria-labelledby={labelledBy} className={`relative ${tones[tone]} ${compact ? "py-20 lg:py-28" : "py-24 lg:py-40"} ${className}`}>
       <Container>{children}</Container>
     </section>
   );

@@ -16,7 +16,7 @@ export function MobileNav() {
         <span aria-hidden="true" className="absolute h-0.5 w-5 -translate-y-1 rounded-full bg-current transition-transform duration-500 ease-out-expo group-open:translate-y-0 group-open:rotate-45" />
         <span aria-hidden="true" className="absolute h-0.5 w-5 translate-y-1 rounded-full bg-current transition-transform duration-500 ease-out-expo group-open:translate-y-0 group-open:-rotate-45" />
       </summary>
-      <nav aria-label="Main" className="absolute inset-x-0 top-full h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-border bg-background px-5 pb-10 pt-6">
+      <nav aria-label="Main" className="absolute inset-x-0 top-full hidden group-open:block h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-border bg-background px-5 pb-10 pt-6">
         <ul className="flex flex-col">
           {nav.map((item, i) => (
             <li key={item.href} className="enter" style={{ "--d": `${60 + i * 60}ms` } as CSSProperties}>

@@ -1,0 +1,230 @@
+[
+  {
+    "source": "/about-1",
+    "destination": "/"
+  },
+  {
+    "source": "/thankyou",
+    "destination": "/"
+  },
+  {
+    "source": "/coachingoptions",
+    "destination": "/coaching"
+  },
+  {
+    "source": "/copy-of-speaker-coaching",
+    "destination": "/coaching"
+  },
+  {
+    "source": "/copy-of-1-1-coaching-options-1",
+    "destination": "/coaching"
+  },
+  {
+    "source": "/copy-of-1-1-coaching-options",
+    "destination": "/coaching"
+  },
+  {
+    "source": "/1-on-1-coaching",
+    "destination": "/coaching"
+  },
+  {
+    "source": "/speciality-programs",
+    "destination": "/coaching"
+  },
+  {
+    "source": "/speakeracademy",
+    "destination": "/coaching"
+  },
+  {
+    "source": "/5weekchallenge",
+    "destination": "/coaching/group"
+  },
+  {
+    "source": "/copy-of-coaching-services",
+    "destination": "/coaching/group"
+  },
+  {
+    "source": "/5weekchallengeondemand",
+    "destination": "/coaching/group"
+  },
+  {
+    "source": "/5-week-challenge-basic-2023",
+    "destination": "/coaching/group"
+  },
+  {
+    "source": "/5-week-challenge-on-demand-plus-2023",
+    "destination": "/coaching/group"
+  },
+  {
+    "source": "/5weekchallengeplus2025",
+    "destination": "/coaching/group"
+  },
+  {
+    "source": "/tedxspeakercoaching",
+    "destination": "/coaching/tedx"
+  },
+  {
+    "source": "/tedxtraining",
+    "destination": "/coaching/tedx"
+  },
+  {
+    "source": "/mentorshipforspeakers",
+    "destination": "/coaching/mentorship"
+  },
+  {
+    "source": "/virtualandtechsolutions",
+    "destination": "/coaching/virtual-studio"
+  },
+  {
+    "source": "/copy-of-virtual-studio-setup",
+    "destination": "/coaching/virtual-studio"
+  },
+  {
+    "source": "/studioquestionandanswer",
+    "destination": "/coaching/virtual-studio"
+  },
+  {
+    "source": "/ultimate",
+    "destination": "/coaching/speaker-package"
+  },
+  {
+    "source": "/paideventcalendar1",
+    "destination": "/event-calendar"
+  },
+  {
+    "source": "/onlinecourse",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/onlinecoursedetails",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/webinarseriesvideos",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/overview",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/copy-of-webinar-series-overview",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/webinarseries",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/webinarcolleges",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/copy-of-use-on-demand-course-1",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/trainings",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/ondemand",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/paidplus",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/onlinespeakingcourse",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/webinars",
+    "destination": "/on-demand"
+  },
+  {
+    "source": "/welcome",
+    "destination": "/vault"
+  },
+  {
+    "source": "/welcometomastermind",
+    "destination": "/mastermind"
+  },
+  {
+    "source": "/copy-of-paid-to-peak-print-book",
+    "destination": "/book"
+  },
+  {
+    "source": "/printbook",
+    "destination": "/book"
+  },
+  {
+    "source": "/copy-of-paid-to-usdpeak-book",
+    "destination": "/book"
+  },
+  {
+    "source": "/paidtospeakbook",
+    "destination": "/book"
+  },
+  {
+    "source": "/paid-to-speak-book",
+    "destination": "/book"
+  },
+  {
+    "source": "/bookfiles",
+    "destination": "/resources"
+  },
+  {
+    "source": "/worksheets",
+    "destination": "/resources"
+  },
+  {
+    "source": "/contact-kevin",
+    "destination": "/apply"
+  },
+  {
+    "source": "/accred",
+    "destination": "/toastmasters"
+  },
+  {
+    "source": "/toastmasterskeynote",
+    "destination": "/toastmasters"
+  },
+  {
+    "source": "/toastmasterkeynotesponsor",
+    "destination": "/toastmasters"
+  },
+  {
+    "source": "/copy-of-speaking-professionally-toast",
+    "destination": "/toastmasters"
+  },
+  {
+    "source": "/spt",
+    "destination": "/toastmasters"
+  },
+  {
+    "source": "/speakingprofessionallytoastmasters",
+    "destination": "/toastmasters"
+  },
+  {
+    "source": "/interview",
+    "destination": "/blog/live-interview-and-q-a-with-a-speakers-agent"
+  },
+  {
+    "source": "/localheroes",
+    "destination": "/blog"
+  },
+  {
+    "source": "/virtualstudiocoaching",
+    "destination": "/coaching/virtual-studio"
+  },
+  {
+    "source": "/paideventcalendar",
+    "destination": "/event-calendar"
+  },
+  {
+    "source": "/blog-1",
+    "destination": "/blog"
+  }
+]

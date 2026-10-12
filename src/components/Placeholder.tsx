@@ -10,7 +10,7 @@ export function Placeholder({ title, children }: { title: string; children?: Rea
     <div role="note" className="rounded-2xl border-2 border-dashed border-accent/60 bg-accent/5 p-6 lg:p-8">
       <p className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">TODO(kc)</p>
       <p className="mt-3 font-display text-xl font-bold tracking-tight">{title}</p>
-      {children && <div className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">{children}</div>}
+      {children && <div className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground [overflow-wrap:anywhere]">{children}</div>}
     </div>
   );
 }

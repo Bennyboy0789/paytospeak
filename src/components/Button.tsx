@@ -26,7 +26,7 @@ export function ButtonLink({ variant = "primary", size = "md", magnetic, classNa
     <Link
       {...props}
       data-magnetic={magnetic || undefined}
-      className={`group inline-flex items-center justify-center gap-2 transition duration-500 ease-out-expo ${variants[variant]} ${variant === "tertiary" ? "" : sizes[size]} ${className}`}
+      className={`group inline-flex max-w-full items-center justify-center gap-2 text-center transition duration-500 ease-out-expo ${variants[variant]} ${variant === "tertiary" ? "" : sizes[size]} ${className}`}
     >
       {variant === "secondary" && (
         <span

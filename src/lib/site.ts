@@ -13,7 +13,8 @@ export const site = {
     { label: "Facebook", href: "https://www.facebook.com/KevinCSnyderSpeaker" },
     { label: "Instagram", href: "https://www.instagram.com/KevinCSnyder/" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/kevincsnyderspeaker/" },
-    // TODO(kc): X handle — kevincsnyder.com doesn't link one.
+    // Linked from kevincsnyder.com and the Wix site footer.
+    { label: "X", href: "https://x.com/kevincsnyder" },
   ],
 } as const;
 

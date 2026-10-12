@@ -5,9 +5,8 @@ import type { CSSProperties } from "react";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
-import { Placeholder } from "@/components/Placeholder";
 import { Eyebrow } from "@/components/Section";
-import { formatDate, getPost, posts } from "@/content/posts";
+import { adjacentPosts, formatDate, getPost, posts } from "@/content/posts";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -22,7 +21,6 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: { type: "article", publishedTime: post.date },
-    robots: post.placeholder ? { index: false } : undefined,
   };
 }
 
@@ -31,6 +29,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
   const post = getPost(slug);
   if (!post) notFound();
   const { default: Body } = await import(`@/content/posts/${slug}.mdx`);
+  const { newer, older } = adjacentPosts(slug);
 
   return (
     <article aria-labelledby="post-title">
@@ -63,14 +62,25 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
             <Image src={post.image.src} alt={post.image.alt} fill placeholder="blur" priority sizes="(min-width: 768px) 48rem, 100vw" className="object-cover" />
           </div>
         )}
-        {post.placeholder && (
-          <div className="mt-10">
-            <Placeholder title="Seed post, not real content" />
-          </div>
-        )}
         <div className="mt-6">
           <Body />
         </div>
+        {(newer || older) && (
+          <nav aria-label="More posts" className="mt-20 grid gap-4 border-t border-border pt-10 sm:grid-cols-2">
+            {older && (
+              <Link href={`/blog/${older.slug}`} className="group rounded-2xl border border-border p-6 transition-colors hover:border-accent/60">
+                <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">&larr; Older</span>
+                <span className="mt-2 block font-display text-lg font-bold tracking-tight text-balance group-hover:text-primary">{older.title}</span>
+              </Link>
+            )}
+            {newer && (
+              <Link href={`/blog/${newer.slug}`} className="group rounded-2xl border border-border p-6 text-right transition-colors hover:border-accent/60 sm:col-start-2">
+                <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Newer &rarr;</span>
+                <span className="mt-2 block font-display text-lg font-bold tracking-tight text-balance group-hover:text-primary">{newer.title}</span>
+              </Link>
+            )}
+          </nav>
+        )}
         <footer className="reveal border-beam mt-20 rounded-3xl bg-card p-8 lg:p-12">
           <p className="font-display text-2xl font-black tracking-tight">Want Kevin in your corner?</p>
           <p className="mt-2 text-foreground/80">Coaching for aspiring and emerging speakers.</p>

@@ -76,7 +76,97 @@ export const coaching = {
   how: {
     eyebrow: "How it works",
     headline: { lead: "The program." } satisfies Headline,
-    offer: null as Offer | null,
+    // TODO(kc): carried over from the Wix 1:1 coaching pages (/copy-of-1-1-coaching-options-1,
+    // /copy-of-1-1-coaching-options, /1-on-1-coaching) and the sample program PDF they link to.
+    // Kevin to confirm which options are still offered and what each includes (the 5-session
+    // inclusions come from the 2021 comparison chart). No prices: Wix figures conflict.
+    // Seen on Wix: 10-session $12,500 / $15,000 / $7,500; 5-session $7,250 / $7,500 / $10,500;
+    // hourly $125 per 30 min / $249 / $250; 3-hour bundle $475 / $499 / $650; Speaker
+    // Assessment $499 / $379; Speech Review "at an hourly coaching rate". Guarantees,
+    // "value" figures and income claims were dropped. The 2-day Intensive is on /coaching/group.
+    offer: {
+      format:
+        "One-on-one coaching with Kevin, virtual or in person, personalized to your speaking goals. Together you review your materials, refine your message, identify speaking opportunities that pay, and build a plan to grow your speaking business.",
+      tiers: [
+        {
+          name: "10-session program",
+          cadence: "Ten sessions, weekly or every other week",
+          summary:
+            "Kevin’s most complete 1:1 program, for speakers who are all in. Ten sessions customizing his five-module Paid to $peak model into your own speaking business, with Kevin reviewing your work between every session. Plan on 2 to 3 hours of assignments a week.",
+          includes: [
+            "Ten 1:1 sessions, weekly or every other week",
+            "A written recap after each session with action steps and feedback",
+            "Access to Kevin between sessions for questions",
+            "2 to 3 hours of Kevin’s time between sessions reviewing your work",
+            "A Speaker Assessment of everything you have",
+            "Help developing your signature story, keynote or workshop",
+            "Identifying your target markets and the organizations in them that pay speakers",
+            "A marketing strategy for your speaking business",
+            "Guidance on outreach, leads and inquiry responses, so you see exactly how Kevin would reply",
+            "Behind the scenes: listen in on Kevin’s prospect calls and join him at live or virtual keynotes",
+            "TEDx speaker training, plus additional coaching",
+            "A year of The Vault and Kevin’s Association Directory",
+            "The Paid to $peak Online Course and Webinar Series",
+            "Speaker Mastermind and Speaking Professionally Toastmasters membership",
+            "Resources for finishing, publishing and promoting your book",
+          ],
+        },
+        {
+          name: "5-session program",
+          cadence: "Five sessions, weekly or every other week",
+          summary:
+            "The same personal approach in a shorter program, with more limited access to Kevin between sessions and shorter access to the included resources.",
+          includes: [
+            "Five 1:1 sessions with Kevin",
+            "Kevin’s review of your work between sessions",
+            "Limited access to Kevin between sessions",
+            "A Speaker Assessment",
+            "TEDx speaker training",
+            "The Paid to $peak Online Course",
+            "Time-limited access to The Vault, the Speaker Mastermind and other resources",
+          ],
+        },
+        {
+          name: "Hourly coaching and 3-hour bundles",
+          cadence: "One hour, or a bundle of three",
+          summary: "Focused, flexible time with Kevin on whatever you need most, without committing to a full program.",
+          includes: [
+            "Book a single hour or a 3-hour bundle",
+            "Bring any part of your speaking business: your signature story, materials, marketing or target groups",
+            "Learn what event organizers need and how to go from free to fee",
+            "Kevin’s review of your materials and access to his templates",
+            "Ask anything you want",
+          ],
+        },
+        {
+          name: "Speaker Assessment",
+          cadence: "Written review and a coaching call",
+          summary:
+            "For speakers who aren’t getting consistent bookings. Kevin reviews all your materials from a meeting planner’s point of view and shows you what to change.",
+          includes: [
+            "Your marketing materials",
+            "Your website and demo video",
+            "Your speech outline",
+            "Your outreach emails",
+            "Your proposals and contracts",
+            "Anything else you want feedback on",
+            "A written assessment with recommendations and samples",
+            "A coaching call to talk through the recommendations",
+          ],
+        },
+        {
+          name: "Speech Review",
+          cadence: "Booked as hourly coaching",
+          summary:
+            "Have a high-stakes speech coming up? Kevin helps you prepare properly and deliver it well, so you make the most of the opportunity.",
+          includes: [
+            "Preparation for one upcoming presentation",
+            "Coaching on your content and delivery",
+            "Booked at the hourly coaching rate",
+          ],
+        },
+      ],
+    } as Offer | null,
   },
 
   why: {

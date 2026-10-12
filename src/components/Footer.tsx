@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { Container } from "@/components/Section";
+import { programs } from "@/content/programs";
 import { applyHref, nav, site } from "@/lib/site";
 
 const footerLinks = [...nav, { label: "Contact", href: applyHref }];
@@ -8,7 +9,7 @@ const footerLinks = [...nav, { label: "Contact", href: applyHref }];
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-border bg-ink pt-20 lg:pt-28">
-      <Container className="relative grid gap-14 md:grid-cols-[1.4fr_1fr_1fr]">
+      <Container className="relative grid gap-14 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
         <div className="max-w-xs">
           <Link href="/" className="inline-block transition-opacity duration-300 hover:opacity-80">
             <Logo variant="stacked" className="h-24 w-auto" />
@@ -29,6 +30,19 @@ export function Footer() {
               <li key={item.label}>
                 <Link href={item.href} className="link-draw text-foreground/80 transition-colors hover:text-foreground">
                   {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav aria-label="Programs">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Programs</h2>
+          <ul className="mt-6 space-y-3">
+            {programs.map((p) => (
+              <li key={p.href}>
+                <Link href={p.href} className="link-draw text-foreground/80 transition-colors hover:text-foreground">
+                  {p.name}
                 </Link>
               </li>
             ))}

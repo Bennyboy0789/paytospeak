@@ -8,6 +8,7 @@ import { Credentials } from "@/components/Credentials";
 import { Heading } from "@/components/Heading";
 import { Pillars } from "@/components/Pillars";
 import { Placeholder } from "@/components/Placeholder";
+import { ProgramGrid } from "@/components/ProgramPage";
 import { Container, Eyebrow, Section } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
 import { coaching, type Offer } from "@/content/coaching";
@@ -142,6 +143,15 @@ export default function CoachingPage() {
       </section>
 
       {/* Apply */}
+      {/* Every program carried over from the Wix site */}
+      <Section tone="card" labelledBy="programs-title" className="border-b border-border">
+        <div className="reveal max-w-3xl">
+          <Eyebrow>More ways to work with Kevin</Eyebrow>
+          <Heading id="programs-title" headline={{ lead: "Group, TEDx, on demand,", highlight: "and more." }} className="mt-6" />
+        </div>
+        <ProgramGrid className="mt-12" />
+      </Section>
+
       <Section labelledBy="apply-title">
         <div className="reveal border-beam rounded-[2rem] bg-card px-7 py-16 text-center lg:px-14 lg:py-24">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[inherit]">
@@ -191,11 +201,13 @@ function OfferDetails({ offer }: { offer: Offer }) {
         {offer.tiers.map((tier) => (
           <article key={tier.name} data-spotlight className="glow-card spotlight flex flex-col rounded-3xl border border-border bg-card p-8 hover:-translate-y-1 lg:p-10">
             <h3 className="font-display text-2xl font-black tracking-tight">{tier.name}</h3>
-            {tier.price && (
+            {tier.price ? (
               <p className="mt-4 font-display text-4xl font-black tracking-tight">
                 {tier.price}
                 {tier.cadence && <span className="ml-2 text-base font-medium text-muted-foreground">{tier.cadence}</span>}
               </p>
+            ) : (
+              tier.cadence && <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-accent">{tier.cadence}</p>
             )}
             <p className="mt-4 leading-relaxed text-foreground/80">{tier.summary}</p>
             <ul className="mt-6 space-y-3 border-t border-border pt-6">

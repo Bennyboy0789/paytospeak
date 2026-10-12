@@ -12,6 +12,19 @@ export const apply = {
     headline: { lead: "Tell Kevin", highlight: "where you are." } satisfies Headline,
     sub: "A few questions so Kevin can see where you are and what you need next.",
   },
+  // From the Wix contact page (/contact-kevin), which now redirects here.
+  values: {
+    heading: "Kevin’s coaching values",
+    items: ["Authenticity", "Trust", "Partnership", "Commitment", "Accountability"],
+    note: "To work together, you both need to be aligned on these.",
+  },
+  // TODO(kc): confirm this is the right public contact email for coaching (it is the one on the Wix site).
+  contact: {
+    email: "Kevin@KevinCSnyder.com",
+    emailLabel: "Prefer email?",
+    callLabel: "Rather talk first?",
+    callCta: "Book a strategy session",
+  },
   fields: {
     name: "Your name",
     email: "Email",

@@ -1,5 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
+import { PostButton, PostImage, PostVideo } from "@/components/PostMedia";
+import { YouTube } from "@/components/YouTube";
 
 // Blog post typography. Kept here instead of a typography plugin so posts use
 // exactly the brand scale from docs/BRAND.md.
@@ -20,6 +22,12 @@ const components: MDXComponents = {
     ),
   strong: (props) => <strong className="font-semibold text-foreground" {...props} />,
   hr: () => <hr className="my-12 border-border" />,
+  em: (props) => <em className="italic" {...props} />,
+  // Embeds used by posts imported from Wix (scripts/wix-import).
+  PostImage,
+  PostVideo,
+  PostButton,
+  YouTube,
 };
 
 export function useMDXComponents(): MDXComponents {
