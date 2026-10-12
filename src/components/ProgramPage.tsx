@@ -21,9 +21,9 @@ export function ProgramPage({ program }: { program: Program }) {
 
   return (
     <>
-      <section aria-labelledby="program-title" className="relative -mt-18 overflow-hidden pt-18">
+      <section aria-labelledby="program-title" className="hero-scope relative -mt-18 overflow-hidden pt-18">
         <StageLights preset="hero" />
-        <Container className="relative py-20 lg:py-32">
+        <Container className="hero-out relative py-20 lg:py-32">
           <nav aria-label="Breadcrumb" className="enter text-sm text-muted-foreground">
             <Link href="/coaching" className="link-draw hover:text-foreground">
               Ways to work with Kevin

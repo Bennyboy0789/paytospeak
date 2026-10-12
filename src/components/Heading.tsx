@@ -14,13 +14,14 @@ type HeadingProps = {
   size?: keyof typeof sizes;
   id?: string;
   className?: string;
-  /** Words rise into place on load. For above-the-fold headings only. */
+  /** Words rise into place on load. For above-the-fold headings only. Other headings rise line by line as they scroll in. */
   animate?: boolean;
 };
 
 /** Brand headline: Inter Tight black, with one phrase in blue (docs/BRAND.md). */
 export function Heading({ headline, as: Tag = "h2", size = "section", id, className = "", animate }: HeadingProps) {
-  const highlightClass = "text-primary [text-shadow:0_0_40px_rgb(0_168_230/0.35)]";
+  // The glow is a filter on the whole phrase, not a text-shadow, so the word masks never clip it.
+  const highlightClass = "text-primary [filter:drop-shadow(0_0_22px_rgb(0_168_230/0.45))]";
 
   if (animate) {
     const lead = headline.lead.split(" ");
@@ -43,22 +44,26 @@ export function Heading({ headline, as: Tag = "h2", size = "section", id, classN
 
   return (
     <Tag id={id} className={`font-display font-black text-balance ${sizes[size]} ${className}`}>
-      {headline.lead}
+      {headline.lead.split(" ").map((w, i) => (
+        <Word key={`l${i}`} word={w} />
+      ))}
       {headline.highlight && (
-        <>
-          {" "}
-          <span className={highlightClass}>{headline.highlight}</span>
-        </>
+        <span className={highlightClass}>
+          {headline.highlight.split(" ").map((w, i) => (
+            <Word key={`h${i}`} word={w} />
+          ))}
+        </span>
       )}
     </Tag>
   );
 }
 
-function Word({ word, i }: { word: string; i: number }) {
+/** Without `i`, the word rises with its line as it scrolls into view (.word-scroll). */
+function Word({ word, i }: { word: string; i?: number }) {
   return (
     <>
       <span className="word-mask">
-        <span className="word" style={{ "--i": i } as CSSProperties}>
+        <span className={i === undefined ? "word-scroll" : "word"} style={i === undefined ? undefined : ({ "--i": i } as CSSProperties)}>
           {word}
         </span>
       </span>{" "}

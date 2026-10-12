@@ -4,6 +4,7 @@ import { Analytics } from "@/components/Analytics";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { PointerFX } from "@/components/PointerFX";
+import { ScrollFX } from "@/components/ScrollFX";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Footer />
         <div aria-hidden="true" className="grain" />
         <PointerFX />
+        <ScrollFX />
         <Analytics />
       </body>
     </html>

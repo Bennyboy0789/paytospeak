@@ -26,9 +26,9 @@ const photos: Record<number, { src: typeof ballroom; alt: string }> = {
 export default function AboutPage() {
   return (
     <>
-      <section aria-labelledby="about-title" className="relative -mt-18 overflow-hidden pt-18">
+      <section aria-labelledby="about-title" className="hero-scope relative -mt-18 overflow-hidden pt-18">
         <StageLights preset="hero" />
-        <Container className="relative py-20 lg:py-36">
+        <Container className="hero-out relative py-20 lg:py-36">
           <div className="enter">
             <Eyebrow>{about.hero.eyebrow}</Eyebrow>
           </div>

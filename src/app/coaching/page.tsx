@@ -27,9 +27,9 @@ const { hero, fit, pillars, how, why, apply } = coaching;
 export default function CoachingPage() {
   return (
     <>
-      <section aria-labelledby="coaching-title" className="relative -mt-18 overflow-hidden pt-18">
+      <section aria-labelledby="coaching-title" className="hero-scope relative -mt-18 overflow-hidden pt-18">
         <StageLights preset="hero" />
-        <Container className="relative grid items-center gap-14 py-16 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:py-32">
+        <Container className="hero-out relative grid items-center gap-14 py-16 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:py-32">
           <div>
             <div className="enter">
               <Eyebrow>{hero.eyebrow}</Eyebrow>

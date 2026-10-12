@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { StageHaze } from "@/components/StageHaze";
 
 type Beam = { left: string; color: string; from: string; to: string; duration: string };
 
@@ -14,8 +15,11 @@ const presets = {
   ],
 } satisfies Record<string, Beam[]>;
 
-/** Decorative swaying stage beams. Place inside a `relative overflow-hidden` section. */
-export function StageLights({ preset = "soft", className = "" }: { preset?: keyof typeof presets; className?: string }) {
+/**
+ * Decorative swaying stage beams. Place inside a `relative overflow-hidden` section.
+ * `haze` adds dust drifting through the light; on by default for the hero preset.
+ */
+export function StageLights({ preset = "soft", haze = preset === "hero", className = "" }: { preset?: keyof typeof presets; haze?: boolean; className?: string }) {
   return (
     <div aria-hidden="true" className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
       {presets[preset].map((b) => (
@@ -33,6 +37,7 @@ export function StageLights({ preset = "soft", className = "" }: { preset?: keyo
           }
         />
       ))}
+      {haze && <StageHaze />}
       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
     </div>
   );

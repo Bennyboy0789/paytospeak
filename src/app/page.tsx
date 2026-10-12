@@ -62,9 +62,9 @@ export default function Home() {
       <section
         aria-labelledby="hero-title"
         data-spotlight
-        className="spotlight relative -mt-18 flex min-h-[100svh] flex-col overflow-hidden pt-18 [--spot-color:rgb(0_168_230/0.08)] [--spot-size:40rem]"
+        className="spotlight hero-scope relative -mt-18 flex min-h-[100svh] flex-col overflow-hidden pt-18 [--spot-color:rgb(0_168_230/0.08)] [--spot-size:40rem]"
       >
-        <div className="absolute inset-x-0 top-0 h-[56svh] overflow-hidden lg:inset-y-0 lg:left-auto lg:right-0 lg:h-auto lg:w-[64%]">
+        <div className="hero-photo-out absolute inset-x-0 top-0 h-[56svh] overflow-hidden lg:inset-y-0 lg:left-auto lg:right-0 lg:h-auto lg:w-[64%]">
           <Image
             src={stageLights}
             alt="Dr. Kevin C. Snyder speaking on stage, microphone in hand"
@@ -79,7 +79,7 @@ export default function Home() {
         </div>
         <StageLights preset="hero" />
 
-        <Container className="relative flex flex-1 flex-col justify-end pb-12 pt-[30svh] lg:justify-center lg:py-24">
+        <Container className="hero-out relative flex flex-1 flex-col justify-end pb-12 pt-[30svh] lg:justify-center lg:py-24">
           <div className="max-w-4xl">
             <div className="enter" style={delay(0)}>
               <Eyebrow>{hero.eyebrow}</Eyebrow>

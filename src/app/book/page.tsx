@@ -36,10 +36,10 @@ export default function BookPage() {
     <>
       <JsonLd data={jsonLd} />
 
-      <section aria-labelledby="book-title" className="relative -mt-18 overflow-hidden pt-18">
+      <section aria-labelledby="book-title" className="hero-scope relative -mt-18 overflow-hidden pt-18">
         <StageLights preset="hero" />
         <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 size-[44rem] translate-x-1/3 -translate-y-1/3 rounded-full bg-accent/10 blur-3xl" />
-        <Container className="relative grid items-center gap-16 py-16 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-28 lg:py-32">
+        <Container className="hero-out relative grid items-center gap-16 py-16 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-28 lg:py-32">
           <div className="order-2 md:order-1">
             <div className="enter">
               <Eyebrow>{hero.eyebrow}</Eyebrow>

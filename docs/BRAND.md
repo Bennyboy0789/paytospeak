@@ -151,13 +151,21 @@ Matched to the parent site's live markup.
 
 Stage lighting is the idea: things are lit, rise into place, and settle. Slow
 in, fast out — never bouncy. All of it lives in `src/app/globals.css`, plus one
-pointer listener (`src/components/PointerFX.tsx`).
+pointer listener (`src/components/PointerFX.tsx`), one scroll listener
+(`src/components/ScrollFX.tsx`) and the haze canvas (`src/components/StageHaze.tsx`).
 
 | Effect | Where | How |
 |---|---|---|
 | Word-by-word rise | Page `<h1>`s (`<Heading animate>`) | CSS on load |
 | Fade-up entrance | Hero copy and CTAs (`.enter`, `--d` delay) | CSS on load |
 | Swaying stage beams | Hero backgrounds (`<StageLights>`) | CSS loop |
+| Dust in the beams | Hero preset of `<StageLights>` (`haze` prop) | Canvas, starts when idle, pauses off screen |
+| Film grain | Whole page (`.grain`) | CSS loop, transform only |
+| Line-by-line rise | Section headlines (`<Heading>` without `animate`) | Scroll-driven CSS |
+| Hero sinks away | Page heroes (`.hero-scope`, `.hero-out`, `.hero-photo-out`) | Scroll-driven CSS |
+| Inertial scrolling | Every page, mouse and trackpad only | ScrollFX (Lenis) |
+| Header hides on scroll down | Header (`data-autohide`) | ScrollFX |
+| Marquee follows the scroll | `<Marquee>` speeds up and reverses with scrolling | ScrollFX |
 | Reveal on scroll | Sections, cards (`.reveal`, `.reveal-stagger`, `.reveal-clip`) | Scroll-driven CSS |
 | Word-by-word light-up | Big statements (`<ScrubText>`) | Scroll-driven CSS |
 | Odometer stats | Credentials strip | Scroll-driven CSS |
@@ -172,7 +180,8 @@ pointer listener (`src/components/PointerFX.tsx`).
   inside `@supports (animation-timeline: view())`; where unsupported, the page is
   static and fully visible. No JS gates visibility.
 - **`prefers-reduced-motion: reduce` stills everything.** Hover colour changes stay.
-- **Pointer effects are mouse/trackpad only** (`hover: hover` and `pointer: fine`).
+- **Pointer effects and inertial scrolling are mouse/trackpad only** (`hover: hover` and `pointer: fine`). Touch scrolling is always native.
+- **Glows on masked text use `filter: drop-shadow`,** not `text-shadow`: the word masks clip a text-shadow into hard-edged boxes.
 - **Easing:** `ease-out-expo` for entrances and hovers; 0.5–1.1s.
 - **Prefer `transform` and `opacity`** (plus colour, and `clip-path` for photo reveals). Nothing that
   triggers layout. Lighthouse mobile performance must stay ≥ 90.
