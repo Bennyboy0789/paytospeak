@@ -174,10 +174,9 @@
   }
 }
 
-/* Outlined display numerals that fill on hover. */
+/* Display numerals: a quiet solid fill that warms to amber on hover. Never outlined. */
 .numeral {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--color-accent);
+  color: color-mix(in oklab, var(--color-foreground) 14%, transparent);
   transition: color 0.5s var(--ease-out-expo);
 }
 .group:hover .numeral,
@@ -442,7 +441,7 @@
 }
 @keyframes fill-in {
   from {
-    color: transparent;
+    color: color-mix(in oklab, var(--color-foreground) 14%, transparent);
   }
   to {
     color: var(--color-accent);

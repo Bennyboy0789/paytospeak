@@ -65,7 +65,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
         )}
         {post.placeholder && (
           <div className="mt-10">
-            <Placeholder title="Seed post — not real content" />
+            <Placeholder title="Seed post, not real content" />
           </div>
         )}
         <div className="mt-6">

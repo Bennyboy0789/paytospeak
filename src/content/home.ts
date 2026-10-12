@@ -6,7 +6,7 @@ export const home = {
     // TODO(kc): confirm hero headline direction. Alternative under review:
     // "Build a speaking career, not just a great talk."
     headline: { lead: "You have a message.", highlight: "Let’s get it booked." } satisfies Headline,
-    sub: "Kevin Snyder has spent 20 years on stage — 1,500+ audiences, a million people. He now coaches aspiring and emerging speakers on the system behind it.",
+    sub: "Kevin Snyder has spent 20 years on stage, in front of 1,500+ audiences and a million people. He now coaches aspiring and emerging speakers on the system behind it.",
     primaryCta: "Apply for coaching",
     secondaryCta: "See how it works",
   },
@@ -42,7 +42,7 @@ export const home = {
       lead: "A kid who didn’t believe in himself",
       highlight: "became a speaker a million people saw.",
     } satisfies Headline,
-    body: "From childhood depression to television game-show winner to keynote speaker and belief researcher — Kevin’s path wasn’t a straight line, and that’s exactly why he can teach it. He built the ShiftThinker™ framework from 20 years on stage and turned it into a system other speakers can learn.",
+    body: "From childhood depression to television game-show winner to keynote speaker and belief researcher, Kevin’s path wasn’t a straight line. That’s exactly why he can teach it. He built the ShiftThinker™ framework from 20 years on stage and turned it into a system other speakers can learn.",
     cta: "Read Kevin’s story",
   },
 

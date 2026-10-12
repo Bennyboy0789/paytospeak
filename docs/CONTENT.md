@@ -12,7 +12,8 @@ this file. If the two disagree, **this file wins**.
 2. That license does **not** extend to facts. Never invent, inflate, or estimate a
    credential, award, client name, testimonial, audience size, or booking count.
 3. Missing fact you need? Write `TODO(kc): <what you need>` in place and continue.
-4. `ShiftThinker™` — always with the trademark symbol, always capitalized exactly.
+4. `ShiftThinker™`: always with the trademark symbol, always capitalized exactly.
+5. **No em dashes** in any site copy. Use a period, comma, or colon instead.
 
 ### Verified facts (safe to use)
 
@@ -43,7 +44,7 @@ this file. If the two disagree, **this file wins**.
 ### Hero
 **Eyebrow:** SPEAKER COACHING
 **Headline:** You have a message. Let's get it booked.
-**Sub:** Kevin Snyder has spent 20 years on stage — 1,500+ audiences, a million people.
+**Sub:** Kevin Snyder has spent 20 years on stage, in front of 1,500+ audiences and a million people.
 He now coaches aspiring and emerging speakers on the system behind it.
 **Primary CTA:** Apply for coaching
 **Secondary CTA:** See how it works
@@ -71,17 +72,17 @@ Three points:
 > a numbered framework for the coaching offer — the ShiftThinker™ framework is a
 > *content* framework for talks, not a coaching curriculum. These are placeholders.
 
-1. **Positioning** — a clear lane, a sharp message, an identity planners remember.
-2. **Materials** — the site, the sheet, the reel, the talk descriptions, done properly.
-3. **Outreach** — a repeatable process for getting in front of the people who book.
-4. **Delivery** — the stagecraft that turns a good talk into a booked career.
+1. **Positioning**: a clear lane, a sharp message, an identity planners remember.
+2. **Materials**: the site, the sheet, the reel, the talk descriptions, done properly.
+3. **Outreach**: a repeatable process for getting in front of the people who book.
+4. **Delivery**: the stagecraft that turns a good talk into a booked career.
 
 ### Section — About (coaching-framed)
 **Eyebrow:** ABOUT KEVIN
 **Headline:** A kid who didn't believe in himself became a speaker a million people saw.
 
 From childhood depression to television game-show winner to keynote speaker and
-belief researcher — Kevin's path wasn't a straight line, and that's exactly why he
+belief researcher, Kevin's path wasn't a straight line. That's exactly why he
 can teach it. He built the ShiftThinker™ framework from 20 years on stage and turned
 it into a system other speakers can learn.
 
@@ -134,7 +135,7 @@ Standalone page. Cover placeholder, swappable in one file.
 
 **Eyebrow:** COMING SOON
 **Headline:** Paid to $peak 2.0
-**Sub:** The systems and strategies behind a speaking career — from someone who's
+**Sub:** The systems and strategies behind a speaking career, from someone who's
 been booked 1,500 times.
 
 **Notify form:** email capture → MailChimp.
@@ -151,10 +152,10 @@ been booked 1,500 times.
 > duplicate it verbatim.
 
 Sections:
-1. The early years — the kid who didn't believe in himself
-2. The unlikely turn — game show, stage, research
-3. The framework — ShiftThinker™
-4. The teaching — why he coaches
+1. The early years: the kid who didn't believe in himself
+2. The unlikely turn: game show, stage, research
+3. The framework: ShiftThinker™
+4. The teaching: why he coaches
 
 ---
 
@@ -213,12 +214,12 @@ for `DRAFT(kc)` to find each instance.
 
 ### Coaching page
 **Hero sub:** Coaching for speakers who are good in the room and ready to build the
-business behind the talk — from someone who has spent 20 years doing exactly that.
+business behind the talk, from someone who has spent 20 years doing exactly that.
 **Image caption:** The view Kevin works toward with every speaker he coaches.
 
 **Who this is for** — *Honest about the fit. Before you apply.*
 - This is for you if:
-  - You've spoken — at work, at a conference, in your community — and people told you it landed.
+  - You've spoken at work, at a conference, in your community, and people told you it landed.
   - You want speaking to be part of how you earn a living, not something you do once a year.
   - You're willing to do the unglamorous half: materials, outreach, follow-up.
   - You want direct feedback, including the parts that are hard to hear.
@@ -230,9 +231,9 @@ business behind the talk — from someone who has spent 20 years doing exactly t
 **What we work on headline:** Four parts of a speaking career. All of them, properly.
 
 **Why Kevin** — *Coached by someone still doing the work.*
-Kevin has spent 20 years on professional stages — corporate, college, and youth
+Kevin has spent 20 years on professional stages: corporate, college, and youth
 audiences. He is an NSA Certified Speaking Professional and a Toastmasters
-Accredited Speaker — one of only nine people worldwide to hold both. The advice
+Accredited Speaker, one of only nine people worldwide to hold both. The advice
 you get is what he does on Monday.
 
 **Apply panel:** A short application so Kevin can see where you are and what you need next.

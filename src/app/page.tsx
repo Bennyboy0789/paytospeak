@@ -101,7 +101,7 @@ export default function Home() {
 
         <Container className="enter-fade relative hidden items-end justify-between pb-10 lg:flex" >
           <p className="max-w-xs text-xs uppercase leading-relaxed tracking-[0.2em] text-muted-foreground">
-            CSP &middot; AS &mdash; {credentials.rarity}
+            CSP &middot; AS &middot; {credentials.rarity}
           </p>
           <div aria-hidden="true" className="flex flex-col items-center gap-3 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
             Scroll

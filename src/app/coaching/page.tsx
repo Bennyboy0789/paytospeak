@@ -171,7 +171,7 @@ function Mark({ kind }: { kind: "yes" | "no" }) {
 
 function OfferPlaceholder() {
   return (
-    <Placeholder title="Program structure — the highest-priority open question">
+    <Placeholder title="Program structure: the highest-priority open question">
       <p>One program or tiers? One-on-one, group cohort, self-paced, or a ladder? Price points, length, cadence?</p>
       <p>
         When confirmed, fill in <code className="font-mono text-foreground">offer</code> in{" "}

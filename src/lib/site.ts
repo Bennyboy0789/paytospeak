@@ -4,7 +4,7 @@ export const site = {
   plainName: "Paid to Speak",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://paidtospeak.biz").replace(/\/$/, ""),
   description:
-    "Speaker coaching from Dr. Kevin C. Snyder, CSP — 20 years on stage, now teaching aspiring and emerging speakers the system behind a booked career.",
+    "Speaker coaching from Dr. Kevin C. Snyder, CSP. 20 years on stage, now teaching aspiring and emerging speakers the system behind a booked career.",
   parent: {
     name: "Dr. Kevin C. Snyder",
     url: "https://kevincsnyder.com",

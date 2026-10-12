@@ -31,14 +31,14 @@ export const coaching = {
   meta: {
     title: "Speaker coaching",
     description:
-      "Coaching for aspiring and emerging speakers from Dr. Kevin C. Snyder, CSP — positioning, materials, outreach, and delivery.",
+      "Coaching for aspiring and emerging speakers from Dr. Kevin C. Snyder, CSP: positioning, materials, outreach, and delivery.",
   },
 
   hero: {
     eyebrow: "Coaching",
     headline: { lead: "Work with", highlight: "Kevin." } satisfies Headline,
     // DRAFT(kc): new copy — tone only, no claims. Review with Kevin.
-    sub: "Coaching for speakers who are good in the room and ready to build the business behind the talk — from someone who has spent 20 years doing exactly that.",
+    sub: "Coaching for speakers who are good in the room and ready to build the business behind the talk, from someone who has spent 20 years doing exactly that.",
     imageCaption: "The view Kevin works toward with every speaker he coaches.",
   },
 
@@ -47,7 +47,7 @@ export const coaching = {
     eyebrow: "Who this is for",
     headline: { lead: "Honest about the fit.", highlight: "Before you apply." } satisfies Headline,
     yes: [
-      "You’ve spoken — at work, at a conference, in your community — and people told you it landed.",
+      "You’ve spoken at work, at a conference, in your community, and people told you it landed.",
       "You want speaking to be part of how you earn a living, not something you do once a year.",
       "You’re willing to do the unglamorous half: materials, outreach, follow-up.",
       "You want direct feedback, including the parts that are hard to hear.",
@@ -83,7 +83,7 @@ export const coaching = {
     eyebrow: "Why Kevin",
     headline: { lead: "Coached by someone", highlight: "still doing the work." } satisfies Headline,
     // DRAFT(kc): framing copy; every fact in it is from the verified list.
-    body: "Kevin has spent 20 years on professional stages — corporate, college, and youth audiences. He is an NSA Certified Speaking Professional and a Toastmasters Accredited Speaker — one of only nine people worldwide to hold both. The advice you get is what he does on Monday.",
+    body: "Kevin has spent 20 years on professional stages: corporate, college, and youth audiences. He is an NSA Certified Speaking Professional and a Toastmasters Accredited Speaker, one of only nine people worldwide to hold both. The advice you get is what he does on Monday.",
   },
 
   apply: {

@@ -38,7 +38,7 @@ there is **no** `tailwind.config.js`; theme tokens live in `@theme` inside
   Kevin is a real person with real, verifiable credentials. This is a liability line.
 - **Match the parent brand.** Don't invent a new palette or type system.
 - **`ShiftThinker™`** — always with the trademark symbol, exact capitalization.
-- **No emoji.** No exclamation marks. No "unlock / transform / elevate / journey."
+- **No emoji.** No exclamation marks. **No em dashes** in site copy. No "unlock / transform / elevate / journey."
 - **Don't build an LMS.** No video hosting, no gated lessons, no progress tracking.
   This is a marketing site.
 - **Don't wire payments.** PayPal integration is a later, separate phase.

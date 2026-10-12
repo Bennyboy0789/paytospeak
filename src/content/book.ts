@@ -20,13 +20,13 @@ export const book = {
   plainTitle: "Paid to Speak 2.0",
   cover,
   meta: {
-    title: "Paid to Speak 2.0 — the new book from Dr. Kevin C. Snyder",
+    title: "Paid to Speak 2.0: the new book from Dr. Kevin C. Snyder",
     description:
       "Paid to $peak 2.0: systems and strategies behind a speaking career, from Dr. Kevin C. Snyder, CSP. Get notified when it’s out.",
   },
   hero: {
     eyebrow: "Coming soon",
-    sub: "The systems and strategies behind a speaking career — from someone who’s been booked 1,500 times.",
+    sub: "The systems and strategies behind a speaking career, from someone who’s been booked 1,500 times.",
     notifyHeading: "Get notified when it’s out",
     notifyBody: "Leave your email and you’ll hear when the book is available.",
   },

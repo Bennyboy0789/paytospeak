@@ -16,7 +16,7 @@ export function Marquee() {
     <ul className="flex shrink-0 items-center">
       {items.map((item, i) => (
         <Fragment key={item}>
-          <li className={`px-8 font-display text-4xl font-black tracking-[-0.01em] whitespace-nowrap lg:px-12 lg:text-7xl ${i % 2 ? "text-transparent [-webkit-text-stroke:1.5px_rgb(246_249_252/0.35)]" : "text-foreground"}`}>
+          <li className={`px-8 font-display text-4xl font-black tracking-[-0.01em] whitespace-nowrap lg:px-12 lg:text-7xl ${i % 2 ? "text-muted-foreground/45" : "text-foreground"}`}>
             {item}
           </li>
           <li>

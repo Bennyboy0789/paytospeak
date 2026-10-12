@@ -27,7 +27,7 @@ const interTight = Inter_Tight({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.plainName} — Speaker coaching with Dr. Kevin C. Snyder`,
+    default: `${site.plainName} | Speaker coaching with Dr. Kevin C. Snyder`,
     template: `%s | ${site.plainName}`,
   },
   description: site.description,

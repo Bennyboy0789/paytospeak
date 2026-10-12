@@ -89,7 +89,9 @@ headline at most. Example:
 
 > You already have the story. **Now build the system.**
 
-Not ALL CAPS (except eyebrows and buttons).
+Not ALL CAPS (except eyebrows and buttons). Never outlined (transparent fill with a
+stroke): it renders unevenly at display sizes. Large decorative numerals and
+marquee text use solid fills.
 
 ---
 
@@ -109,6 +111,7 @@ generous — the guy who tells you the truth because he wants you booked.
 **Rules:**
 - No emoji.
 - No exclamation marks.
+- No em dashes. Use a period, comma, or colon instead.
 - No "unlock," "transform," "elevate," "game-changer," "journey."
 - Second person. Talk to the reader.
 - Confidence over hype. He doesn't need to oversell — he's booked 1,500+ times.

@@ -12,8 +12,8 @@ export function Credentials() {
       <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-1/2 size-[30rem] -translate-y-1/2 rounded-full bg-primary/10 blur-3xl" />
       <Container className="relative grid items-center gap-12 py-14 lg:grid-cols-[auto_1fr] lg:gap-20 lg:py-20">
         <div className="reveal flex items-center gap-5">
-          <Image src={cspBadge} alt={`CSP — ${credentials.csp}`} className="size-20 transition-transform duration-700 ease-out-expo hover:-rotate-6 hover:scale-110 lg:size-24" sizes="96px" />
-          <Image src={asBadge} alt={`AS — ${credentials.as}`} className="size-20 transition-transform duration-700 ease-out-expo hover:rotate-6 hover:scale-110 lg:size-24" sizes="96px" />
+          <Image src={cspBadge} alt={`CSP: ${credentials.csp}`} className="size-20 transition-transform duration-700 ease-out-expo hover:-rotate-6 hover:scale-110 lg:size-24" sizes="96px" />
+          <Image src={asBadge} alt={`AS: ${credentials.as}`} className="size-20 transition-transform duration-700 ease-out-expo hover:rotate-6 hover:scale-110 lg:size-24" sizes="96px" />
           <p className="max-w-[14rem] text-sm leading-snug text-muted-foreground">{credentials.rarity}</p>
         </div>
         <dl className="odometer reveal-stagger grid grid-cols-3 gap-4 sm:gap-6 lg:justify-items-end">

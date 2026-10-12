@@ -6,7 +6,7 @@ export const about = {
   meta: {
     title: "About Kevin",
     description:
-      "Dr. Kevin C. Snyder — CSP, AS, 20 years on stage — and why he now coaches aspiring and emerging speakers.",
+      "Dr. Kevin C. Snyder, CSP, AS, has spent 20 years on stage. Here is why he now coaches aspiring and emerging speakers.",
   },
   hero: {
     eyebrow: "About Kevin",
@@ -21,7 +21,7 @@ export const about = {
       eyebrow: "The early years",
       title: "The kid who didn’t believe in himself.",
       body: ["Kevin grew up in North Carolina. As a child he struggled with depression, and believing in himself did not come easily."],
-      todo: "Request Kevin’s own account of his childhood — the details he’s comfortable sharing on a coaching site.",
+      todo: "Request Kevin’s own account of his childhood, with the details he’s comfortable sharing on a coaching site.",
     },
     {
       eyebrow: "The unlikely turn",
@@ -32,14 +32,14 @@ export const about = {
     {
       eyebrow: "The framework",
       title: "ShiftThinker™.",
-      body: ["Out of 20 years on stage, Kevin built the ShiftThinker™ framework — the thinking behind the talks he gives."],
+      body: ["Out of 20 years on stage, Kevin built the ShiftThinker™ framework, the thinking behind the talks he gives."],
       todo: "One or two sentences on ShiftThinker™ in Kevin’s words.",
     },
     {
       eyebrow: "The teaching",
       title: "Why he coaches.",
       body: [
-        "Kevin has spoken to more than 1,500 audiences across corporate, college, and youth markets. He is an NSA Certified Speaking Professional and a Toastmasters Accredited Speaker — one of only nine people worldwide to hold both.",
+        "Kevin has spoken to more than 1,500 audiences across corporate, college, and youth markets. He is an NSA Certified Speaking Professional and a Toastmasters Accredited Speaker, one of only nine people worldwide to hold both.",
         "Now he coaches aspiring and emerging speakers on the system behind that career.",
       ],
       todo: "Why Kevin coaches, in his words.",

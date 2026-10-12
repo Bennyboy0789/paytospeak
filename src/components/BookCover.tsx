@@ -18,7 +18,7 @@ export function BookCover({ className = "", priority }: { className?: string; pr
       <Sheen />
     </div>
   ) : (
-    <div className={`${frame} flex flex-col bg-[radial-gradient(120%_80%_at_50%_0%,var(--color-secondary)_0%,var(--color-background)_70%)] p-[9%]`} role="img" aria-label={`${book.plainTitle} — cover coming soon`}>
+    <div className={`${frame} flex flex-col bg-[radial-gradient(120%_80%_at_50%_0%,var(--color-secondary)_0%,var(--color-background)_70%)] p-[9%]`} role="img" aria-label={`${book.plainTitle}: cover coming soon`}>
       <div aria-hidden="true" className="flex flex-1 flex-col">
         <Logo variant="stacked" className="h-auto w-full" />
         <p className="mt-[6%] font-display text-[34cqw] font-black leading-none tracking-tight text-accent">2.0</p>
