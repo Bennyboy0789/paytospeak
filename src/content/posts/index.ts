@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import viewFromStage from "@/assets/images/kevin-view-from-stage.jpg";
 
 /*
  * Blog registry. To add a post:
@@ -23,6 +24,8 @@ const all: PostMeta[] = [
     title: "Placeholder post — replace with Kevin’s first article",
     description: "Seed post so the blog template can be reviewed. Kevin has five written posts from the previous site waiting to come over.",
     date: "2026-10-08",
+    // TODO(kc): stand-in photo so the layout can be reviewed; swap for the post’s real thumbnail.
+    image: { src: viewFromStage, alt: "Kevin on stage, seen from behind, facing a full ballroom audience" },
     placeholder: true,
   },
 ];
