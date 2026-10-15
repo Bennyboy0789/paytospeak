@@ -3,9 +3,9 @@ import type { CSSProperties } from "react";
 import asBadge from "@/assets/images/badge-as.png";
 import cspBadge from "@/assets/images/badge-csp.png";
 import { Container } from "@/components/Section";
-import { credentials, stats } from "@/content/shared";
+import { credentials, featuredIn, stats } from "@/content/shared";
 
-/** Proof strip: the two designations and the verified numbers. */
+/** Proof strip: the two designations, the verified numbers, and where Kevin has been featured. */
 export function Credentials() {
   return (
     <section aria-label="Kevin’s credentials" className="relative overflow-hidden border-y border-border bg-card">
@@ -26,6 +26,35 @@ export function Credentials() {
             </div>
           ))}
         </dl>
+      </Container>
+      <Container className="relative border-t border-border py-8 lg:py-10">
+        <div className="reveal flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14">
+          <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.22em] text-accent">Featured on</p>
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 lg:flex-1 lg:gap-10">
+            {featuredIn.map((f) => {
+              const body = (
+                <>
+                  <span className="block font-display text-lg font-black leading-tight tracking-tight text-foreground/70 transition-colors duration-300 group-hover:text-foreground lg:text-xl">
+                    {f.name}
+                  </span>
+                  <span className="mt-1 block text-xs text-muted-foreground">{f.note}</span>
+                </>
+              );
+              return (
+                <li key={f.name}>
+                  {f.href ? (
+                    <a href={f.href} target="_blank" rel="noopener noreferrer" className="group block">
+                      {body}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  ) : (
+                    body
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </Container>
     </section>
   );

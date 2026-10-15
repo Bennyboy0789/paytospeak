@@ -13,4 +13,23 @@ export const credentials = {
   rarity: "One of only nine people worldwide to hold both.",
 } as const;
 
+/**
+ * Media and stages Kevin has been featured on, each checked against its source (2026-10-15).
+ * TEDxRaleigh is left out on purpose: Kevin curated it, he didn't speak at it.
+ */
+export const featuredIn = [
+  { name: "TEDxWakeForestU", note: "TEDx talk", href: undefined },
+  { name: "TEDxCapeMay", note: "TEDx talk", href: "https://www.youtube.com/watch?v=GbJaPqqV3A4" },
+  {
+    name: "Toastmasters Magazine",
+    note: "January 2023 feature",
+    href: "https://toastmasterscdn.azureedge.net/medias/files/department-documents/magazine/magazine-pdfs/2023-magazine-pdfs/magazine-january-2023-s.pdf",
+  },
+  {
+    name: "The Toastmasters Podcast",
+    note: "Episode 220",
+    href: "https://www.toastmasterspodcast.com/posts/-220-introducing-dr-kevin-c-snyder-toastmasters-newest-accredited-speaker.html",
+  },
+] as const;
+
 export type Headline = { lead: string; highlight?: string };
