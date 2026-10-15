@@ -24,7 +24,7 @@ export type Pillar = { title: string; body: string };
  */
 export type Offer = {
   format: string;
-  tiers: { name: string; price?: string; cadence?: string; summary: string; includes: string[] }[];
+  tiers: { name: string; price?: string; cadence?: string; summary: string; guarantee?: string; includes: string[] }[];
 };
 
 export const coaching = {
@@ -53,7 +53,7 @@ export const coaching = {
       "You want direct feedback, including the parts that are hard to hear.",
     ],
     no: [
-      "You want a guaranteed number of bookings. Nobody can honestly promise that.",
+      "You want results without doing the work. Kevin’s guarantees depend on you doing it.",
       "You want a script handed to you. Kevin helps you find your message, not borrow his.",
       "You aren’t ready to put your talk in front of real audiences yet.",
     ],
@@ -76,23 +76,25 @@ export const coaching = {
   how: {
     eyebrow: "How it works",
     headline: { lead: "The program." } satisfies Headline,
-    // TODO(kc): carried over from the Wix 1:1 coaching pages (/copy-of-1-1-coaching-options-1,
+    // Carried over from the Wix 1:1 coaching pages (/copy-of-1-1-coaching-options-1,
     // /copy-of-1-1-coaching-options, /1-on-1-coaching) and the sample program PDF they link to.
-    // Kevin to confirm which options are still offered and what each includes (the 5-session
-    // inclusions come from the 2021 comparison chart). No prices: Wix figures conflict.
-    // Seen on Wix: 10-session $12,500 / $15,000 / $7,500; 5-session $7,250 / $7,500 / $10,500;
-    // hourly $125 per 30 min / $249 / $250; 3-hour bundle $475 / $499 / $650; Speaker
-    // Assessment $499 / $379; Speech Review "at an hourly coaching rate". Guarantees,
-    // "value" figures and income claims were dropped. The 2-day Intensive is on /coaching/group.
+    // Prices and the guarantee are from Kevin's 2026 coaching options chart ($7,500 or $12,500,
+    // "with guarantee for PAID speaking opportunities"); shown per Ben, 2026-10-15. The chart
+    // has no hourly, Speaker Assessment or Speech Review rates, so those stay off the page.
+    // Older Wix figures: 10-session $15,000 / $7,500; 5-session $7,250 / $10,500; hourly $125 per
+    // 30 min / $249 / $250; 3-hour bundle $475 / $499 / $650; Speaker Assessment $499 / $379.
+    // TODO(kc): the terms of the 1:1 guarantee (what qualifies, the time frame, the refund).
     offer: {
       format:
         "One-on-one coaching with Kevin, virtual or in person, personalized to your speaking goals. Together you review your materials, refine your message, identify speaking opportunities that pay, and build a plan to grow your speaking business.",
       tiers: [
         {
           name: "10-session program",
-          cadence: "Ten sessions, weekly or every other week",
+          price: "$12,500",
+          cadence: "Ten sessions",
           summary:
-            "Kevin’s most complete 1:1 program, for speakers who are all in. Ten sessions customizing his five-module Paid to $peak model into your own speaking business, with Kevin reviewing your work between every session. Plan on 2 to 3 hours of assignments a week.",
+            "Kevin’s most complete 1:1 program, for speakers who are all in. Ten sessions, weekly or every other week, customizing his five-module Paid to $peak model into your own speaking business, with Kevin reviewing your work between every session. Plan on 2 to 3 hours of assignments a week.",
+          guarantee: "Includes Kevin’s guarantee for paid speaking opportunities.",
           includes: [
             "Ten 1:1 sessions, weekly or every other week",
             "A written recap after each session with action steps and feedback",
@@ -113,9 +115,11 @@ export const coaching = {
         },
         {
           name: "5-session program",
-          cadence: "Five sessions, weekly or every other week",
+          price: "$7,500",
+          cadence: "Five sessions",
           summary:
-            "The same personal approach in a shorter program, with more limited access to Kevin between sessions and shorter access to the included resources.",
+            "The same personal approach in a shorter program, weekly or every other week, with more limited access to Kevin between sessions and shorter access to the included resources.",
+          guarantee: "Includes Kevin’s guarantee for paid speaking opportunities.",
           includes: [
             "Five 1:1 sessions with Kevin",
             "Kevin’s review of your work between sessions",

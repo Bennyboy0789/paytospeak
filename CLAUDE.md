@@ -39,6 +39,9 @@ there is **no** `tailwind.config.js`; theme tokens live in `@theme` inside
 - **Match the parent brand.** Don't invent a new palette or type system.
 - **`ShiftThinker™`** — always with the trademark symbol, exact capitalization.
 - **No emoji.** No exclamation marks. **No em dashes** in site copy. No "unlock / transform / elevate / journey."
+- **Prices and guarantees come only from Kevin's own current material** (his 2026 coaching
+  charts and the pages he refreshed in October 2026). Show them as he states them (Ben,
+  2026-10-15). Never invent a price, a guarantee, or a guarantee's terms: `TODO(kc)` instead.
 - **Don't build an LMS.** No video hosting, no gated lessons, no progress tracking.
   This is a marketing site.
 - **Don't wire payments.** PayPal integration is a later, separate phase.

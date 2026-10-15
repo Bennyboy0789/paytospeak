@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ButtonLink } from "@/components/Button";
@@ -16,7 +17,7 @@ const linkProps = (href: string) => (external(href) ? { target: "_blank", rel: "
 
 /** A program carried over from the Wix site. Content lives in src/content/programs/. */
 export function ProgramPage({ program }: { program: Program }) {
-  const { eyebrow, headline, sub, blocks, cta, todo } = program;
+  const { eyebrow, headline, sub, investment, photo, blocks, cta, todo } = program;
   const others = programs.filter((p) => p.href !== program.href);
 
   return (
@@ -46,10 +47,18 @@ export function ProgramPage({ program }: { program: Program }) {
             <ButtonLink href={cta.href} {...linkProps(cta.href)} magnetic>
               {cta.label}
             </ButtonLink>
-            <p className="text-sm text-muted-foreground">Pricing is shared on the call.</p>
+            <p className="text-sm text-muted-foreground">{investment ?? "Pricing is shared on the call."}</p>
           </div>
         </Container>
       </section>
+
+      {photo && (
+        <Container className="pb-4">
+          <div className="reveal-clip parallax relative aspect-[16/9] overflow-hidden rounded-3xl border border-border lg:aspect-[21/9]">
+            <Image src={photo.src} alt={photo.alt} fill placeholder="blur" sizes="(min-width: 1280px) 80rem, 100vw" className="object-cover" />
+          </div>
+        </Container>
+      )}
 
       {blocks.map((block, i) => (
         <Section key={i} tone={i % 2 ? "card" : "background"} compact>
@@ -62,7 +71,7 @@ export function ProgramPage({ program }: { program: Program }) {
           <Eyebrow className="justify-center">Next step</Eyebrow>
           <Heading size="small" headline={{ lead: "Talk it through", highlight: "with Kevin." }} className="mx-auto mt-6 max-w-2xl" />
           <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-foreground/80">
-            A short call to see where you are, whether this is the right fit, and what it costs.
+            A short call to see where you are, whether this is the right fit, and which option suits your goals and budget.
           </p>
           <ButtonLink href={cta.href} {...linkProps(cta.href)} className="mt-10">
             {cta.label}
@@ -166,7 +175,9 @@ function Block({ block }: { block: ProgramBlock }) {
               <article key={o.name} data-spotlight className="glow-card spotlight flex flex-col rounded-3xl border border-border bg-background p-8 lg:p-10">
                 <h3 className="font-display text-2xl font-black tracking-tight">{o.name}</h3>
                 {o.format && <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-accent">{o.format}</p>}
+                {o.price && <p className="mt-5 font-display text-4xl font-black tracking-tight">{o.price}</p>}
                 {o.summary && <p className="mt-4 leading-relaxed text-foreground/80">{o.summary}</p>}
+                {o.guarantee && <p className="mt-5 border-l-2 border-accent pl-4 font-semibold leading-relaxed">{o.guarantee}</p>}
                 {o.includes.length > 0 && (
                   <ul className="mt-6 space-y-3 border-t border-border pt-6">
                     {o.includes.map((item) => (

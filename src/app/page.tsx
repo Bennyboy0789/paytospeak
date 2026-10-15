@@ -11,15 +11,17 @@ import { Marquee } from "@/components/Marquee";
 import { Pillars } from "@/components/Pillars";
 import { ScrubText } from "@/components/ScrubText";
 import { Container, Eyebrow, Section } from "@/components/Section";
+import { StageGallery } from "@/components/StageGallery";
 import { StageLights } from "@/components/StageLights";
 import { SubscribeForm } from "@/components/SubscribeForm";
+import { YouTube } from "@/components/YouTube";
 import { book } from "@/content/book";
 import { coaching } from "@/content/coaching";
 import { home } from "@/content/home";
 import { credentials } from "@/content/shared";
 import { applyHref, site } from "@/lib/site";
 
-const { hero, problem, system, about, newsletter } = home;
+const { hero, problem, system, about, stage, newsletter } = home;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -165,6 +167,27 @@ export default function Home() {
                 {about.cta}
               </ButtonLink>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* On stage: Kevin's action photos and demo video */}
+      <section aria-labelledby="stage-title" className="relative overflow-hidden py-24 lg:py-40">
+        <Container>
+          <div className="reveal flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div className="max-w-3xl">
+              <Eyebrow>{stage.eyebrow}</Eyebrow>
+              <Heading id="stage-title" headline={stage.headline} className="mt-6" />
+            </div>
+            <p className="max-w-md text-lg leading-relaxed text-foreground/80">{stage.body}</p>
+          </div>
+        </Container>
+        <StageGallery className="mt-14 lg:mt-20" />
+        <Container className="mt-20 lg:mt-28">
+          <div className="reveal mx-auto max-w-4xl">
+            <h3 className="font-display text-2xl font-black tracking-tight lg:text-3xl">{stage.video.heading}</h3>
+            <p className="mt-3 text-lg text-foreground/75">{stage.video.body}</p>
+            <YouTube id={stage.video.youtubeId} title={stage.video.title} />
           </div>
         </Container>
       </section>

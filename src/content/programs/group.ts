@@ -1,47 +1,134 @@
+import blueStage from "@/assets/images/stage/blue-stage-wide.jpg";
 import { calendly, type Program } from "./types";
 
-/** Group coaching: the 5-Week Challenge ("Paid to $peak in 5 Weeks") plus the in-person group formats. */
+/**
+ * Group coaching: the 5-Week Challenge ("Paid to $peak in 5 Weeks") plus the 2-day in-person Intensive.
+ * Source: /5weekchallenge as Kevin rewrote it in October 2026, and his 2026 coaching options chart.
+ */
 export const group: Program = {
   href: "/coaching/group",
   name: "Group coaching",
-  card: "Paid to $peak in 5 Weeks: a cohort that works through Kevin’s five-module model together, with a live Q&A with Kevin every week.",
+  card: "The 5-Week Challenge: Kevin’s group program, offered twice a year, with live weekly coaching and his paid speaking guarantee.",
   meta: {
-    title: "Group coaching: Paid to $peak in 5 Weeks",
+    title: "Group coaching: the 5-Week Challenge",
     description:
-      "Kevin Snyder’s 5-Week Challenge: five weekly 90-minute live Q&A sessions, the full Paid to $peak Online Course, and a cohort of speakers working through the same model.",
+      "Kevin Snyder’s 5-Week Challenge: live weekly group coaching, the full Paid to $peak Online Course, a cohort of speakers, and Kevin’s paid speaking engagement guarantee. Offered twice a year.",
   },
   eyebrow: "Group coaching",
-  headline: { lead: "Five weeks, five modules,", highlight: "one cohort." },
-  sub: "The 5-Week Challenge is Kevin’s group coaching program. You work through his Paid to $peak model one module a week, bring your questions to a live 90-minute Q&A, and build your speaking business alongside other speakers doing the same work.",
+  headline: { lead: "Accept the Challenge. Follow the process.", highlight: "Get paid." },
+  sub: "Offered only twice a year, the 5-Week Challenge is Kevin’s group coaching program: an affordable alternative to private 1:1 coaching, with a 1:1 option included. It teaches you how to find, book and earn paid speaking engagements with his Paid to $peak framework.",
+  investment: "$1,500 or $2,500. Payment plans available.",
+  photo: { src: blueStage, alt: "Kevin speaking on a large blue-lit conference stage with three screens behind him" },
   blocks: [
     {
       kind: "text",
-      heading: "How the 5-Week Challenge works",
+      heading: "Why it’s called the 5-Week Challenge",
       body: [
-        "For five weeks, Kevin is your coach. Each week focuses on one module of his Paid to $peak model, the same framework behind his book and online course, and ends with a live group Q&A built around your questions.",
-        "You get the full Paid to $peak Online Course before the first session, so you can watch each module ahead of time and send your questions in advance. Kevin also shares templates, samples and scripts that aren’t in the book or the course.",
-        "You join a cohort: a group of speakers who start together and finish together. You can connect with and support each other during the five weeks and after. Kevin calls it a community within a community, and he considers it essential.",
-        "It’s for speakers at any level, brand new, emerging or seasoned, who are committed to building paid speaking into their business. Not feeling ready is fine. Getting you ready is the point.",
-        "Kevin runs the program twice a year as “Paid to $peak in 5 Weeks,” and offers a TEDx version as well.",
+        "Follow the process, do the work between sessions, and Kevin guarantees you will book paid speaking engagements within six months. He challenges you to prove him wrong.",
+        "The Paid to $peak framework behind it was developed through 1,500+ audiences and more than a million people reached. It’s based on Kevin’s book, PAID to $PEAK: the course gives you the roadmap, and the live coaching sessions help you put it into action.",
+        "You also get live weekly coaching sessions with Q&A, recordings with evergreen access, practical templates, useful resources, and a supportive community of fellow speakers.",
+      ],
+    },
+    {
+      kind: "text",
+      heading: "Not feeling ready? Good.",
+      body: [
+        "That’s exactly why Kevin offers the 5-Week Challenge: to get you ready. You don’t have to have everything figured out. You just have to be committed to taking action.",
+        "For five weeks, Kevin personally coaches, guides and supports you. He answers your questions, helps you get past obstacles, and shares insider strategies and bonus resources you won’t find in his book or online course.",
+        "Because the Challenge runs only twice a year, there’s no reason to put your speaking goals on hold. Your next paid speaking engagement could be closer than you think.",
       ],
     },
     {
       kind: "list",
-      heading: "What you’ll learn",
-      intro: "Kevin’s Paid to $peak framework teaches you how to:",
+      heading: "Who should accept the Challenge",
+      intro: "Whether you’re new to speaking, building momentum or already experienced, the Challenge is for anyone serious about turning their message into income. You’ll learn how to:",
       items: [
-        "Prepare your business and your mindset",
-        "Design and deliver a strong speech",
-        "Find paid speaking opportunities",
-        "Verify and identify organizations that can pay",
-        "Set your speaking fee",
-        "Use the strategies Kevin has used to build and grow his own speaking business",
+        "Identify organizations with speaking budgets",
+        "Set your speaking fee with confidence",
+        "Turn your expertise into a profitable speaking business",
+        "Find, book and earn paid speaking engagements",
+      ],
+    },
+    {
+      kind: "options",
+      heading: "Two ways to accept the Challenge",
+      intro: "Both include the full course and every live session. Plus adds one-on-one time with Kevin.",
+      options: [
+        {
+          name: "Basic",
+          format: "Group cohort, five weekly sessions",
+          price: "$1,500",
+          summary: "The full group program: the course, the live coaching and the cohort.",
+          guarantee: "Do the work and book paid speaking engagements within six months, or get a refund.",
+          includes: [
+            "The entire Paid to $peak Online Course",
+            "A weekly group coaching session with Q&A",
+            "Recordings of each session",
+            "The Paid to $peak Speaker Mastermind",
+            "Extra templates, samples and scripts",
+          ],
+        },
+        {
+          name: "Plus",
+          format: "Everything in Basic, with 1:1 coaching",
+          price: "$2,500",
+          summary: "Kevin works with you one-on-one and reviews your materials. Places are limited because of the 1:1 calls.",
+          guarantee: "Do the work and book paid speaking engagements within six months, or get a refund.",
+          includes: [
+            "Everything in Basic",
+            "Two 1:1 coaching sessions with Kevin",
+            "The Paid to $peak Webinar Series",
+            "TEDx training videos and templates",
+            "A Speaker Assessment: Kevin reviews your speaking materials, such as your presentation information, website, demo video and program",
+            "And more",
+          ],
+        },
+      ],
+    },
+    {
+      kind: "text",
+      heading: "Upcoming cohort",
+      body: [
+        "Session 1: Monday, November 2. Session 2: Monday, November 9. Session 3: Monday, November 16. Session 4: Monday, November 23. Session 5: Monday, November 30.",
+        "Each session is a full 90 minutes live with Kevin on Zoom, Mondays at 12 p.m. Eastern (9 a.m. Pacific), unless a better time emerges for the cohort.",
+        "Can’t make a session? That’s fine. Every session is recorded, and you can send your questions in advance so Kevin can answer them during the Q&A.",
+        "After the final session on November 30, you continue with Kevin’s Speaker Mastermind and coaching sessions for ongoing support.",
+      ],
+    },
+    {
+      kind: "videos",
+      heading: "Hear it from Kevin",
+      videos: [
+        { youtubeId: "aIcIPqnF6_c", title: "Learn more about the PAID to $PEAK 5-Week Challenge" },
+        { youtubeId: "9rtIrL5TfaQ", title: "Details about the PAID to $PEAK 5-Week Challenge" },
+      ],
+    },
+    {
+      kind: "steps",
+      heading: "How to enroll",
+      steps: [
+        {
+          title: "Accept the Challenge",
+          body: "Picture paid speaking engagements on your calendar this fall and next spring. Not sure Basic or Plus is right? Book a strategy session and talk it through with Kevin.",
+        },
+        {
+          title: "Confirm your seat",
+          body: "Pay in full, or pay a deposit and request a payment plan. Full payment is due by the third session.",
+        },
+        {
+          title: "Get set up",
+          body: "Once your seat is confirmed, you receive an email with access to the online course, how to prepare for session one, and more.",
+        },
+        {
+          title: "Prepare for Module 1",
+          body: "Read or listen to the Preface and Module 1 of Kevin’s book, PAID to $PEAK, and work through the free Module 1 worksheet.",
+        },
       ],
     },
     {
       kind: "steps",
       heading: "The five modules",
-      intro: "One module a week. Each module has a free worksheet, on the resources page at /resources.",
+      intro: "One module a week. Each module has a free worksheet on the resources page.",
       steps: [
         {
           title: "Module 1: Where to start",
@@ -67,98 +154,23 @@ export const group: Program = {
     },
     {
       kind: "options",
-      heading: "Two ways to join",
-      intro: "Both options include the full course and every live session. Plus adds one-on-one time with Kevin.",
-      options: [
-        {
-          name: "Basic",
-          format: "Group cohort, five weekly sessions",
-          summary: "The full group program: the course, the live Q&As and the cohort.",
-          includes: [
-            "A cohort community of speakers working through the program together",
-            "Five weekly 90-minute live Q&A sessions with Kevin on Zoom",
-            "Send questions in advance or ask them live",
-            "Recordings of every session",
-            "The full Paid to $peak Online Course",
-            "Three months of Kevin’s Speaker Mastermind",
-            "Bonus templates, samples and scripts not included in the online course",
-          ],
-        },
-        {
-          name: "Plus",
-          format: "Everything in Basic, with 1:1 coaching",
-          summary: "Kevin works with you one-on-one and reviews your materials. Places are limited because of the 1:1 calls.",
-          includes: [
-            "Everything in Basic",
-            "Two 1:1 coaching sessions with Kevin",
-            "Kevin’s Paid to $peak Webinar Series",
-            "Kevin’s TEDx training videos and templates, plus an additional session",
-            "Virtual studio training, plus an additional group session",
-            "A Speaker Assessment: Kevin reviews your speaker website, demo video, program information and more",
-            "The Paid to $peak Sailing Retreat: a half day with Kevin on his 40-foot sailboat, six people in total",
-            "A full year of the Speaker Mastermind",
-          ],
-        },
-      ],
-    },
-    {
-      kind: "text",
-      heading: "Schedule",
-      body: [
-        "Cohorts meet once a week for five weeks. Each session is a full 90 minutes live with Kevin on Zoom. Sessions have run on Wednesdays at 12 p.m. Eastern (9 a.m. Pacific), unless a better time emerges for the cohort or Kevin’s speaking calendar changes.",
-        "Can’t make a session? Every session is recorded, and you can send your questions in advance so Kevin can answer them during the Q&A.",
-        "After the final session, you continue with Kevin’s Speaker Mastermind for ongoing support. Ask Kevin when the next cohort starts.",
-      ],
-    },
-    {
-      kind: "steps",
-      heading: "How to enroll",
-      steps: [
-        {
-          title: "Talk to Kevin about the next cohort",
-          body: "Book a strategy session to ask about dates, the difference between Basic and Plus, and whether the program fits where you are.",
-        },
-        {
-          title: "Confirm your seat",
-          body: "Pay in full, or pay a deposit and arrange a payment plan.",
-        },
-        {
-          title: "Get set up",
-          body: "Once your seat is confirmed, you receive an email with access to the online course and details on how to prepare for the first session.",
-        },
-        {
-          title: "Prepare for Module 1",
-          body: "Read or listen to the Preface and Module 1 of Kevin’s book, PAID to $PEAK, and work through the free Module 1 worksheet.",
-        },
-      ],
-    },
-    {
-      kind: "options",
-      heading: "In-person group formats",
-      intro: "Kevin has also run the Paid to $peak model as in-person events for small groups.",
+      heading: "Prefer to work in person?",
+      intro: "Kevin’s most immersive and comprehensive coaching experience.",
       options: [
         {
           name: "Paid to $peak Intensive",
-          format: "Two full days in person, once a year",
+          format: "Two full days in person",
+          price: "$4,500",
           summary:
-            "Two full days working directly with Kevin in person on the strategies, insider knowledge and systems for getting booked and getting paid. A hands-on experience for five people who want to launch or accelerate a speaking business.",
+            "Two full days working directly with Kevin in person to learn proven strategies, insider knowledge and systems to get booked and get paid. A deep dive, with hands-on coaching and implementation.",
           includes: [
             "Two full days with Kevin, in person",
-            "A group of five people",
-            "Follow-up coaching after the event",
+            "Follow-up coaching after the program",
             "The Paid to $peak Online Course",
-            "Resources from The Vault, Kevin’s library of templates and samples",
-          ],
-        },
-        {
-          name: "Paid to $peak Academy",
-          format: "One-day seminar, once a year",
-          summary:
-            "One full, live day that walks you through the fundamentals of building a speaking business, face to face with a group of speakers who are committed to the same goal.",
-          includes: [
-            "A full day of live teaching on the whole process",
-            "A cohort community of fellow attendees",
-            "Two hours of personalized coaching to review your materials and plan how to find speaking opportunities",
+            "Templates, tools and resources from The Vault",
+            "Marketing, booking and business strategy",
+            "Contract review and customization",
+            "The Speaker Mastermind",
           ],
         },
       ],
@@ -168,20 +180,24 @@ export const group: Program = {
       heading: "Questions",
       items: [
         {
+          q: "What are the guarantee details?",
+          a: "If you do the work, you get results. Doing the work means completing all the checklists at the end of each module and taking the complimentary follow-up 1:1 coaching session with Kevin. If you do all of that and don’t have a paid speaking engagement within six months, you get a refund. Kevin compares it to a gym membership: if you don’t do the work, don’t expect results.",
+        },
+        {
           q: "What is a cohort?",
-          a: "The group of speakers who go through each 5-Week Challenge together. You start together and finish together, and you can connect with and support each other during the program and after.",
+          a: "The group of speakers who go through each 5-Week Challenge together. You start together and finish together, and you can connect with and support each other during the Challenge and after. It’s a community within a community.",
         },
         {
           q: "What if I don’t feel ready?",
-          a: "That’s the point of the program. Five weeks of focused work with Kevin is designed to get you ready.",
+          a: "That’s the entire point. The 5-Week Challenge is designed to get you ready.",
         },
         {
-          q: "What if I can’t make a live session?",
+          q: "What if I can’t make the weekly live sessions?",
           a: "Every session is recorded. Send your questions in advance and Kevin will answer them during the Q&A.",
         },
         {
           q: "How long are the live sessions, and when are they?",
-          a: "A full 90 minutes live with Kevin on Zoom. Questions sent in advance are queued by priority, and he takes questions live too. Sessions have run on Wednesdays at 12 p.m. Eastern (9 a.m. Pacific) unless a better time emerges for the cohort.",
+          a: "A full 90 minutes live with Kevin on Zoom. Questions sent in advance are queued by priority, and he takes questions live too. Unless a better time emerges for the cohort, sessions are on Mondays at 12 p.m. Eastern (9 a.m. Pacific).",
         },
         {
           q: "How are the sessions structured?",
@@ -189,11 +205,11 @@ export const group: Program = {
         },
         {
           q: "Do I have enough time to be ready for the next cohort?",
-          a: "Yes. Each week focuses on one module so you understand the concepts. Review the module, do your best to work on it, and you’ll have questions to bring. You also learn from the rest of the cohort.",
+          a: "Yes. Each week focuses on one module so you understand the concepts. Review the module, do your best to work on it, and you’ll have questions to bring. You also learn from others in the cohort.",
         },
         {
           q: "How do I prepare for the first session?",
-          a: "Read or listen to the Preface and Module 1 of PAID to $PEAK (in print, eBook or audiobook) and work through the Module 1 worksheet, free on the resources page. You get more details after you enroll.",
+          a: "The first session focuses on Module 1 of PAID to $PEAK, available in print, eBook and audiobook. Read or listen to the Preface and Module 1 and work through the Module 1 worksheet, free on the resources page. You get more details after you enroll.",
         },
         {
           q: "Is this only for professional speakers?",
@@ -205,31 +221,34 @@ export const group: Program = {
         },
         {
           q: "Are payment plans available?",
-          a: "Yes. Pay a deposit and arrange a plan with Kevin. Full payment is due by the third session.",
+          a: "Yes. Pay a deposit and request a payment plan. Full payment must be made by the third session.",
         },
         {
-          q: "Can I pay now for a later cohort?",
-          a: "Yes. You can confirm your place in a future cohort now.",
+          q: "Can I pay now to lock in the price for a later cohort?",
+          a: "Yes. Smart.",
+        },
+        {
+          q: "Is it tax deductible?",
+          a: "Professional coaching and education may qualify as tax-deductible business expenses. Ask your CPA or tax advisor whether that applies to you.",
+        },
+        {
+          q: "Is there a referral reward?",
+          a: "Yes. Refer someone who enrolls in the 5-Week Challenge and you receive $150, and Kevin donates $100 to a charity of your choice in your honor: $250 in rewards for every referral who enrolls.",
         },
         {
           q: "What if I need one-on-one help?",
-          a: "Kevin offers 1:1 coaching alongside the group program. See the 1:1 options on the coaching page, then book a strategy session to talk them through.",
+          a: "Kevin offers 1:1 coaching alongside the group program. Review the 1:1 options on the coaching page, then book a strategy session to talk them through.",
         },
       ],
     },
   ],
   cta: { label: "Book a strategy session", href: calendly.strategy },
   wixPrices: [
-    "PLUS $2,500 (PayPal form KQK4XBJ79MXFC on /5weekchallenge)",
-    "BASIC $1,500 (PayPal form KQK4XBJ79MXFC on /5weekchallenge)",
-    "Payment plan deposit $250 (PayPal form KQK4XBJ79MXFC on /5weekchallenge)",
-    "Group coaching $1,500 or $2,500 (current coaching options chart PNG on /coachingoptions)",
-    "5-Week Group Program $3,500, shown with a \"$10,000+ value\" (2019 chart PDF on /1-on-1-coaching)",
-    "5-week program normal price $3,450, discount $1,750 through November 20 (2017 events page /copy-of-coaching-services)",
-    "Paid to $peak Group Academy $1,500, held quarterly (2021 chart PDF on /copy-of-1-1-coaching-options)",
-    "Paid to $peak Intensive $4,500 for the 2-day in-person experience (current coaching options chart PNG on /coachingoptions)",
-    "Paid to SPEAK Academy (one day) normal price $775, discount $495 through November 20, includes 2 hours coaching (/copy-of-coaching-services)",
-    "Paid to $peak Academy event shown as a \"$999 value\" (2019 chart PDF on /1-on-1-coaching)",
+    "Group coaching $1,500 or $2,500 (2026 coaching options chart on /coachingoptions). Shown on the page as Basic and Plus.",
+    "PLUS $2,500, BASIC $1,500, payment plan deposit $250 (PayPal form KQK4XBJ79MXFC on /5weekchallenge)",
+    "Paid to $peak Intensive $4,500 for the 2-day in-person experience (2026 coaching options chart). Shown on the page.",
+    "Older: 5-Week Group Program $3,500 with a \"$10,000+ value\" (2019 chart PDF); normal price $3,450, discount $1,750 (2017 events page)",
+    "Older: Paid to $peak Group Academy $1,500, held quarterly (2021 chart PDF); one-day Academy $775, discount $495 (2017 events page). Not on the 2026 chart, so not shown.",
   ],
   sources: [
     "/5weekchallenge",
@@ -240,17 +259,8 @@ export const group: Program = {
     "/5weekchallengeplus2025",
   ],
   todo: [
-    "Confirm this program is still offered and its current format.",
-    "Is the 5-Week Challenge still run twice a year? Older Wix pages said quarterly. When does the next cohort start, and is Wednesday at 12 p.m. Eastern still the slot?",
-    "Confirm the Basic and Plus inclusions. Wix text gives Basic 3 months of the Speaker Mastermind; the Plus graphic says a full year. Which is current?",
-    "Is the Sailing Retreat still part of Plus? Are the virtual studio and TEDx add-on sessions still included?",
-    "Are payment plans still offered, with full payment due by session three? Who handles enrollment and payment plans now (Wix named Sarah Edwards)?",
-    "Is there still a TEDx version of the 5-Week Challenge? If so, how does it differ?",
-    "Is the Paid to $peak Intensive (two days in person, five people, once a year) still offered? Where is it held?",
-    "Is the one-day Paid to $peak Academy retired? It last appeared on the 2017 events page and the 2021 chart.",
-    "The Wix page promised a “GUARANTEE” and refunds if you had no paid engagements. Those are not carried over. What is the actual refund policy?",
-    "Does the referral reward (a thank-you payment plus a donation to a charity of the referrer’s choice) still run? It is not shown here.",
-    "The two 5-Week Challenge YouTube videos (aIcIPqnF6_c, 9rtIrL5TfaQ) are not embedded because they likely describe the old guarantee. Approve them as they are, or re-record?",
-    "The free module worksheets are referenced on /resources but are not in public/files yet. Approve hosting the five module PDFs and the Module 1 Word file.",
+    "Payment: Wix sends deposits through PayPal and payment-plan requests to Sarah Edwards (Info@Inspiractivesolutions.com). Until payments are wired, the page sends people to a strategy session. Is that right, and should Sarah be named?",
+    "Where and how often is the 2-day in-person Intensive held, and how many people per group?",
+    "Is there still a TEDx version of the 5-Week Challenge? The /coaching copy says there is.",
   ],
 };

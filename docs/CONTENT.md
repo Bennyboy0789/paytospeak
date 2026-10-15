@@ -32,7 +32,9 @@ this file. If the two disagree, **this file wins**.
 
 ### NOT verified — do not use
 
-- Any specific coaching price, tier, or enrollment count
+- Any coaching price, tier or guarantee that isn't in Kevin's 2026 coaching charts or his
+  October 2026 page refresh (those are published as he states them, Ben 2026-10-15),
+  and any enrollment count
 - Any testimonial quote or named client
 - Specific income or booking results attributed to coaching
 - The Paid to $peak logo **vector** file (not yet received — a raster copy was pulled from the Wix site, see `docs/BRAND.md`)
@@ -224,7 +226,7 @@ business behind the talk, from someone who has spent 20 years doing exactly that
   - You're willing to do the unglamorous half: materials, outreach, follow-up.
   - You want direct feedback, including the parts that are hard to hear.
 - Probably not a fit if:
-  - You want a guaranteed number of bookings. Nobody can honestly promise that.
+  - You want results without doing the work. Kevin's guarantees depend on you doing it.
   - You want a script handed to you. Kevin helps you find your message, not borrow his.
   - You aren't ready to put your talk in front of real audiences yet.
 

@@ -46,6 +46,20 @@ export const home = {
     cta: "Read Kevin’s story",
   },
 
+  // Kevin's action photos (src/content/stage.ts) and his demo video, the one the Wix home page
+  // leads with. Facts from the verified list only.
+  stage: {
+    eyebrow: "On stage",
+    headline: { lead: "1,500+ audiences.", highlight: "Here are a few." } satisfies Headline,
+    body: "Twenty years of corporate, college and youth audiences, in rooms of every size. This is what booked speaking looks like.",
+    video: {
+      heading: "Watch Kevin’s demo video",
+      body: "Kevin’s own speaking samples. Is this what you want to do?",
+      youtubeId: "OGl8ZRA2e6c",
+      title: "Demo video | Dr. Kevin Snyder | Motivational keynote speaker | Certified Speaking Professional",
+    },
+  },
+
   book: {
     eyebrow: "New book",
     body: "Systems and strategies for turning what you know into a speaking career.",

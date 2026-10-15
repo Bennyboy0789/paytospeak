@@ -4,6 +4,7 @@ import type { CSSProperties } from "react";
 import ballroom from "@/assets/images/kevin-stage-ballroom.jpg";
 import viewFromStage from "@/assets/images/kevin-view-from-stage.jpg";
 import { ButtonLink } from "@/components/Button";
+import { CompareTable } from "@/components/CompareTable";
 import { Credentials } from "@/components/Credentials";
 import { Heading } from "@/components/Heading";
 import { Pillars } from "@/components/Pillars";
@@ -11,6 +12,7 @@ import { Placeholder } from "@/components/Placeholder";
 import { ProgramGrid } from "@/components/ProgramPage";
 import { Container, Eyebrow, Section } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
+import { YouTube } from "@/components/YouTube";
 import { coaching, type Offer } from "@/content/coaching";
 import { applyHref } from "@/lib/site";
 
@@ -67,8 +69,25 @@ export default function CoachingPage() {
 
       <Credentials />
 
+      {/* Kevin's coaching options chart */}
+      <Section labelledBy="compare-title">
+        <div className="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="max-w-3xl">
+            <Eyebrow>Coaching options</Eyebrow>
+            <Heading id="compare-title" headline={{ lead: "Choose the best path", highlight: "for your speaking goals." }} className="mt-5" />
+          </div>
+          <p className="max-w-sm text-muted-foreground">
+            Coaching in 1:1, group and online formats. Kevin can also customize coaching to work with your budget.
+          </p>
+        </div>
+        <p className="mt-10 text-sm text-muted-foreground lg:hidden">Scroll the table sideways to compare every option.</p>
+        <div className="mt-4 lg:mt-12">
+          <CompareTable />
+        </div>
+      </Section>
+
       {/* Fit */}
-      <Section labelledBy="fit-title">
+      <Section tone="card" labelledBy="fit-title" className="border-y border-border">
         <div className="reveal max-w-3xl">
           <Eyebrow>{fit.eyebrow}</Eyebrow>
           <Heading id="fit-title" headline={fit.headline} className="mt-5" />
@@ -100,7 +119,7 @@ export default function CoachingPage() {
       </Section>
 
       {/* Pillars */}
-      <Section tone="card" labelledBy="pillars-title" className="border-y border-border">
+      <Section labelledBy="pillars-title">
         <div className="reveal max-w-3xl">
           <Eyebrow>{pillars.eyebrow}</Eyebrow>
           <Heading id="pillars-title" headline={pillars.headline} className="mt-5" />
@@ -116,7 +135,7 @@ export default function CoachingPage() {
       </Section>
 
       {/* How it works */}
-      <Section id="how" labelledBy="how-title" className="scroll-mt-20">
+      <Section id="how" tone="card" labelledBy="how-title" className="scroll-mt-20 border-t border-border">
         <div className="reveal">
           <Eyebrow>{how.eyebrow}</Eyebrow>
           <Heading id="how-title" headline={how.headline} className="mt-6" />
@@ -138,6 +157,7 @@ export default function CoachingPage() {
             <ButtonLink href="/about" variant="tertiary" className="mt-8">
               Read Kevin’s story
             </ButtonLink>
+            <YouTube id="SfJs07T5fNw" title="Kevin’s coaching philosophy and how he helps speakers succeed" />
           </div>
         </Container>
       </section>
@@ -199,17 +219,18 @@ function OfferDetails({ offer }: { offer: Offer }) {
       <p className="text-lg text-muted-foreground">{offer.format}</p>
       <div className={`mt-8 grid gap-6 ${single ? "" : "md:grid-cols-2 lg:grid-cols-3"}`}>
         {offer.tiers.map((tier) => (
-          <article key={tier.name} data-spotlight className="glow-card spotlight flex flex-col rounded-3xl border border-border bg-card p-8 hover:-translate-y-1 lg:p-10">
+          <article key={tier.name} data-spotlight className="glow-card spotlight flex flex-col rounded-3xl border border-border bg-background p-8 hover:-translate-y-1 lg:p-10">
             <h3 className="font-display text-2xl font-black tracking-tight">{tier.name}</h3>
             {tier.price ? (
               <p className="mt-4 font-display text-4xl font-black tracking-tight">
                 {tier.price}
-                {tier.cadence && <span className="ml-2 text-base font-medium text-muted-foreground">{tier.cadence}</span>}
+                {tier.cadence && <span className="ml-2 font-sans text-base font-medium tracking-normal text-muted-foreground">{tier.cadence}</span>}
               </p>
             ) : (
               tier.cadence && <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-accent">{tier.cadence}</p>
             )}
             <p className="mt-4 leading-relaxed text-foreground/80">{tier.summary}</p>
+            {tier.guarantee && <p className="mt-5 border-l-2 border-accent pl-4 font-semibold leading-relaxed">{tier.guarantee}</p>}
             <ul className="mt-6 space-y-3 border-t border-border pt-6">
               {tier.includes.map((item) => (
                 <li key={item} className="flex gap-3">

@@ -61,6 +61,10 @@ URL redirects) so older aliases survive too.
 - **One page per program**, so every Wix offer has a home.
 - **Prices are hidden** until Kevin confirms them. Wix shows conflicting prices for
   most programs; each file keeps them all in `wixPrices`.
+  *Updated 15 Oct 2026:* Kevin's 2026 coaching charts count as confirmation. Their prices
+  are shown on /coaching (1:1 tiers and the comparison table), group, TEDx and Mastermind.
+  On Demand and The Vault stay hidden: Kevin is still refreshing "Digital Resources", and
+  the course price conflicts ($350/$450 on the course page, $497 on the chart).
 - **"Buy" buttons book a call** (Calendly) or go to `/apply`. No PayPal links.
 
 ## Copy rules applied
@@ -69,6 +73,10 @@ Kevin's Wix copy was tidied to `CLAUDE.md` and `docs/BRAND.md`:
 
 - **No outcome promises.** Every guarantee is gone ("you WILL have PAID engagements",
   "$2,500 speaking engagement within 6 months", refunds tied to results).
+  *Updated 15 Oct 2026 (Ben):* the guarantees Kevin restated in his October refresh are
+  shown as he wrote them: the 5-Week Challenge paid-engagement guarantee (with its FAQ
+  terms), the 1:1 "guarantee for paid speaking opportunities", and the TEDx Intensive's
+  guaranteed selection. Terms Kevin hasn't stated are `todo` items.
 - **No value figures or urgency.** "$20,000+ in resources" and "only 10 spots" are out.
 - **No testimonials.** The two on Wix (Brittany Stephens, Tristan Cole) need Kevin's
   confirmation and the clients' consent.
@@ -126,7 +134,8 @@ YouTube (unlisted is fine) and swap the embeds.
 The full list is in `docs/wix/PAGES-INVENTORY.md` section 8. The ones that block launch:
 
 1. **Offers.** Which programs are still offered, and at what prices?
-2. **Refunds.** What is the real refund policy? The Wix guarantees can't carry over.
+2. **Guarantee terms.** The 1:1 and TEDx Intensive guarantees are shown without terms.
+   What qualifies, the time frame, and what the refund is.
 3. **Buyer access.** Where do past buyers reach their course, webinars, Vault and
    Mastermind once the Wix pages redirect?
 4. **Testimonials.** Consent for testimonials, and any new ones.

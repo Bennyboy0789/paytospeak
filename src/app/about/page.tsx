@@ -3,6 +3,8 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 import ballroom from "@/assets/images/kevin-stage-ballroom.jpg";
 import studentSelfie from "@/assets/images/kevin-student-selfie.jpg";
+import bookSigning from "@/assets/images/stage/book-signing.jpg";
+import portrait from "@/assets/images/stage/portrait-vest.jpg";
 import { ButtonLink } from "@/components/Button";
 import { Heading } from "@/components/Heading";
 import { Placeholder } from "@/components/Placeholder";
@@ -20,6 +22,7 @@ export const metadata: Metadata = {
 // Photos placed between chapters, by chapter index.
 const photos: Record<number, { src: typeof ballroom; alt: string }> = {
   1: { src: ballroom, alt: "Kevin speaking to a ballroom audience, arms raised" },
+  2: { src: bookSigning, alt: "Kevin signing copies of his book Think Differently for a line of readers" },
   3: { src: studentSelfie, alt: "Kevin taking a selfie with a student in front of a packed gymnasium audience" },
 };
 
@@ -28,14 +31,28 @@ export default function AboutPage() {
     <>
       <section aria-labelledby="about-title" className="hero-scope relative -mt-18 overflow-hidden pt-18">
         <StageLights preset="hero" />
-        <Container className="hero-out relative py-20 lg:py-36">
-          <div className="enter">
-            <Eyebrow>{about.hero.eyebrow}</Eyebrow>
+        <Container className="hero-out relative grid items-center gap-14 py-20 lg:grid-cols-[1.4fr_1fr] lg:gap-20 lg:py-32">
+          <div>
+            <div className="enter">
+              <Eyebrow>{about.hero.eyebrow}</Eyebrow>
+            </div>
+            <Heading as="h1" id="about-title" size="page" headline={about.hero.headline} animate className="mt-7" />
+            <p className="enter mt-10 max-w-2xl text-xl leading-relaxed text-foreground/80" style={{ "--d": "900ms" } as CSSProperties}>
+              {about.hero.sub}
+            </p>
           </div>
-          <Heading as="h1" id="about-title" size="page" headline={about.hero.headline} animate className="mt-7 max-w-6xl" />
-          <p className="enter mt-10 max-w-2xl text-xl leading-relaxed text-foreground/80" style={{ "--d": "900ms" } as CSSProperties}>
-            {about.hero.sub}
-          </p>
+          <div className="enter relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-border lg:max-w-none" style={{ "--d": "250ms" } as CSSProperties}>
+            <Image
+              src={portrait}
+              alt="Dr. Kevin C. Snyder laughing, hand on his chest, in a vest and jeans"
+              fill
+              priority
+              placeholder="blur"
+              sizes="(min-width: 1024px) 34vw, 24rem"
+              className="ken-burns object-cover object-[50%_40%]"
+            />
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+          </div>
         </Container>
       </section>
 
