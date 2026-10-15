@@ -1,7 +1,8 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import withAudience from "@/assets/images/kevin-with-audience-member.jpg";
-import stageLights from "@/assets/images/kevin-stage-lights.jpg";
+import kevinCutout from "@/assets/images/hero-kevin-cutout.webp";
+import stagePlate from "@/assets/images/hero-stage-plate.jpg";
 import { BookCover } from "@/components/BookCover";
 import { ButtonLink } from "@/components/Button";
 import { Credentials } from "@/components/Credentials";
@@ -66,17 +67,29 @@ export default function Home() {
         data-spotlight
         className="spotlight hero-scope relative -mt-18 flex min-h-[100svh] flex-col overflow-hidden pt-18 [--spot-color:rgb(0_168_230/0.08)] [--spot-size:40rem]"
       >
+        {/* Two layers cut from one photo: the softened stage screen, and Kevin in front of it.
+            Both share the same frame and crop, so at rest he sits exactly where the photo had him. */}
         <div className="hero-photo-out absolute inset-x-0 top-0 h-[56svh] overflow-hidden lg:inset-y-0 lg:left-auto lg:right-0 lg:h-auto lg:w-[64%]">
           <Image
-            src={stageLights}
-            alt="Dr. Kevin C. Snyder speaking on stage, microphone in hand"
+            src={stagePlate}
+            alt=""
             fill
             priority
             placeholder="blur"
             sizes="(min-width: 1024px) 64vw, 100vw"
-            className="ken-burns object-cover object-[74%_center]"
+            className="ken-burns object-cover object-[74%_center] lg:[mask-image:linear-gradient(to_right,transparent,black_25%)]"
           />
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40 lg:bg-gradient-to-r lg:from-background lg:via-background/50 lg:to-transparent" />
+          <div className="hero-subject-out absolute inset-0 [mask-image:linear-gradient(to_top,transparent,black_45%)] lg:[mask-image:linear-gradient(to_top,transparent,black_30%)]">
+            <Image
+              src={kevinCutout}
+              alt="Dr. Kevin C. Snyder speaking on stage, microphone in hand"
+              fill
+              loading="eager"
+              sizes="(min-width: 1024px) 64vw, 100vw"
+              className="hero-subject object-cover object-[74%_center]"
+            />
+          </div>
           <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
         </div>
         <StageLights preset="hero" />

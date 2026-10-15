@@ -293,6 +293,16 @@
   }
 }
 
+/* The cut-out speaker settles less than the stage behind him, so the two read as separate planes. */
+.hero-subject {
+  animation: hero-subject 2.4s var(--ease-out-expo) both;
+}
+@keyframes hero-subject {
+  from {
+    transform: scale(1.03) translateY(1.5%);
+  }
+}
+
 .float {
   animation: float 7s ease-in-out infinite alternate;
 }
@@ -398,6 +408,11 @@
       animation-timeline: --hero;
       animation-range: exit 0% exit 100%;
     }
+    .hero-subject-out {
+      animation: hero-subject-out linear both;
+      animation-timeline: --hero;
+      animation-range: exit 0% exit 100%;
+    }
 
     /* Photo opens from a narrower frame and settles. */
     .reveal-clip {
@@ -500,6 +515,11 @@
   to {
     opacity: 0.3;
     transform: scale(1.06);
+  }
+}
+@keyframes hero-subject-out {
+  to {
+    transform: translateY(-4%);
   }
 }
 @keyframes reveal-clip {
