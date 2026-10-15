@@ -31,8 +31,7 @@ export function Container({ children, className = "" }: { children: ReactNode; c
 /** Amber label above a headline, led by a short rule. */
 export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <p className={`flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent ${className}`}>
-      <span aria-hidden="true" className="h-px w-8 bg-accent" />
+    <p className={`flex items-center text-xs font-semibold uppercase tracking-[0.22em] text-accent ${className}`}>
       {children}
     </p>
   );
