@@ -31,10 +31,10 @@ this file. If the two disagree, **this file wins**.
 - Grew up in North Carolina; speaks across corporate, college, and youth markets
 - **Featured on** (the "Featured on" row in the credentials strip, checked 2026-10-15):
   TEDx talks at TEDxWakeForestU (his blog post "How to get on the TEDx stage") and
-  TEDxCapeMay (talk video); *Toastmasters Magazine*, January 2023, "Introducing Kevin
+  TEDxCapeMay (talk video); *Toastmaster* magazine (singular), January 2023, "Introducing Kevin
   Snyder, Accredited Speaker"; *The Toastmasters Podcast*, episode 220. Kevin curated
   TEDxRaleigh (2016) but did not speak there, so it is not a "featured on" item.
-  Use outlet names as text, not their logos (TEDx rules limit speakers' use of the logo).
+  TEDx events are set as text, not the TEDx logo (TEDx rules limit speakers' use of it). The two Toastmasters items use their own marks: the magazine masthead from that issue's cover and the podcast wordmark from its cover art. No outbound links (Ben, 2026-10-15).
 
 ### NOT verified — do not use
 

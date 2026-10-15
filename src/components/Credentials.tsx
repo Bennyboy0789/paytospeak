@@ -30,29 +30,19 @@ export function Credentials() {
       <Container className="relative border-t border-border py-8 lg:py-10">
         <div className="reveal flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14">
           <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.22em] text-accent">Featured on</p>
-          <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 lg:flex-1 lg:gap-10">
-            {featuredIn.map((f) => {
-              const body = (
-                <>
-                  <span className="block font-display text-lg font-black leading-tight tracking-tight text-foreground/70 transition-colors duration-300 group-hover:text-foreground lg:text-xl">
-                    {f.name}
-                  </span>
-                  <span className="mt-1 block text-xs text-muted-foreground">{f.note}</span>
-                </>
-              );
-              return (
-                <li key={f.name}>
-                  {f.href ? (
-                    <a href={f.href} target="_blank" rel="noopener noreferrer" className="group block">
-                      {body}
-                      <span className="sr-only"> (opens in a new tab)</span>
-                    </a>
+          <ul className="grid grid-cols-2 items-end gap-x-6 gap-y-8 sm:grid-cols-4 lg:flex-1 lg:gap-10">
+            {featuredIn.map((f) => (
+              <li key={f.name}>
+                <div className="flex h-10 items-end lg:h-12">
+                  {f.logo ? (
+                    <Image src={f.logo.src} alt={f.name} sizes="200px" className={`w-auto max-w-full object-contain object-left opacity-75 ${f.logo.className}`} />
                   ) : (
-                    body
+                    <span className="font-display text-lg font-black leading-none tracking-tight text-foreground/75 lg:text-xl">{f.name}</span>
                   )}
-                </li>
-              );
-            })}
+                </div>
+                <span className="mt-2 block text-xs text-muted-foreground">{f.note}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </Container>
