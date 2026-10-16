@@ -1,0 +1,14 @@
+{
+  "_comment": "Applied by blog.mjs after the Wix data is read. titles: by new slug, for titles Wix itself stored cut short, and one post whose displayed title repeats another post's (its Wix SEO title and slug are distinct, and docs/CONTENT.md cites it by that name). replace: literal fixes for clear typos in titles and descriptions.",
+  "titles": {
+    "how-to-get-on-the-tedx-stage": "How to get on the TEDx stage",
+    "joinspt": "Join us for Speaking Professionally Toastmasters - monthly on the 1st Tuesday @ 12pm EST via Zoom",
+    "joinsptjanuary": "Join us for Speaking Professionally Toastmasters - monthly on the 1st Tuesday @ 12pm EST via Zoom",
+    "weather": "At some point, weather WILL impact your speaking travel. Here's what to do so it doesn't..."
+  },
+  "replace": [
+    ["Joni me", "Join me"],
+    ["PAID to 4PEAK", "PAID to $PEAK"],
+    ["You speaker website", "Your speaker website"]
+  ]
+}

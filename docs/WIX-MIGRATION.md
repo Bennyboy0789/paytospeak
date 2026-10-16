@@ -84,7 +84,7 @@ Kevin's Wix copy was tidied to `CLAUDE.md` and `docs/BRAND.md`:
   "90th Accredited Speaker" and others are listed in `docs/wix/notes-*.md`.
 - **Blog posts are Kevin's words,** with three mechanical changes applied by the
   importer (`scripts/wix-import/text.mjs`): no em dashes, no emoji, no exclamation
-  marks. Old posts still contain older offers and some outcome language; they're
+  marks (plus the clean-up listed under "Blog import"). Old posts still contain older offers and some outcome language; they're
   dated archive content, but review before launch.
 
 ## Blog import
@@ -104,6 +104,38 @@ meantime. Supporting files:
 - `files-policy.json` decides which linked files are re-hosted, renamed, or pointed
   elsewhere.
 - `video-overrides.json` holds four YouTube IDs Wix only loads in the browser.
+- `footer.json` + `footer.mjs` describe and cut the shared Wix footer (below).
+- `metadata-fixes.json` holds the few titles Wix itself stored cut short, and typo fixes.
+- `video-titles.json` titles the videos that were linked thumbnails (below).
+
+### Clean-up the importer applies (16 Oct 2026)
+
+Mechanical only; Kevin's wording is otherwise untouched.
+
+- **Titles** come from the title Wix shows on the post (its `h1`), not the JSON-LD
+  `headline`. That field is the SEO title: Wix cuts it at about 100 characters, and Kevin
+  had copied one SEO title ("A newly updated resource...") onto three posts.
+- **Title repeated as the first heading** (or a bold first line) is dropped. When that
+  heading is the fuller form ("7 Insider Tips for Landing a TEDx Talk"), it becomes the title.
+- **Headings** start at h2: a post whose first heading is an h3 has its h3s promoted.
+- **Entities** in titles and excerpts (`&amp;`, `&quot;`, `&#010;`) are decoded.
+- **Excerpts**: Wix builds most by gluing paragraphs together with no space
+  ("EventsThese criteria"). When the excerpt is just the start of the body, it is rebuilt
+  from the body; Kevin's own SEO excerpts are kept, ending on a whole word.
+- **Run-together sentences** ("feature.Every TEDx event") get their space back, and the
+  links Wix auto-created from them (`http://business.So`) are dropped.
+- **"\*\*" call-out markers** that open a paragraph are dropped (not in `sailingretreat`,
+  where they are footnote marks). Single asterisks (bullets, footnotes) stay.
+- **Shared footer**: the promo block Wix appended after Kevin's sign-off (book and
+  logo-wall images, "Want to speak professionally?", contact lines, the reel video) is
+  cut, because the site renders its own end-of-post block. Only a trailing run made
+  entirely of the blocks in `footer.json` is cut, and only when it contains the promo
+  text itself. "Earn greatness today. Onward and upward." stays as a plain paragraph.
+- **Video thumbnails**: an image that linked to a YouTube video (a play button baked
+  into the picture) becomes a real `<YouTube>` embed.
+
+Images the cut footers used are no longer imported. Copies from the first import are
+still in `src/assets/images/posts/`; `.cache/wix/orphaned-post-images.txt` lists them.
 
 ## Not published, on purpose
 

@@ -1,0 +1,53 @@
+{
+  "_comment": "The promo block Wix appended to most posts after Kevin's sign-off. footer.mjs strips the trailing run of these blocks; the site renders its own end-of-post block instead. Text entries are matched against the block's words (lower case, punctuation removed): long entries as prefixes, short ones exactly.",
+  "text": [
+    "desire to become a professional speaker",
+    "not getting the speaking business you had hoped for",
+    "not getting paid speaking engagements",
+    "not getting paid speaking engagements yet",
+    "not earning paid speaking engagements",
+    "not getting paid speaking business",
+    "tired of not getting paid speaking engagements",
+    "want to speak professionally",
+    "want to speak professionally part time or full time",
+    "contact me to schedule your free speaker consultation",
+    "contact me for a free speaker consultation",
+    "contact me for a complimentary chat 1 1 to discuss your goals",
+    "click here to schedule a free consultation to discuss your goals",
+    "click here to schedule a free strategy session to discuss your goals",
+    "contact me for a complimentary strategy session to explore which of my programs fits your goals",
+    "i coach speakers 1 1 and provide different coaching programs based on need",
+    "in addition to my own speaking business i have a passion for helping and coaching speakers",
+    "i ve been honored to present for over 1 000 000 people",
+    "whether i m on a stage or in a training room with professionals or students",
+    "if you are serious about becoming a professional speaker explore my coaching",
+    "email kevin kevincsnyder com",
+    "website www kevincsnyder com",
+    "social media kevincsnyder",
+    "social kevincsnyder",
+    "download my free app kevincsnyder",
+    "click here to download my speaker packet",
+    "kevin kevincsnyder com",
+    "www kevincsnyder com",
+    "www paidtospeak biz"
+  ],
+  "anchors": [
+    "desire to become a professional speaker",
+    "want to speak professionally",
+    "in addition to my own speaking business i have a passion for helping and coaching speakers",
+    "i ve been honored to present for over 1 000 000 people",
+    "if you are serious about becoming a professional speaker explore my coaching"
+  ],
+  "images": [
+    "d46abc_2b428a310ba34ae8aefc07abf9686663~mv2.jpg",
+    "d46abc_2088d4a1034147419182e87673561951~mv2.jpg",
+    "d46abc_5046ed259c754c3e823297171283dbdd~mv2.jpg",
+    "d46abc_443805bb54d848cd9326db2d2752d0b7~mv2.jpg",
+    "d46abc_9fdf8c149c824336992ef2a1dc5bf33d~mv2.jpg",
+    "d46abc_1c6c04b0a1584e538fe8b77c540aeff4~mv2.jpg",
+    "d46abc_994f1daec019461e807ba43619b815b3~mv2.jpg"
+  ],
+  "anchorImages": ["d46abc_994f1daec019461e807ba43619b815b3~mv2.jpg"],
+  "youtube": ["q5LNbKujTGU"],
+  "signOff": "earn greatness today onward and upward"
+}
