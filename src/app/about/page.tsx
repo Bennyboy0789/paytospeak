@@ -42,19 +42,20 @@ export default function AboutPage() {
               {about.hero.sub}
             </p>
           </div>
-          {/* Kevin cut out of the vest portrait (stage/portrait-vest.jpg, already graded), standing on
-              the stage dark: a soft spotlight behind him and a floor shadow so he doesn't float. */}
-          <div className="relative mx-auto aspect-[772/1500] w-full max-w-[17rem] sm:max-w-xs lg:max-w-[23rem]">
-            <div aria-hidden="true" className="absolute -inset-x-1/3 top-[4%] bottom-[10%] bg-[radial-gradient(closest-side,rgb(0_168_230/0.2),rgb(247_162_36/0.06)_55%,transparent)]" />
-            <div aria-hidden="true" className="absolute inset-x-[2%] -bottom-[1.5%] h-[5%] bg-[radial-gradient(closest-side,rgb(0_0_0/0.75),transparent)]" />
+          {/* Kevin cut out of the vest portrait (stage/portrait-vest.jpg, already graded), large and
+              cropped by the bottom of the section. Phones: in the flow under the text, pulled down
+              through the section padding. lg: pinned to the right, from under the header to the
+              section's bottom edge. object-top keeps his head in frame; the crop falls at his knees. */}
+          <div className="relative mx-auto -mb-20 h-[30rem] w-full max-w-sm overflow-hidden sm:h-[36rem] sm:max-w-md lg:absolute lg:top-16 lg:right-12 lg:bottom-0 lg:mb-0 lg:h-auto lg:w-[36%] lg:max-w-none">
+            <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(closest-side,rgb(0_168_230/0.2),rgb(247_162_36/0.06)_55%,transparent)]" />
             <Image
               src={kevinCutout}
               alt="Dr. Kevin C. Snyder laughing, hand on his chest, in a vest and jeans"
               fill
               loading="eager"
               fetchPriority="high"
-              sizes="(min-width: 1024px) 23rem, (min-width: 640px) 20rem, 17rem"
-              className="hero-subject object-contain object-bottom"
+              sizes="(min-width: 1024px) 36vw, (min-width: 640px) 28rem, 24rem"
+              className="hero-subject object-cover object-top"
             />
           </div>
         </Container>
