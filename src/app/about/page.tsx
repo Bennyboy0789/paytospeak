@@ -77,11 +77,21 @@ export default function AboutPage() {
                       {para}
                     </p>
                   ))}
-                  <div className="mt-8">
-                    <Placeholder title="Story detail needed">
-                      <p>{chapter.todo}</p>
-                    </Placeholder>
-                  </div>
+                  {chapter.quote && (
+                    <figure className="mt-10 border-l-2 border-accent pl-6">
+                      <blockquote className="font-display text-2xl font-black leading-snug tracking-[-0.005em] text-balance lg:text-3xl">
+                        <p>&ldquo;{chapter.quote}&rdquo;</p>
+                      </blockquote>
+                      <figcaption className="mt-4 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">Kevin</figcaption>
+                    </figure>
+                  )}
+                  {chapter.todo && (
+                    <div className="mt-8">
+                      <Placeholder title="Story detail needed">
+                        <p>{chapter.todo}</p>
+                      </Placeholder>
+                    </div>
+                  )}
                 </div>
               </article>
               {photos[i] && (

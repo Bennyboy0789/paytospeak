@@ -29,6 +29,29 @@ this file. If the two disagree, **this file wins**.
 - ~2,000 opted-in subscribers to a bi-weekly speaker-tip email
 - Involved with NSA (National Speakers Association)
 - Grew up in North Carolina; speaks across corporate, college, and youth markets
+
+### Kevin's own story (his published account, read 2026-10-16)
+
+Safe to use, because Kevin publishes these himself. Sources: kevincsnyder.com/meet-kevin (the
+timeline and "A Personal Note"), the "Why I coach speakers" section of kevincsnyder.com/coaching,
+and his own posts on this blog.
+- Diagnosed with depression and an eating disorder at 12; recovery started his curiosity about belief
+- In college he went to the Dean of Students to withdraw; the dean refused to sign the form
+- Won on *The Price is Right* and met Bob Barker; it is his signature story (planners ask for it)
+- Career in Student Affairs; Dean of Students at High Point University; left in 2012 to speak full time
+- Doctoral research on belief and self-efficacy, the foundation of the ShiftThinker™ Framework
+- His turning point: a student told him his speech had saved her life
+- "I'm not a natural speaker." Spoke for free and at conference breakouts first; his biggest
+  mistake was trying to figure out paid speaking on his own; then hired a speaker coach
+- A ShiftThinker™ "believes boldly, thinks differently, and takes meaningful action"
+- Quotes: "The most important story you'll ever believe is the one you tell yourself." and
+  "Most speakers don't make it when they try to do it alone. I wish I had hired a coach much sooner."
+
+Held back until Ben or Kevin OKs them: his own results after hiring a coach ("paid keynote
+opportunities within six months", "replaced my university salary" a year later), and claims
+outside the verified list on that site ("all 50 states", Amazon best-seller, "fewer than 100"
+Accredited Speakers, the Guinness attempt, Semester at Sea). The reader quotes on
+kevincsnyder.com/coaching read as summaries, not quotes, so they are not testimonials.
 - **Featured on** (the "Featured on" row in the credentials strip, checked 2026-10-15):
   TEDx talks at TEDxWakeForestU (his blog post "How to get on the TEDx stage") and
   TEDxCapeMay (talk video); *Toastmaster* magazine (singular), January 2023, "Introducing Kevin
@@ -155,9 +178,8 @@ been booked 1,500 times.
 
 ## About page
 
-> `TODO(kc):` Request his existing bio assets from kevincsnyder.com and any
-> long-form story copy. Coaching-framed rewrite of the keynote bio; do not
-> duplicate it verbatim.
+Filled 2026-10-16 from Kevin's own published account (sources under "Kevin's own story"
+below), rewritten for coaching; not the keynote bio verbatim. All of it is `DRAFT(kc)`.
 
 Sections:
 1. The early years: the kid who didn't believe in himself
@@ -259,14 +281,19 @@ the systems and strategies behind a speaking career.
 first edition's cover on kevincsnyder.com.)
 
 ### About page
-Each chapter carries one or two sentences built only from verified facts, plus a
-visible `TODO(kc)` asking for Kevin's own account:
-1. **Growing up in North Carolina.** Grew up in North Carolina; childhood depression. (Retitled so it
-   doesn't repeat the page headline, which already says "A kid who didn't believe in himself".)
-2. **A game show, a stage, and a question about belief.** `TODO(kc):` show name, year, research detail.
-3. **The ShiftThinker™ framework.** `TODO(kc):` one or two sentences in Kevin's words.
-4. **Why he coaches.** Credentials + "Now he coaches aspiring and emerging speakers
-   on the system behind that career." `TODO(kc):` why, in his words.
+Four chapters from Kevin's own account (see "Kevin's own story"); the exact copy is in
+`src/content/about.ts`. Two end on a pull quote in his words. No TODO blocks remain.
+1. **Growing up in North Carolina.** Depression and an eating disorder at 12; the question of
+   belief; the dean who wouldn't sign his withdrawal form. (Retitled so it doesn't repeat the
+   page headline, which already says "A kid who didn't believe in himself".)
+2. **A game show, a stage, and a question about belief.** The Price is Right and Bob Barker; Dean
+   of Students at High Point; doctoral research on belief and self-efficacy; the student whose
+   life his speech saved; full time in 2012.
+3. **The ShiftThinker™ framework.** What a ShiftThinker™ is. Quote: "The most important story
+   you'll ever believe is the one you tell yourself."
+4. **Why he coaches.** Not a natural speaker; spoke for free; tried to do it alone; hired a coach;
+   credentials; why he wrote PAID to $PEAK. Quote: "Most speakers don't make it when they try to
+   do it alone. I wish I had hired a coach much sooner."
 
 ### Blog post footer
 **Written by Dr. Kevin C. Snyder.** 20 years speaking professionally, in front of 1,500+ audiences. Kevin
