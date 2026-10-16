@@ -56,6 +56,20 @@ the page as a TODO(kc) block).
 All are permanent. Ask Kevin for Wix's own redirect list (Wix dashboard, SEO,
 URL redirects) so older aliases survive too.
 
+## Re-checked against the live Wix site (16 Oct 2026)
+
+All 33 pages were re-fetched and their text diffed against the 12 Oct capture; the blog
+sitemap was compared post by post.
+- **Blog:** no new or edited posts (same 269; the newest edit is 30 June 2026).
+- **Rewritten pages,** all already reflected here: `/5weekchallenge` (cohort dates, guarantee,
+  referral rewards, what's included), `/tedxspeakercoaching` (new intro, three options, the
+  not-affiliated note) and `/virtualandtechsolutions` (the studio story, equipment packages,
+  tutorial video).
+- **Trimmed only:** `/onlinecourse` and `/speciality-programs` dropped their cross-sell blocks.
+- **Menu:** "Speciality Programs" and "Mentorship Program" left the menu, and a "Digital
+  Resources" group (Mastermind, Online Course, Webinar Series, The Vault) was added. The pages
+  themselves are still live. Question for Kevin: is Mentorship being retired?
+
 ## Decisions (Ben, 12 Oct 2026)
 
 - **One page per program**, so every Wix offer has a home.
