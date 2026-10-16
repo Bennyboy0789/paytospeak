@@ -51,7 +51,7 @@ export function SubscribeForm({ list, submitLabel }: SubscribeFormProps) {
         <button
           type="submit"
           disabled={pending}
-          className="btn-shine min-h-13 shrink-0 cursor-pointer whitespace-nowrap rounded-full bg-accent px-7 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition duration-500 ease-out-expo hover:-translate-y-0.5 hover:shadow-amber-lg disabled:opacity-60"
+          className="min-h-13 shrink-0 cursor-pointer whitespace-nowrap rounded-full bg-accent px-7 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition duration-500 ease-out-expo hover:-translate-y-0.5 hover:shadow-amber-lg disabled:opacity-60"
         >
           {pending ? "Sending…" : submitLabel}
         </button>

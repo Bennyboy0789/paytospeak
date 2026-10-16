@@ -63,8 +63,7 @@ export default function Home() {
       {/* Hero — runs under the transparent header */}
       <section
         aria-labelledby="hero-title"
-        data-spotlight
-        className="spotlight hero-scope relative -mt-18 flex min-h-[100svh] flex-col overflow-hidden pt-18 [--spot-color:rgb(0_168_230/0.08)] [--spot-size:40rem]"
+        className="hero-scope relative -mt-18 flex min-h-[100svh] flex-col overflow-hidden pt-18"
       >
         {/* Two layers cut from one photo (stage-mic-hands-up.jpg): the crowd with Kevin removed and a
             soft depth-of-field blur, and Kevin, sharp, in front of it. Both share the same frame and

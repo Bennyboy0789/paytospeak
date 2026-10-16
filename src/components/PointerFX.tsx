@@ -6,7 +6,7 @@ import { useEffect } from "react";
  * One document-level pointer listener for every hover effect that tracks the cursor:
  *   [data-spotlight]  sets --mx / --my (px) — used by .spotlight and .glow-card
  *   [data-tilt]       sets --rx / --ry (deg) on the element — used by .book-3d
- *   [data-magnetic]   nudges the element toward the cursor, up to 8px
+ *   [data-magnetic]   nudges the element toward the cursor, up to 4px
  * Mouse and trackpad only, and nothing at all under prefers-reduced-motion.
  */
 export function PointerFX() {
@@ -55,7 +55,7 @@ export function PointerFX() {
         const r = mag.getBoundingClientRect();
         const dx = (x - (r.left + r.width / 2)) / (r.width / 2);
         const dy = (y - (r.top + r.height / 2)) / (r.height / 2);
-        mag.style.setProperty("translate", `${(dx * 8).toFixed(1)}px ${(dy * 6).toFixed(1)}px`);
+        mag.style.setProperty("translate", `${(dx * 4).toFixed(1)}px ${(dy * 3).toFixed(1)}px`);
       }
     };
 

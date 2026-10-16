@@ -3,7 +3,7 @@ import type { ComponentProps } from "react";
 
 const variants = {
   primary:
-    "btn-shine rounded-full bg-accent font-semibold uppercase tracking-wide text-accent-foreground shadow-amber hover:-translate-y-0.5 hover:shadow-amber-lg",
+    "rounded-full bg-accent font-semibold uppercase tracking-wide text-accent-foreground shadow-amber hover:-translate-y-0.5 hover:shadow-amber-lg",
   secondary:
     "group/btn relative isolate overflow-hidden rounded-full border border-border font-semibold uppercase tracking-wide text-foreground hover:border-accent hover:text-accent-foreground",
   tertiary: "group/btn font-semibold text-primary hover:text-foreground",

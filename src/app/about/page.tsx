@@ -41,7 +41,7 @@ export default function AboutPage() {
               {about.hero.sub}
             </p>
           </div>
-          <div className="enter relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-border lg:max-w-none" style={{ "--d": "250ms" } as CSSProperties}>
+          <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-border lg:max-w-none">
             <Image
               src={portrait}
               alt="Dr. Kevin C. Snyder laughing, hand on his chest, in a vest and jeans"

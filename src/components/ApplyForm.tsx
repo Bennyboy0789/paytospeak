@@ -86,7 +86,7 @@ export function ApplyForm() {
         <button
           type="submit"
           disabled={pending}
-          className="btn-shine cursor-pointer rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition duration-500 ease-out-expo hover:-translate-y-0.5 hover:shadow-amber-lg disabled:opacity-60"
+          className="cursor-pointer rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition duration-500 ease-out-expo hover:-translate-y-0.5 hover:shadow-amber-lg disabled:opacity-60"
         >
           {pending ? "Sending…" : fields.submit}
         </button>

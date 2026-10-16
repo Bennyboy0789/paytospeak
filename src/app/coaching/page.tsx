@@ -49,7 +49,7 @@ export default function CoachingPage() {
               </ButtonLink>
             </div>
           </div>
-          <figure className="enter" style={delay(250)}>
+          <figure>
             <div className="zoom-on-hover relative aspect-[4/5] overflow-hidden rounded-3xl border border-border sm:aspect-[4/3] lg:aspect-[4/5]">
               <Image
                 src={viewFromStage}
