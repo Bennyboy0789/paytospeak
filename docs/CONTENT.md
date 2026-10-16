@@ -174,6 +174,23 @@ been booked 1,500 times.
 > `TODO(kc):` Outline is ~1/3 drafted. Request the outline to build the "What's
 > inside" section. Until then, ship without it.
 
+### First edition: open questions (asked off-site)
+
+The first-edition section ("Where it started", the formats, worksheets and course links) is
+carried over from Wix. Its question list used to show on the page as a TODO(kc) block; it was
+taken off the page on 2026-10-16 because Ben is asking Kevin directly. The list stays in
+`src/content/book-first-edition.ts` (`todo`); delete each item as it's answered.
+- Is the page content current?
+- Sell the first edition alongside 2.0, or retire it when 2.0 comes out?
+- Are both Amazon listings live (print ISBN 1505436265, eBook ASIN B083RD2TWS)?
+- Is the audiobook on Audible or Amazon? Link?
+- Is the audiobook's bonus module ("How to Write and Publish Your Book in 90 Days") also in print and eBook?
+- "#1 BEST SELLER & TOP RATED book for Speakers on Amazon": which list, category and date? Not shown until confirmed.
+- Is the "Passion Project" autographed-copy offer still running? (Left out until the PayPal phase.)
+- OK to drop the free coaching call for an Amazon review for good? (Amazon doesn't allow review incentives.)
+- Is the on-demand course still the book in course form, and still for sale?
+- Cover title: "PAID to SPEAK" or "PAID to $PEAK"?
+
 ---
 
 ## About page

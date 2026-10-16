@@ -5,7 +5,6 @@ import { BookCover } from "@/components/BookCover";
 import { ButtonLink } from "@/components/Button";
 import { Heading } from "@/components/Heading";
 import { JsonLd } from "@/components/JsonLd";
-import { Placeholder } from "@/components/Placeholder";
 import { Container, Eyebrow, Section } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
 import { SubscribeForm } from "@/components/SubscribeForm";
@@ -119,15 +118,6 @@ export default function BookPage() {
           </ButtonLink>
         </div>
 
-        <div className="mt-16">
-          <Placeholder title="First edition, carried over from the Wix site: Kevin to confirm">
-            <ul className="list-disc space-y-1 pl-5">
-              {firstBook.todo.map((t) => (
-                <li key={t}>{t}</li>
-              ))}
-            </ul>
-          </Placeholder>
-        </div>
       </Section>
 
       <Section labelledBy="book-cta-title">

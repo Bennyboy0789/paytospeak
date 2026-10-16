@@ -107,6 +107,8 @@ export const firstEdition = {
     label: "Take it as an on-demand course",
   },
   sources: ["/printbook", "/copy-of-paid-to-peak-print-book", "/copy-of-paid-to-usdpeak-book", "/paidtospeakbook", "/paid-to-speak-book"],
+  // Open questions for Kevin. Not shown on the page: Ben is asking Kevin directly (2026-10-16).
+  // Remove each one as it's answered. Also listed in docs/CONTENT.md under "The Book".
   todo: [
     "Confirm this page’s content is current.",
     "Do you still want to sell the first edition alongside Paid to $peak 2.0, or retire it when 2.0 comes out?",
