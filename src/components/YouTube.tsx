@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import posters from "@/content/youtube-posters.json";
 
 // The sharpest thumbnail each video has, found ahead of time by scripts/youtube-posters.mjs
@@ -17,8 +17,21 @@ const best = posters as Record<string, string>;
 export function YouTube({ id, title = "YouTube video" }: { id: string; title?: string }) {
   const [playing, setPlaying] = useState(false);
   const [poster, setPoster] = useState(best[id] ?? "hqdefault");
+  const box = useRef<HTMLDivElement>(null);
+
+  // Next keeps pages you navigate away from mounted but hidden (React <Activity>), so a
+  // playing video would keep sounding from a page you can't see. Hiding runs this cleanup:
+  // blank the player at once to stop the sound, and go back to the thumbnail.
+  useLayoutEffect(() => {
+    const el = box.current;
+    return () => {
+      el?.querySelector("iframe")?.setAttribute("src", "about:blank");
+      setPlaying(false);
+    };
+  }, []);
+
   return (
-    <div className="relative mt-8 aspect-video overflow-hidden rounded-2xl border border-border bg-card">
+    <div ref={box} className="relative mt-8 aspect-video overflow-hidden rounded-2xl border border-border bg-card">
       {playing ? (
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
