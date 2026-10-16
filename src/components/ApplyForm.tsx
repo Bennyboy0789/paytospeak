@@ -3,6 +3,7 @@
 import { type ReactNode, useActionState, useEffect, useId, useRef } from "react";
 import { applyAction, type FormState } from "@/app/actions";
 import { apply } from "@/content/apply";
+import { track } from "@/lib/track";
 
 const initial: FormState = { status: "idle", message: "" };
 const { fields } = apply;
@@ -31,6 +32,10 @@ export function ApplyForm() {
     const select = programField.current;
     if (wanted && select && !v.program && fields.programs.some((p) => p.value === wanted)) select.value = wanted;
   }, [v.program]);
+
+  useEffect(() => {
+    if (state.status === "success") track("apply_submit", { program: state.values?.program ?? "" });
+  }, [state]);
 
   if (state.status === "success") {
     return (

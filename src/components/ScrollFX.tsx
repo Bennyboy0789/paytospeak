@@ -6,7 +6,8 @@ import { useEffect } from "react";
 /*
  * Everything that reacts to scrolling and needs JavaScript, on one scroll listener:
  *   - Inertial wheel scrolling (Lenis), for mouse and trackpad only. Touch scrolling stays native.
- *   - The header slides away while you scroll down and comes back as soon as you scroll up.
+ *   - On the blog, the header slides away while you scroll down and comes back as soon as you
+ *     scroll up. Everywhere else it stays put, so the Apply button is always one tap away.
  *   - The marquee speeds up with scroll speed and runs backwards while you scroll up.
  * Under prefers-reduced-motion none of it runs: native scrolling, a fixed header, a steady marquee.
  */
@@ -48,7 +49,7 @@ export function ScrollFX() {
       if (dy === 0) return;
 
       if (header) {
-        const keep = header.contains(document.activeElement) || header.querySelector("details[open]");
+        const keep = !window.location.pathname.startsWith("/blog") || header.contains(document.activeElement) || header.querySelector("details[open]");
         if (y < 120 || dy < -4 || keep) delete header.dataset.hidden;
         else if (dy > 4) header.dataset.hidden = "";
       }

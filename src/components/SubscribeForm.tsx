@@ -1,19 +1,26 @@
 "use client";
 
-import { useActionState, useId } from "react";
+import { useActionState, useEffect, useId } from "react";
 import { subscribeAction, type FormState } from "@/app/actions";
+import { track } from "@/lib/track";
 
 const initial: FormState = { status: "idle", message: "" };
 
 type SubscribeFormProps = {
   list: "newsletter" | "book";
   submitLabel: string;
+  /** Where the form sits, e.g. "blog-post". Sent to MailChimp as a tag and to analytics. */
+  source: string;
 };
 
-export function SubscribeForm({ list, submitLabel }: SubscribeFormProps) {
+export function SubscribeForm({ list, submitLabel, source }: SubscribeFormProps) {
   const [state, action, pending] = useActionState(subscribeAction, initial);
   const id = useId();
   const emailError = state.fieldErrors?.email;
+
+  useEffect(() => {
+    if (state.status === "success") track("subscribe", { list, source });
+  }, [state.status, list, source]);
 
   if (state.status === "success") {
     return (
@@ -26,6 +33,7 @@ export function SubscribeForm({ list, submitLabel }: SubscribeFormProps) {
   return (
     <form action={action} noValidate className="@container w-full">
       <input type="hidden" name="list" value={list} />
+      <input type="hidden" name="source" value={source} />
       <div aria-hidden="true" className="hidden">
         <label>
           Company <input type="text" name="company" tabIndex={-1} autoComplete="off" />

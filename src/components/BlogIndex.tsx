@@ -4,7 +4,8 @@ import type { CSSProperties } from "react";
 import { Heading } from "@/components/Heading";
 import { Container, Eyebrow } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
-import { formatDate, pageCount, posts, postsOnPage } from "@/content/posts";
+import { Newsletter } from "@/components/Newsletter";
+import { formatDate, pageCount, type PostMeta, posts, postsOnPage } from "@/content/posts";
 
 const pageHref = (n: number) => (n === 1 ? "/blog" : `/blog/page/${n}`);
 
@@ -23,42 +24,64 @@ export function BlogIndex({ page }: { page: number }) {
         </div>
         <Heading as="h1" id="blog-title" size="page" headline={{ lead: "Notes on the", highlight: "speaking business." }} animate className="mt-7 max-w-5xl" />
 
-        {/* Date above the title at every size; the thumbnail sits to the right, small on phones. */}
+        {/* Date above the title at every size; the thumbnail sits to the right, small on phones.
+            The speaker-tips sign-up sits after the first few posts, where readers still are. */}
         <ol className="enter mt-16 border-t border-border lg:mt-20" style={{ "--d": "500ms" } as CSSProperties}>
-          {list.map((post, i) => (
-            <li key={post.slug}>
-              <article data-spotlight className="spotlight group relative grid grid-cols-[minmax(0,1fr)_auto] items-start gap-5 border-b border-border py-8 sm:gap-8 md:px-6 lg:items-center lg:gap-12 lg:py-12">
-                <div className="max-w-2xl">
-                  <time dateTime={post.date} className="text-sm text-muted-foreground">
-                    {formatDate(post.date)}
-                  </time>
-                  <h2 className="mt-2 font-display text-xl font-black tracking-[-0.01em] text-balance transition duration-700 ease-out-expo group-hover:translate-x-2 group-hover:text-primary sm:text-2xl lg:text-3xl">
-                    <Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0">
-                      {post.title}
-                    </Link>
-                  </h2>
-                  {post.description && <p className="mt-3 line-clamp-3 leading-relaxed text-pretty text-foreground/75">{post.description}</p>}
-                </div>
-                {post.image && (
-                  <div className="zoom-on-hover overflow-hidden rounded-xl sm:rounded-2xl">
-                    <Image
-                      src={post.image.src}
-                      alt={post.image.alt}
-                      placeholder="blur"
-                      sizes="(min-width: 1024px) 14rem, (min-width: 640px) 11rem, 5.5rem"
-                      loading={i < 2 ? "eager" : "lazy"}
-                      className="aspect-square w-22 object-cover sm:aspect-[4/3] sm:w-44 lg:w-56"
-                    />
-                  </div>
-                )}
-              </article>
-            </li>
+          {list.slice(0, SIGNUP_AFTER).map((post, i) => (
+            <PostRow key={post.slug} post={post} eager={i < 2} />
           ))}
         </ol>
+        {list.length > SIGNUP_AFTER && (
+          <>
+            <Newsletter source="blog" variant="inline" />
+            <ol start={SIGNUP_AFTER + 1} className="border-t border-border">
+              {list.slice(SIGNUP_AFTER).map((post) => (
+                <PostRow key={post.slug} post={post} />
+              ))}
+            </ol>
+          </>
+        )}
 
         {pageCount > 1 && <Pagination page={page} />}
       </Container>
     </section>
+  );
+}
+
+const SIGNUP_AFTER = 4;
+
+function PostRow({ post, eager = false }: { post: PostMeta; eager?: boolean }) {
+  return (
+    <li>
+      <article
+        data-spotlight
+        className="spotlight group relative grid grid-cols-[minmax(0,1fr)_auto] items-start gap-5 border-b border-border py-8 sm:gap-8 md:px-6 lg:items-center lg:gap-12 lg:py-12"
+      >
+        <div className="max-w-2xl">
+          <time dateTime={post.date} className="text-sm text-muted-foreground">
+            {formatDate(post.date)}
+          </time>
+          <h2 className="mt-2 font-display text-xl font-black tracking-[-0.01em] text-balance transition duration-700 ease-out-expo group-hover:translate-x-2 group-hover:text-primary sm:text-2xl lg:text-3xl">
+            <Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0">
+              {post.title}
+            </Link>
+          </h2>
+          {post.description && <p className="mt-3 line-clamp-3 leading-relaxed text-pretty text-foreground/75">{post.description}</p>}
+        </div>
+        {post.image && (
+          <div className="zoom-on-hover overflow-hidden rounded-xl sm:rounded-2xl">
+            <Image
+              src={post.image.src}
+              alt={post.image.alt}
+              placeholder="blur"
+              sizes="(min-width: 1024px) 14rem, (min-width: 640px) 11rem, 5.5rem"
+              loading={eager ? "eager" : "lazy"}
+              className="aspect-square w-22 object-cover sm:aspect-[4/3] sm:w-44 lg:w-56"
+            />
+          </div>
+        )}
+      </article>
+    </li>
   );
 }
 

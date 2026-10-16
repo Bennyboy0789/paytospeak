@@ -52,7 +52,7 @@ export default function BookPage() {
               <h2 className="font-display text-2xl font-black tracking-tight">{hero.notifyHeading}</h2>
               <p className="mt-2 text-muted-foreground">{hero.notifyBody}</p>
               <div className="mt-6">
-                <SubscribeForm list="book" submitLabel="Notify me" />
+                <SubscribeForm list="book" submitLabel="Notify me" source="book" />
               </div>
             </div>
           </div>

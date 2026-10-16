@@ -3,6 +3,19 @@ import type { Headline } from "./shared";
 // TODO(kc): which fields? Minimum assumed below. Confirm whether applications
 // route to email, MailChimp, or a form service (see src/app/actions.ts).
 export const apply = {
+  /**
+   * Whether the application form can send. It can't until applyAction in src/app/actions.ts
+   * has somewhere to deliver to. Until then /apply leads with booking a strategy session
+   * instead of a form that would fail after the visitor filled it in.
+   * TODO(kc): where applications go. Wire applyAction, then set this to true.
+   */
+  open: false as boolean,
+  // Shown in place of the form while `open` is false. Copy reused from the program pages' closing card.
+  closed: {
+    heading: "Start with a strategy session",
+    body: "A short call to see where you are, whether this is the right fit, and which option suits your goals and budget.",
+    cta: "Book a strategy session",
+  },
   meta: {
     title: "Apply for coaching",
     description: "Apply for speaker coaching with Dr. Kevin C. Snyder. Tell Kevin where you are.",

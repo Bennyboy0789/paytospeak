@@ -27,8 +27,12 @@ export async function subscribeAction(_prev: FormState, formData: FormData): Pro
     return { status: "error", message: "Check the email address.", fieldErrors: { email: "Enter a valid email address." }, values: { email } };
   }
   const list = formData.get("list") === "book" ? "book" : "newsletter";
+  // Which form it came from (home, blog, blog-post, resources, book), so Kevin can see what works.
+  const source = String(formData.get("source") ?? "").toLowerCase();
+  const tags: string[] = [TAGS[list]];
+  if (/^[a-z-]{1,24}$/.test(source)) tags.push(`signup-${source}`);
 
-  const result = await subscribe(email, [TAGS[list]]);
+  const result = await subscribe(email, tags);
   if (result.ok) {
     return {
       status: "success",

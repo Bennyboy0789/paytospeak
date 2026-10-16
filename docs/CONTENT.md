@@ -276,6 +276,7 @@ business behind the talk, from someone who has spent 20 years doing exactly that
   - You aren't ready to put your talk in front of real audiences yet.
 
 **What we work on headline:** Four parts of a speaking career. All of them, properly.
+(Section taken off the page 16 Oct until Kevin confirms the pillars; the copy stays in `coaching.ts`.)
 
 **Why Kevin** — *Coached by someone still doing the work.*
 Kevin has spent 20 years on professional stages: corporate, college, and youth
@@ -286,6 +287,43 @@ you get is what he does on Monday.
 **Apply panel:** A few questions about your speaking so far, and what you want from it next.
 **Tier buttons:** "Apply for 10 sessions", "Apply for 5 sessions" (to `/apply?program=…`, which preselects the
 program), "Book an hour" and "Book a speech review" (Kevin's hourly Calendly), "Apply for an assessment".
+
+**FAQ (added 16 Oct, conversion audit)** — *Good questions to ask first.* Facts only from the page's own
+offer and Kevin's options chart. The guarantee question is left out until Kevin gives the 1:1 terms.
+- What does coaching cost? The 10-session program is $12,500 and the 5-session program is $7,500. Group
+  coaching is $1,500 or $2,500, and Paid to $peak On Demand is $497. Hourly coaching and 3-hour bundles
+  are booked directly on Kevin's calendar. Kevin can also customize coaching to work with your budget.
+- How much time does it take? Sessions run weekly or every other week. In the 10-session program, plan
+  on 2 to 3 hours of assignments a week between sessions.
+- Is it virtual or in person? One-on-one coaching works either way. Group coaching is live and virtual,
+  over five weeks.
+- How is 1:1 coaching different from the online course? The course is self-paced: you work through the
+  Paid to $peak modules on your own. In 1:1 coaching Kevin applies the same model to your own speaking
+  business, reviews your work between sessions and gives you direct feedback. Both the 10-session and
+  5-session programs include the course.
+- Which option is right for me? Start with the comparison at the top of this page. If you're still not
+  sure, that's what a strategy session is for: Kevin will tell you what fits.
+
+**Testimonials:** a "From Kevin's clients" section (*Speakers who did the work.*) is built but renders
+nothing until `src/content/testimonials.ts` has real, consented entries.
+
+### Home page
+**About section, last two sentences (16 Oct):** He built the ShiftThinker™ framework from 20 years on
+stage. What he teaches speakers is the business side: his five-module Paid to $peak model. (Was: "turned
+it into a system other speakers can learn", which presented ShiftThinker™ as the coaching curriculum.)
+
+### Apply page while the form is off
+`apply.open` is `false` until applications have somewhere to go, so /apply shows "Start with a strategy
+session" and a Book a strategy session button (Kevin's strategy-session Calendly) instead of the form. The
+sub line reuses the program pages' closing copy. Set `open: true` once `applyAction` is wired.
+
+### Blog
+- **Past-offer note** on 29 older posts that describe an offer as it was then (list in
+  `src/content/posts/past-offers.ts`): "Kevin wrote this on [date]. Programs, prices and guarantees may have
+  changed since. See current coaching options."
+- **Speaker-tips sign-up** (the home newsletter copy) inside the blog index after four posts, about 60% of
+  the way through longer posts (at the end of short ones), and on /resources after the module worksheets.
+  Each form tags the contact `signup-<where>` in MailChimp (home, blog, blog-post, resources, book).
 
 ### Book page
 **Notify:** Leave your email and you'll hear when the book is available.
@@ -314,6 +352,8 @@ still of him beside Bob Barker).
 4. **Why he coaches.** Not a natural speaker; spoke for free; tried to do it alone; hired a coach;
    credentials; why he wrote PAID to $PEAK. Quote: "Most speakers don't make it when they try to
    do it alone. I wish I had hired a coach much sooner."
+
+**Closer:** Ready to *work together?* Buttons: Apply for coaching (primary), See the coaching options.
 
 ### Blog post footer
 **Written by Dr. Kevin C. Snyder.** 20 years speaking professionally, in front of 1,500+ audiences. Kevin

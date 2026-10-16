@@ -43,7 +43,8 @@ export const home = {
       // Non-breaking space: keeps "a million" together so "a" never dangles at a line end.
       highlight: "became a speaker a million people saw.",
     } satisfies Headline,
-    body: "From childhood depression to television game-show winner to keynote speaker and belief researcher, Kevin’s path wasn’t a straight line. That’s exactly why he can teach it. He built the ShiftThinker™ framework from 20 years on stage and turned it into a system other speakers can learn.",
+    // DRAFT(kc): last two sentences reworded 16 Oct so ShiftThinker™ isn't presented as the coaching curriculum.
+    body: "From childhood depression to television game-show winner to keynote speaker and belief researcher, Kevin’s path wasn’t a straight line. That’s exactly why he can teach it. He built the ShiftThinker™ framework from 20 years on stage. What he teaches speakers is the business side: his five-module Paid to $peak model.",
     cta: "Read Kevin’s story",
   },
 

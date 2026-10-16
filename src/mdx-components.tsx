@@ -5,7 +5,7 @@ import { YouTube } from "@/components/YouTube";
 
 // Blog post typography. Kept here instead of a typography plugin so posts use
 // exactly the brand scale from docs/BRAND.md.
-const components: MDXComponents = {
+export const components: MDXComponents = {
   h2: (props) => <h2 className="mt-14 font-display text-3xl font-black tracking-tight text-balance" {...props} />,
   h3: (props) => <h3 className="mt-12 font-display text-2xl font-black tracking-[-0.01em] text-balance" {...props} />,
   p: (props) => <p className="mt-5 text-lg leading-relaxed text-pretty text-foreground/85" {...props} />,

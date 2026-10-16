@@ -48,6 +48,8 @@ export type ProgramBlock = { id?: string } & (
   /** Files under /files show a download icon; any other link shows an arrow. */
   | { kind: "downloads"; heading?: string; intro?: string; files: { label: string; href: string; note?: string }[] }
   | { kind: "faq"; heading?: string; items: { q: string; a: string }[] }
+  /** Kevin's speaker-tips sign-up. `source` tags where it came from (MailChimp, analytics). */
+  | { kind: "subscribe"; source: string }
 );
 
 export type ProgramOption = {

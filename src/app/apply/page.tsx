@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { ApplyForm } from "@/components/ApplyForm";
+import { ButtonLink } from "@/components/Button";
 import { Heading } from "@/components/Heading";
 import { Container, Eyebrow } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
@@ -28,12 +29,30 @@ export default function ApplyPage() {
           </div>
           <Heading as="h1" id="apply-title" size="page" headline={apply.hero.headline} animate className="mt-7 lg:text-[clamp(3rem,5.2vw,5rem)]" />
           <p className="enter mt-8 text-lg leading-relaxed text-pretty text-foreground/80" style={delay(500)}>
-            {apply.hero.sub}
+            {apply.open ? apply.hero.sub : apply.closed.body}
           </p>
         </div>
 
-        <div className="enter border-beam rounded-[2rem] bg-card p-6 sm:p-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start lg:p-12" style={delay(300)}>
-          <ApplyForm />
+        <div
+          className="enter border-beam rounded-[2rem] bg-card p-6 sm:p-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start lg:p-12"
+          style={delay(300)}
+        >
+          {apply.open ? (
+            <ApplyForm />
+          ) : (
+            <div>
+              <h2 className="font-display text-3xl font-black tracking-tight text-balance lg:text-4xl">{apply.closed.heading}</h2>
+              <ButtonLink href={calendly.strategy} target="_blank" rel="noopener" className="mt-8 w-full sm:w-auto">
+                {apply.closed.cta}
+              </ButtonLink>
+              <p className="mt-6 text-sm text-muted-foreground">
+                {apply.contact.emailLabel}{" "}
+                <a href={`mailto:${apply.contact.email}`} className="link-draw font-semibold text-primary">
+                  {apply.contact.email}
+                </a>
+              </p>
+            </div>
+          )}
         </div>
 
         <div className="lg:col-start-1 lg:row-start-2">
@@ -49,24 +68,26 @@ export default function ApplyPage() {
             </ul>
             <p className="mt-3 text-sm text-muted-foreground">{apply.values.note}</p>
           </div>
-          <dl className="enter mt-8 grid gap-5 text-sm sm:grid-cols-2" style={delay(650)}>
-            <div>
-              <dt className="text-muted-foreground">{apply.contact.emailLabel}</dt>
-              <dd>
-                <a href={`mailto:${apply.contact.email}`} className="link-draw inline-block py-1.5 font-semibold text-primary">
-                  {apply.contact.email}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-muted-foreground">{apply.contact.callLabel}</dt>
-              <dd>
-                <a href={calendly.strategy} target="_blank" rel="noopener" className="link-draw inline-block py-1.5 font-semibold text-primary">
-                  {apply.contact.callCta}
-                </a>
-              </dd>
-            </div>
-          </dl>
+          {apply.open && (
+            <dl className="enter mt-8 grid gap-5 text-sm sm:grid-cols-2" style={delay(650)}>
+              <div>
+                <dt className="text-muted-foreground">{apply.contact.emailLabel}</dt>
+                <dd>
+                  <a href={`mailto:${apply.contact.email}`} className="link-draw inline-block py-1.5 font-semibold text-primary">
+                    {apply.contact.email}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground">{apply.contact.callLabel}</dt>
+                <dd>
+                  <a href={calendly.strategy} target="_blank" rel="noopener" className="link-draw inline-block py-1.5 font-semibold text-primary">
+                    {apply.contact.callCta}
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          )}
           <ul className="enter mt-10 space-y-2 border-t border-border pt-8 text-sm leading-relaxed text-pretty text-muted-foreground" style={delay(650)}>
             <li>
               {credentials.csp} and {credentials.as}. {credentials.rarity}

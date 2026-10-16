@@ -12,7 +12,7 @@ import { Container, Eyebrow, Section } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
 import { YouTube } from "@/components/YouTube";
 import { about } from "@/content/about";
-import { site } from "@/lib/site";
+import { applyHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: about.meta.title,
@@ -108,7 +108,14 @@ export default function AboutPage() {
               {photos[i] && (
                 // From lg the photo starts at the text column, so it never cuts across the timeline rail.
                 <div className="reveal-clip parallax relative mt-24 aspect-[16/9] overflow-hidden rounded-3xl lg:mt-36 lg:ml-[20rem]">
-                  <Image src={photos[i].src} alt={photos[i].alt} fill placeholder="blur" sizes="(min-width: 1280px) 54rem, (min-width: 1024px) calc(100vw - 26rem), 100vw" className="object-cover" />
+                  <Image
+                    src={photos[i].src}
+                    alt={photos[i].alt}
+                    fill
+                    placeholder="blur"
+                    sizes="(min-width: 1280px) 54rem, (min-width: 1024px) calc(100vw - 26rem), 100vw"
+                    className="object-cover"
+                  />
                 </div>
               )}
             </li>
@@ -119,13 +126,21 @@ export default function AboutPage() {
       <Section labelledBy="about-cta-title">
         <div className="reveal flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
           <Heading id="about-cta-title" headline={about.cta.headline} />
-          <ButtonLink href="/coaching" magnetic>
-            {about.cta.label}
-          </ButtonLink>
+          <div className="flex flex-wrap gap-4">
+            <ButtonLink href={applyHref} magnetic className="w-full sm:w-auto">
+              {about.cta.label}
+            </ButtonLink>
+            <ButtonLink href="/coaching" variant="secondary" magnetic className="w-full sm:w-auto">
+              {about.cta.secondary}
+            </ButtonLink>
+          </div>
         </div>
         <p className="mt-12 border-t border-border pt-8 text-muted-foreground">
           {about.keynoteLink.text}{" "}
-          <a href={site.parent.url} className="text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground">
+          <a
+            href={site.parent.url}
+            className="text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground"
+          >
             {about.keynoteLink.label}
           </a>
           .

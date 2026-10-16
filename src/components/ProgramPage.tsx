@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ButtonLink } from "@/components/Button";
 import { Heading } from "@/components/Heading";
+import { Newsletter } from "@/components/Newsletter";
 import { Placeholder } from "@/components/Placeholder";
 import { Container, Eyebrow, Section } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
@@ -159,7 +160,16 @@ function ProgramLinks({ items, className = "" }: { items: readonly Program[]; cl
               <span className="block font-display text-lg font-black tracking-[-0.01em] transition-colors group-hover:text-primary lg:text-xl">{p.name}</span>
               <span className="mt-1 hidden text-sm leading-relaxed text-muted-foreground sm:line-clamp-2">{p.card}</span>
             </span>
-            <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 shrink-0 text-primary transition-transform duration-500 ease-out-expo group-hover:translate-x-1">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-4 shrink-0 text-primary transition-transform duration-500 ease-out-expo group-hover:translate-x-1"
+            >
               <path d="M2 8h11M9 4l4 4-4 4" />
             </svg>
           </Link>
@@ -181,7 +191,15 @@ function BlockHeading({ heading, intro }: { heading?: string; intro?: string }) 
 
 function Check() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" className="mt-1 size-4 shrink-0 text-accent" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      className="mt-1 size-4 shrink-0 text-accent"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+    >
       <path d="m4 10.5 4 4 8-9" />
     </svg>
   );
@@ -349,7 +367,16 @@ function Block({ block, cta }: { block: ProgramBlock; cta: Cta }) {
                   {...linkProps(f.href)}
                   className="group flex h-full items-start gap-4 rounded-2xl border border-border bg-background p-6 transition-colors hover:border-accent/60"
                 >
-                  <svg aria-hidden="true" viewBox="0 0 24 24" className="mt-0.5 size-6 shrink-0 text-accent" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="mt-0.5 size-6 shrink-0 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d={isFile(f.href) ? "M12 4v11m0 0-4-4m4 4 4-4M5 20h14" : "M5 12h14m0 0-5-5m5 5-5 5"} />
                   </svg>
                   <span>
@@ -363,24 +390,34 @@ function Block({ block, cta }: { block: ProgramBlock; cta: Cta }) {
         </>
       );
 
+    case "subscribe":
+      return <Newsletter source={block.source} />;
+
     case "faq":
       return (
         <>
           <BlockHeading heading={block.heading ?? "Frequently asked questions"} />
-          <div className="mt-10 divide-y divide-border border-y border-border">
-            {block.items.map((item) => (
-              <details key={item.q} className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 font-display text-lg font-bold lg:text-xl [&::-webkit-details-marker]:hidden">
-                  {item.q}
-                  <span aria-hidden="true" className="text-2xl text-accent transition-transform duration-300 group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="-mt-2 max-w-3xl pb-6 text-lg leading-relaxed text-pretty text-foreground/80">{item.a}</p>
-              </details>
-            ))}
-          </div>
+          <Faq items={block.items} />
         </>
       );
   }
+}
+
+/** Questions and answers, each opening in place. Used by the program pages and /coaching. */
+export function Faq({ items, className = "" }: { items: readonly { q: string; a: string }[]; className?: string }) {
+  return (
+    <div className={`mt-10 divide-y divide-border border-y border-border ${className}`}>
+      {items.map((item) => (
+        <details key={item.q} data-faq className="group">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 font-display text-lg font-bold lg:text-xl [&::-webkit-details-marker]:hidden">
+            {item.q}
+            <span aria-hidden="true" className="text-2xl text-accent transition-transform duration-300 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p className="-mt-2 max-w-3xl pb-6 text-lg leading-relaxed text-pretty text-foreground/80">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  );
 }

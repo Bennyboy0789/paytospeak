@@ -7,11 +7,11 @@ import { ButtonLink } from "@/components/Button";
 import { CompareTable } from "@/components/CompareTable";
 import { Credentials } from "@/components/Credentials";
 import { Heading } from "@/components/Heading";
-import { Pillars } from "@/components/Pillars";
 import { Placeholder } from "@/components/Placeholder";
-import { ProgramGrid } from "@/components/ProgramPage";
+import { Faq, ProgramGrid } from "@/components/ProgramPage";
 import { Container, Eyebrow, Section } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
+import { Testimonials } from "@/components/Testimonials";
 import { YouTube } from "@/components/YouTube";
 import { coaching, type Offer } from "@/content/coaching";
 import { applyHref } from "@/lib/site";
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/coaching" },
 };
 
-const { hero, fit, pillars, how, why, apply } = coaching;
+const { hero, fit, how, why, faq, apply } = coaching;
 
 export default function CoachingPage() {
   return (
@@ -118,21 +118,8 @@ export default function CoachingPage() {
         </div>
       </Section>
 
-      {/* Pillars */}
-      <Section labelledBy="pillars-title">
-        <div className="reveal max-w-3xl">
-          <Eyebrow>{pillars.eyebrow}</Eyebrow>
-          <Heading id="pillars-title" headline={pillars.headline} className="mt-5" />
-        </div>
-        <div className="mt-12">
-          <Placeholder title="Confirm the coaching pillars">
-            <p>These four are working placeholders from the content doc. Kevin to confirm, rename, or replace them.</p>
-          </Placeholder>
-        </div>
-        <div className="mt-10">
-          <Pillars items={pillars.items} layout="rows" />
-        </div>
-      </Section>
+      {/* The pillars (coaching.pillars) stay off the page until Kevin confirms them. They were a
+          TODO block plus four placeholder items between the fit check and the prices. */}
 
       {/* How it works */}
       <Section id="how" tone="card" labelledBy="how-title" className="scroll-mt-20 border-t border-border">
@@ -146,7 +133,14 @@ export default function CoachingPage() {
       {/* Why Kevin */}
       <section aria-labelledby="why-title" className="relative overflow-hidden border-y border-border bg-ink">
         <div className="parallax relative h-72 overflow-hidden sm:h-96 lg:absolute lg:inset-y-0 lg:left-0 lg:h-auto lg:w-1/2">
-          <Image src={ballroom} alt="Kevin speaking to a ballroom audience, arms raised" fill placeholder="blur" sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover object-[62%_center] lg:object-[76%_center]" />
+          <Image
+            src={ballroom}
+            alt="Kevin speaking to a ballroom audience, arms raised"
+            fill
+            placeholder="blur"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-[62%_center] lg:object-[76%_center]"
+          />
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink to-transparent lg:bg-gradient-to-l lg:via-transparent lg:via-30%" />
         </div>
         <Container className="relative py-16 lg:py-32">
@@ -162,16 +156,18 @@ export default function CoachingPage() {
         </Container>
       </section>
 
-      {/* Apply */}
-      {/* Every program carried over from the Wix site */}
-      <Section tone="card" labelledBy="programs-title" className="border-b border-border">
+      <Testimonials />
+
+      {/* FAQ */}
+      <Section tone="card" labelledBy="faq-title" className="border-b border-border">
         <div className="reveal max-w-3xl">
-          <Eyebrow>More ways to work with Kevin</Eyebrow>
-          <Heading id="programs-title" headline={{ lead: "Group, TEDx, on demand,", highlight: "and more." }} className="mt-6" />
+          <Eyebrow>{faq.eyebrow}</Eyebrow>
+          <Heading id="faq-title" headline={faq.headline} className="mt-5" />
         </div>
-        <ProgramGrid className="mt-12" />
+        <Faq items={faq.items} />
       </Section>
 
+      {/* Apply */}
       <Section labelledBy="apply-title">
         <div className="reveal border-beam rounded-[2rem] bg-card px-7 py-16 text-center lg:px-14 lg:py-24">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[inherit]">
@@ -187,13 +183,30 @@ export default function CoachingPage() {
           </div>
         </div>
       </Section>
+
+      {/* Every program carried over from the Wix site, after the closer so it doesn't compete with it. */}
+      <Section tone="card" labelledBy="programs-title" className="border-t border-border">
+        <div className="reveal max-w-3xl">
+          <Eyebrow>More ways to work with Kevin</Eyebrow>
+          <Heading id="programs-title" headline={{ lead: "Group, TEDx, on demand,", highlight: "and more." }} className="mt-6" />
+        </div>
+        <ProgramGrid className="mt-12" />
+      </Section>
     </>
   );
 }
 
 function Mark({ kind }: { kind: "yes" | "no" }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" className={`mt-1.5 size-5 shrink-0 ${kind === "yes" ? "text-accent" : "text-muted-foreground"}`} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      className={`mt-1.5 size-5 shrink-0 ${kind === "yes" ? "text-accent" : "text-muted-foreground"}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+    >
       {kind === "yes" ? <path d="M4 10.5l4 4 8-9" /> : <path d="M5 5l10 10M15 5L5 15" />}
     </svg>
   );
@@ -205,8 +218,7 @@ function OfferPlaceholder() {
       <p>One program or tiers? One-on-one, group cohort, self-paced, or a ladder? Price points, length, cadence?</p>
       <p>
         When confirmed, fill in <code className="font-mono text-foreground">offer</code> in{" "}
-        <code className="font-mono text-foreground">src/content/coaching.ts</code>. One tier renders as a single panel; several render
-        side by side.
+        <code className="font-mono text-foreground">src/content/coaching.ts</code>. One tier renders as a single panel; several render side by side.
       </p>
     </Placeholder>
   );
@@ -247,7 +259,10 @@ function Tier({ tier, compact }: { tier: Offer["tiers"][number]; compact?: boole
   const cta = tier.cta ?? { label: "Apply", href: applyHref };
   const external = /^https?:\/\//.test(cta.href);
   return (
-    <article data-spotlight className={`glow-card spotlight flex flex-col rounded-3xl border border-border bg-background hover:-translate-y-1 ${compact ? "p-7 lg:p-8" : "p-8 lg:p-10"}`}>
+    <article
+      data-spotlight
+      className={`glow-card spotlight flex flex-col rounded-3xl border border-border bg-background hover:-translate-y-1 ${compact ? "p-7 lg:p-8" : "p-8 lg:p-10"}`}
+    >
       <h3 className={`font-display font-black tracking-[-0.01em] text-balance ${compact ? "text-xl lg:text-2xl" : "text-2xl"}`}>{tier.name}</h3>
       {tier.price ? (
         <p className="mt-4 font-display text-4xl font-black tracking-tight">

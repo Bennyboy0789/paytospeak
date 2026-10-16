@@ -9,19 +9,19 @@ import { Credentials } from "@/components/Credentials";
 import { Heading } from "@/components/Heading";
 import { JsonLd } from "@/components/JsonLd";
 import { Marquee } from "@/components/Marquee";
+import { Newsletter } from "@/components/Newsletter";
 import { Pillars } from "@/components/Pillars";
 import { ScrubText } from "@/components/ScrubText";
 import { Container, Eyebrow, Section } from "@/components/Section";
 import { StageGallery } from "@/components/StageGallery";
 import { StageLights } from "@/components/StageLights";
-import { SubscribeForm } from "@/components/SubscribeForm";
 import { YouTube } from "@/components/YouTube";
 import { book } from "@/content/book";
 import { coaching } from "@/content/coaching";
 import { home } from "@/content/home";
 import { applyHref, site } from "@/lib/site";
 
-const { hero, problem, system, about, stage, newsletter } = home;
+const { hero, problem, system, about, stage } = home;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -228,20 +228,7 @@ export default function Home() {
 
       {/* Newsletter */}
       <Section labelledBy="newsletter-title">
-        <div className="reveal border-beam rounded-[2rem] bg-card p-8 sm:p-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16 lg:p-16">
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[inherit]">
-            <div className="absolute -right-32 -top-32 size-96 rounded-full bg-primary/15 blur-3xl" />
-            <div className="absolute -bottom-40 -left-20 size-96 rounded-full bg-accent/10 blur-3xl" />
-          </div>
-          <div>
-            <Eyebrow>{newsletter.eyebrow}</Eyebrow>
-            <Heading id="newsletter-title" size="small" headline={newsletter.headline} className="mt-6" />
-            <p className="mt-5 text-lg leading-relaxed text-foreground/80">{newsletter.body}</p>
-          </div>
-          <div className="mt-10 lg:mt-0">
-            <SubscribeForm list="newsletter" submitLabel="Subscribe" />
-          </div>
-        </div>
+        <Newsletter source="home" titleId="newsletter-title" />
       </Section>
     </>
   );

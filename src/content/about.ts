@@ -89,5 +89,9 @@ export const about = {
   },
   chapters,
   keynoteLink: { text: "Booking Kevin for a keynote? That’s on", label: "kevincsnyder.com" },
-  cta: { headline: { lead: "Ready to", highlight: "work together?" } satisfies Headline, label: "See the coaching program" },
+  cta: {
+    headline: { lead: "Ready to", highlight: "work together?" } satisfies Headline,
+    label: "Apply for coaching",
+    secondary: "See the coaching options",
+  },
 } as const;

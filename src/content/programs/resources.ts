@@ -70,6 +70,9 @@ export const resources: Program = {
         },
       ],
     },
+    // Downloads stay open (old blog posts link straight to them); this sits beside them for
+    // readers who want more.
+    { kind: "subscribe", source: "resources" },
     {
       kind: "downloads",
       heading: "Checklists and templates",

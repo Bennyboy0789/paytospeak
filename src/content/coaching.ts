@@ -196,6 +196,36 @@ export const coaching = {
     body: "Kevin has spent 20 years on professional stages: corporate, college, and youth audiences. He is an NSA Certified Speaking Professional and a Toastmasters Accredited Speaker, one of only nine people worldwide to hold both. The advice you get is what he does on Monday.",
   },
 
+  // DRAFT(kc): new copy, logged in docs/CONTENT.md. Every fact is from this page's own offer
+  // and Kevin's coaching options chart (src/content/compare.ts).
+  // TODO(kc): add "How does the guarantee work?" once Kevin gives the 1:1 guarantee terms.
+  faq: {
+    eyebrow: "Questions",
+    headline: { lead: "Good questions", highlight: "to ask first." } satisfies Headline,
+    items: [
+      {
+        q: "What does coaching cost?",
+        a: "The 10-session program is $12,500 and the 5-session program is $7,500. Group coaching is $1,500 or $2,500, and Paid to $peak On Demand is $497. Hourly coaching and 3-hour bundles are booked directly on Kevin’s calendar. Kevin can also customize coaching to work with your budget.",
+      },
+      {
+        q: "How much time does it take?",
+        a: "Sessions run weekly or every other week. In the 10-session program, plan on 2 to 3 hours of assignments a week between sessions.",
+      },
+      {
+        q: "Is it virtual or in person?",
+        a: "One-on-one coaching works either way. Group coaching is live and virtual, over five weeks.",
+      },
+      {
+        q: "How is 1:1 coaching different from the online course?",
+        a: "The course is self-paced: you work through the Paid to $peak modules on your own. In 1:1 coaching Kevin applies the same model to your own speaking business, reviews your work between sessions and gives you direct feedback. Both the 10-session and 5-session programs include the course.",
+      },
+      {
+        q: "Which option is right for me?",
+        a: "Start with the comparison at the top of this page. If you’re still not sure, that’s what a strategy session is for: Kevin will tell you what fits.",
+      },
+    ],
+  },
+
   apply: {
     eyebrow: "Apply",
     headline: { lead: "Tell Kevin", highlight: "where you are." } satisfies Headline,
