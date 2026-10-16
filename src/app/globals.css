@@ -283,9 +283,10 @@
   }
 }
 
-/* Slow settle on hero photography. */
+/* Slow settle on hero photography. `backwards`, not `both`: a held end state would own
+   `transform` for good and turn a hover zoom on the same photo into an instant jump. */
 .ken-burns {
-  animation: ken-burns 2.4s var(--ease-out-expo) both;
+  animation: ken-burns 2.4s var(--ease-out-expo) backwards;
 }
 @keyframes ken-burns {
   from {
@@ -576,9 +577,10 @@
   background-size: 100% 1px;
 }
 
-/* Photo that leans in on hover. */
+/* Photo that leans in on hover. Slow and even, like a camera push-in: expo would do most
+   of the move in the first beat. */
 .zoom-on-hover img {
-  transition: transform 1.4s var(--ease-out-expo);
+  transition: transform 2.4s cubic-bezier(0.25, 0.8, 0.35, 1);
 }
 .zoom-on-hover:hover img {
   transform: scale(1.06);
