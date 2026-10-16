@@ -10,6 +10,7 @@ import { Heading } from "@/components/Heading";
 import { Placeholder } from "@/components/Placeholder";
 import { Container, Eyebrow, Section } from "@/components/Section";
 import { StageLights } from "@/components/StageLights";
+import { YouTube } from "@/components/YouTube";
 import { about } from "@/content/about";
 import { site } from "@/lib/site";
 
@@ -77,6 +78,12 @@ export default function AboutPage() {
                       {para}
                     </p>
                   ))}
+                  {chapter.video && (
+                    <figure>
+                      <YouTube id={chapter.video.id} title={chapter.video.title} poster={chapter.video.poster} />
+                      <figcaption className="mt-3 text-sm text-muted-foreground">{chapter.video.caption}</figcaption>
+                    </figure>
+                  )}
                   {chapter.quote && (
                     <figure className="mt-10 border-l-2 border-accent pl-6">
                       <blockquote className="font-display text-2xl font-black leading-snug tracking-[-0.005em] text-balance lg:text-3xl">

@@ -4,7 +4,18 @@ import type { Headline } from "./shared";
  * A chapter of Kevin's story. `quote` is Kevin's own published wording, shown as a pull
  * quote. `todo` renders a visible TODO(kc) block; leave it off once the chapter is complete.
  */
-type Chapter = { eyebrow: string; title: string; body: string[]; quote?: string; todo?: string };
+type Chapter = {
+  eyebrow: string;
+  title: string;
+  body: string[];
+  /**
+   * Click-to-play YouTube video under the text. `title` is what screen readers announce;
+   * `poster` picks another YouTube still when the default frame is a poor one.
+   */
+  video?: { id: string; title: string; caption: string; poster?: string };
+  quote?: string;
+  todo?: string;
+};
 
 // Coaching-framed story. The facts are Kevin's own account (kevincsnyder.com/meet-kevin, the
 // "Why I coach speakers" section of kevincsnyder.com/coaching, and his blog posts), read
@@ -20,6 +31,8 @@ const chapters: Chapter[] = [
       "Recovery started a question he has been asking ever since: how does a person come to believe in himself?",
       "In college it nearly ended there. Kevin went to the Dean of Students to withdraw, and the dean refused to sign the form. Someone else believed in him first. His own belief followed.",
     ],
+    // Linked from kevincsnyder.com/meet-kevin ("The Story Kevin Almost Never Told").
+    video: { id: "GbJaPqqV3A4", title: "Kevin Snyder at TEDxCapeMay", caption: "Kevin at TEDxCapeMay, telling the story he almost never told." },
   },
   {
     eyebrow: "The unlikely turn",
@@ -29,6 +42,14 @@ const chapters: Chapter[] = [
       "He built a career in Student Affairs and became a Dean of Students at High Point University. His curiosity about belief became doctoral research on belief and self-efficacy: how confidence is built, and how it turns into action.",
       "Then a student told him that his speech had saved her life. Kevin realized speaking was a calling, and in 2012 he left the dean’s office to speak full time.",
     ],
+    // The upload Kevin links from his own blog (aerate2020). Original 4:3 broadcast. Its default
+    // thumbnail is a vacuum cleaner; still hq2 is Kevin beside Bob Barker.
+    video: {
+      id: "LrKLPcPiusA",
+      title: "Kevin Snyder meets Bob Barker on The Price is Right",
+      caption: "Kevin with Bob Barker on The Price is Right.",
+      poster: "hq2",
+    },
   },
   {
     eyebrow: "The framework",

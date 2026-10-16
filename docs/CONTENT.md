@@ -283,6 +283,9 @@ first edition's cover on kevincsnyder.com.)
 ### About page
 Four chapters from Kevin's own account (see "Kevin's own story"); the exact copy is in
 `src/content/about.ts`. Two end on a pull quote in his words. No TODO blocks remain.
+Videos (click to play): his TEDxCapeMay talk under chapter 1 (linked from his meet-kevin page),
+and *The Price is Right* clip under chapter 2 (the upload his own blog links, shown with the
+still of him beside Bob Barker).
 1. **Growing up in North Carolina.** Depression and an eating disorder at 12; the question of
    belief; the dean who wouldn't sign his withdrawal form. (Retitled so it doesn't repeat the
    page headline, which already says "A kid who didn't believe in himself".)

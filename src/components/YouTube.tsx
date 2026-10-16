@@ -12,11 +12,12 @@ const best = posters as Record<string, string>;
 /**
  * Click-to-load YouTube embed. Shows the video's thumbnail until played, so a
  * post with several videos doesn't load several YouTube players up front.
+ * `poster` picks a different YouTube still ("hq1", "hq2", "hq3") when the default frame is a poor one.
  * The play button sits in the corner, clear of any title baked into the thumbnail.
  */
-export function YouTube({ id, title = "YouTube video" }: { id: string; title?: string }) {
+export function YouTube({ id, title = "YouTube video", poster: chosen }: { id: string; title?: string; poster?: string }) {
   const [playing, setPlaying] = useState(false);
-  const [poster, setPoster] = useState(best[id] ?? "hqdefault");
+  const [poster, setPoster] = useState(chosen ?? best[id] ?? "hqdefault");
   const box = useRef<HTMLDivElement>(null);
 
   // Next keeps pages you navigate away from mounted but hidden (React <Activity>), so a
