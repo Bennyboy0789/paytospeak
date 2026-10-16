@@ -170,9 +170,11 @@ pointer listener (`src/components/PointerFX.tsx`), one scroll listener
 | Word-by-word light-up | Big statements (`<ScrubText>`) | Scroll-driven CSS |
 | Odometer stats | Credentials strip | Scroll-driven CSS |
 | Glass header | Header | Scroll-driven CSS |
-| Cursor light, border glow | Cards and rows (`data-spotlight`, `.glow-card`) | PointerFX |
+| Cursor light, warm border | Cards and rows (`data-spotlight`, `.glow-card`) | PointerFX |
+| Lit hairline (still) | Feature panels (`.border-beam`) | CSS |
+| Slow push-in | Photos (`.zoom-on-hover`) | CSS hover, 2.4s |
 | 3D book tilt | `<BookCover>` (`data-tilt`) | PointerFX |
-| Magnetic CTAs | Hero buttons (`magnetic` prop) | PointerFX |
+| Magnetic CTAs | Hero buttons (`magnetic` prop), 4px at most | PointerFX |
 | Page transitions | Every route (`src/app/template.tsx`) | React `<ViewTransition>` |
 
 **Rules:**
@@ -182,12 +184,36 @@ pointer listener (`src/components/PointerFX.tsx`), one scroll listener
 - **`prefers-reduced-motion: reduce` stills everything.** Hover colour changes stay.
 - **Pointer effects and inertial scrolling are mouse/trackpad only** (`hover: hover` and `pointer: fine`). Touch scrolling is always native.
 - **Glows on masked text use `filter: drop-shadow`,** not `text-shadow`: the word masks clip a text-shadow into hard-edged boxes.
-- **Easing:** `ease-out-expo` for entrances and hovers; 0.5–1.1s.
+- **Restraint reads as premium (Ben, 2026-10-16).** Fewer things, moving slower. No light
+  sweeps across buttons, no light running laps around a panel, no second colour in a hover
+  glow. Before adding an effect, take one away from the same section.
+- **Easing:** `ease-out-expo` for entrances and hovers; 0.7 to 1.4s. Photo zooms use an even
+  curve over 2.4s, like a camera push-in. Headlines rise straight, no rotation.
+- **Hero photos don't fade in from invisible.** They are the page's largest element, and an
+  opacity entrance delays LCP. They show at once and settle with `.ken-burns` (which uses
+  `backwards`, so a hover zoom on the same photo still transitions).
 - **Prefer `transform` and `opacity`** (plus colour, and `clip-path` for photo reveals). Nothing that
   triggers layout. Lighthouse mobile performance must stay ≥ 90.
-- Buttons stay solid amber. The hover sheen is a light sweep, not a gradient fill.
+- Buttons stay solid amber: lift, deeper glow and the arrow on hover. No sheen.
 
 ---
+
+## Photography
+
+Every site photo carries one grade, baked into the file by `scripts/grade-photos.mjs`:
+white balance pulled partway to neutral (blue stage washes kept), loud colours calmed,
+deeper blacks with a soft highlight roll-off, and a trace of amber in the highlights and
+blue in the shadows. It always grades from the untouched original (kept in
+`.cache/photo-originals/`, and in git history), so it never stacks. New photo: add it to
+`PHOTOS` in the script and run it. Use `--preview <dir>` to look first.
+
+## Share cards
+
+Every route has an `opengraph-image.tsx` that calls `ogCard()` in `src/lib/og.tsx`: the
+page's own eyebrow and headline (highlight in blue), the logo, and a graded photo fading in
+from the right. Program pages use their hero photo; blog posts use their title and date.
+All are drawn once at build time. Fonts are the `.woff` files in `src/assets/fonts/`
+(the card renderer can't read woff2).
 
 ## Logo
 
