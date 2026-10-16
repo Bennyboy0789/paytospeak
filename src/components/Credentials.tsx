@@ -35,7 +35,7 @@ export function Credentials() {
               <li key={f.name}>
                 <div className="flex h-10 items-end lg:h-12">
                   {f.logo ? (
-                    <Image src={f.logo.src} alt={f.name} sizes="16rem" className={`w-auto max-w-full object-contain object-left opacity-75 ${f.logo.className}`} />
+                    <Image src={f.logo.src} alt={f.name} sizes="16rem" className={`w-auto max-w-full object-contain object-left ${f.logo.className}`} />
                   ) : (
                     <span className="font-display text-lg font-black leading-none tracking-tight text-foreground/75 lg:text-xl">{f.name}</span>
                   )}

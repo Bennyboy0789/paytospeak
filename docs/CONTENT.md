@@ -34,7 +34,7 @@ this file. If the two disagree, **this file wins**.
   TEDxCapeMay (talk video); *Toastmaster* magazine (singular), January 2023, "Introducing Kevin
   Snyder, Accredited Speaker"; *The Toastmasters Podcast*, episode 220. Kevin curated
   TEDxRaleigh (2016) but did not speak there, so it is not a "featured on" item.
-  TEDx events are set as text, not the TEDx logo (TEDx rules limit speakers' use of it). The two Toastmasters items use their own marks: the magazine masthead from that issue's cover and the podcast wordmark from its cover art. No outbound links (Ben, 2026-10-15).
+  Kevin is cleared to use the TEDx logos (Ben, 2026-10-16), so both TEDx events show their own event logos, from tedxwakeforestu.com and tedxcapemay.com, tagline included. The two Toastmasters items use their own marks: the magazine masthead from that issue's cover and the podcast wordmark from its cover art. No outbound links (Ben, 2026-10-15).
 
 ### NOT verified — do not use
 
