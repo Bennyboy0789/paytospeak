@@ -32,6 +32,23 @@ export const apply = {
     // banned list in docs/BRAND.md.
     stage: "Where are you with speaking right now?",
     stageHint: "Talks you’ve given, who you speak to, what’s working, what isn’t.",
+    program: "What are you interested in?",
+    programHint: "A best guess is fine. Kevin will tell you what fits.",
+    // Keys match the `?program=` links on /coaching. Names as they appear on the site.
+    programs: [
+      { value: "not-sure", label: "Not sure yet" },
+      { value: "10-session", label: "1:1 coaching: 10-session program" },
+      { value: "5-session", label: "1:1 coaching: 5-session program" },
+      { value: "group", label: "Group coaching (the 5-Week Challenge)" },
+      { value: "intensive", label: "Paid to $peak Intensive" },
+      { value: "mentorship", label: "Mentorship" },
+      { value: "tedx", label: "TEDx speaker coaching" },
+      { value: "assessment", label: "Speaker Assessment" },
+      { value: "hourly", label: "Hourly coaching or a Speech Review" },
+      { value: "speaker-package", label: "Ultimate Speaker Package" },
+      { value: "virtual-studio", label: "Virtual studio coaching" },
+    ],
+    required: "Everything is required except the link.",
     link: "Link to a talk or your site",
     linkHint: "Optional",
     submit: "Send application",

@@ -12,14 +12,16 @@ export const about = {
     eyebrow: "About Kevin",
     headline: {
       lead: "A kid who didn’t believe in himself",
-      highlight: "became a speaker a million people saw.",
+      // Non-breaking space keeps "a million" together.
+      highlight: "became a speaker a million people saw.",
     } satisfies Headline,
     sub: "Kevin’s path wasn’t a straight line, and that’s exactly why he can teach it.",
   },
   chapters: [
     {
       eyebrow: "The early years",
-      title: "The kid who didn’t believe in himself.",
+      // Not a repeat of the page headline, which already says this.
+      title: "Growing up in North Carolina.",
       body: ["Kevin grew up in North Carolina. As a child he struggled with depression, and believing in himself did not come easily."],
       todo: "Request Kevin’s own account of his childhood, with the details he’s comfortable sharing on a coaching site.",
     },
@@ -31,7 +33,7 @@ export const about = {
     },
     {
       eyebrow: "The framework",
-      title: "ShiftThinker™.",
+      title: "The ShiftThinker™ framework.",
       body: ["Out of 20 years on stage, Kevin built the ShiftThinker™ framework, the thinking behind the talks he gives."],
       todo: "One or two sentences on ShiftThinker™ in Kevin’s words.",
     },

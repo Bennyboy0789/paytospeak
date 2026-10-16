@@ -41,10 +41,10 @@ export default function CoachingPage() {
               {hero.sub}
             </p>
             <div className="enter mt-10 flex flex-wrap gap-4" style={delay(600)}>
-              <ButtonLink href={applyHref} magnetic>
+              <ButtonLink href={applyHref} magnetic className="w-full sm:w-auto">
                 {apply.cta}
               </ButtonLink>
-              <ButtonLink href="#how" variant="secondary" magnetic>
+              <ButtonLink href="#how" variant="secondary" magnetic className="w-full sm:w-auto">
                 {how.eyebrow}
               </ButtonLink>
             </div>
@@ -58,7 +58,7 @@ export default function CoachingPage() {
                 priority
                 placeholder="blur"
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                className="ken-burns object-cover"
+                className="ken-burns object-cover lg:object-[12%_center]"
               />
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
             </div>
@@ -80,8 +80,8 @@ export default function CoachingPage() {
             Coaching in 1:1, group and online formats. Kevin can also customize coaching to work with your budget.
           </p>
         </div>
-        <p className="mt-10 text-sm text-muted-foreground lg:hidden">Scroll the table sideways to compare every option.</p>
-        <div className="mt-4 lg:mt-12">
+        <p className="mt-10 hidden text-sm text-muted-foreground sm:block lg:hidden">Scroll the table sideways to compare every option.</p>
+        <div className="mt-10 sm:mt-4 lg:mt-12">
           <CompareTable />
         </div>
       </Section>
@@ -92,7 +92,7 @@ export default function CoachingPage() {
           <Eyebrow>{fit.eyebrow}</Eyebrow>
           <Heading id="fit-title" headline={fit.headline} className="mt-5" />
         </div>
-        <div className="reveal-stagger mt-14 grid gap-5 lg:grid-cols-[1.25fr_1fr]">
+        <div className="reveal-stagger mt-14 grid items-start gap-5 lg:grid-cols-[1.25fr_1fr]">
           <div data-spotlight className="glow-card spotlight rounded-3xl border border-accent/40 bg-card p-8 lg:p-12">
             <h3 className="font-display text-2xl font-black tracking-tight">This is for you if</h3>
             <ul className="mt-6 space-y-5">
@@ -146,8 +146,8 @@ export default function CoachingPage() {
       {/* Why Kevin */}
       <section aria-labelledby="why-title" className="relative overflow-hidden border-y border-border bg-ink">
         <div className="parallax relative h-72 overflow-hidden sm:h-96 lg:absolute lg:inset-y-0 lg:left-0 lg:h-auto lg:w-1/2">
-          <Image src={ballroom} alt="Kevin speaking to a ballroom audience, arms raised" fill placeholder="blur" sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover object-[62%_center]" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink to-transparent lg:bg-gradient-to-l" />
+          <Image src={ballroom} alt="Kevin speaking to a ballroom audience, arms raised" fill placeholder="blur" sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover object-[62%_center] lg:object-[76%_center]" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink to-transparent lg:bg-gradient-to-l lg:via-transparent lg:via-30%" />
         </div>
         <Container className="relative py-16 lg:py-32">
           <div className="reveal lg:ml-auto lg:w-1/2 lg:pl-20">
@@ -180,7 +180,7 @@ export default function CoachingPage() {
           <div className="relative mx-auto max-w-2xl">
             <Eyebrow className="justify-center">{apply.eyebrow}</Eyebrow>
             <Heading id="apply-title" headline={apply.headline} className="mt-5" />
-            <p className="mt-6 text-lg leading-relaxed text-foreground/80">{apply.body}</p>
+            <p className="mt-6 text-lg leading-relaxed text-balance text-foreground/80">{apply.body}</p>
             <ButtonLink href={applyHref} className="mt-10" magnetic>
               {apply.cta}
             </ButtonLink>
@@ -212,39 +212,85 @@ function OfferPlaceholder() {
   );
 }
 
+// Long include lists show this many, with the rest behind a disclosure.
+const SHOWN = 6;
+
 function OfferDetails({ offer }: { offer: Offer }) {
-  const single = offer.tiers.length === 1;
+  // Priced programs lead, side by side; the lighter options follow in a row of their own.
+  const lead = offer.tiers.filter((t) => t.price);
+  const more = offer.tiers.filter((t) => !t.price);
   return (
     <div>
-      <p className="text-lg text-muted-foreground">{offer.format}</p>
-      <div className={`mt-8 grid gap-6 ${single ? "" : "md:grid-cols-2 lg:grid-cols-3"}`}>
-        {offer.tiers.map((tier) => (
-          <article key={tier.name} data-spotlight className="glow-card spotlight flex flex-col rounded-3xl border border-border bg-background p-8 hover:-translate-y-1 lg:p-10">
-            <h3 className="font-display text-2xl font-black tracking-tight">{tier.name}</h3>
-            {tier.price ? (
-              <p className="mt-4 font-display text-4xl font-black tracking-tight">
-                {tier.price}
-                {tier.cadence && <span className="ml-2 font-sans text-base font-medium tracking-normal text-muted-foreground">{tier.cadence}</span>}
-              </p>
-            ) : (
-              tier.cadence && <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-accent">{tier.cadence}</p>
-            )}
-            <p className="mt-4 leading-relaxed text-foreground/80">{tier.summary}</p>
-            {tier.guarantee && <p className="mt-5 border-l-2 border-accent pl-4 font-semibold leading-relaxed">{tier.guarantee}</p>}
-            <ul className="mt-6 space-y-3 border-t border-border pt-6">
-              {tier.includes.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <Mark kind="yes" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-auto pt-8">
-              <ButtonLink href={applyHref}>Apply</ButtonLink>
-            </div>
-          </article>
+      <p className="max-w-3xl text-lg leading-relaxed text-pretty text-muted-foreground">{offer.format}</p>
+      <div className={`mt-8 grid gap-6 ${lead.length > 1 ? "md:grid-cols-2" : ""}`}>
+        {lead.map((tier) => (
+          <Tier key={tier.name} tier={tier} />
         ))}
       </div>
+      {more.length > 0 && (
+        <>
+          <p className="mt-16 text-xs font-semibold uppercase tracking-[0.22em] text-accent">Shorter options</p>
+          <div className={`mt-6 grid gap-6 ${more.length > 2 ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2"}`}>
+            {more.map((tier) => (
+              <Tier key={tier.name} tier={tier} compact />
+            ))}
+          </div>
+        </>
+      )}
     </div>
+  );
+}
+
+function Tier({ tier, compact }: { tier: Offer["tiers"][number]; compact?: boolean }) {
+  const shown = tier.includes.slice(0, SHOWN);
+  const rest = tier.includes.slice(SHOWN);
+  const cta = tier.cta ?? { label: "Apply", href: applyHref };
+  const external = /^https?:\/\//.test(cta.href);
+  return (
+    <article data-spotlight className={`glow-card spotlight flex flex-col rounded-3xl border border-border bg-background hover:-translate-y-1 ${compact ? "p-7 lg:p-8" : "p-8 lg:p-10"}`}>
+      <h3 className={`font-display font-black tracking-[-0.01em] text-balance ${compact ? "text-xl lg:text-2xl" : "text-2xl"}`}>{tier.name}</h3>
+      {tier.price ? (
+        <p className="mt-4 font-display text-4xl font-black tracking-tight">
+          {tier.price}
+          {tier.cadence && <span className="ml-2 font-sans text-base font-medium tracking-normal text-muted-foreground">{tier.cadence}</span>}
+        </p>
+      ) : (
+        tier.cadence && <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-balance text-accent">{tier.cadence}</p>
+      )}
+      <p className="mt-4 leading-relaxed text-pretty text-foreground/80">{tier.summary}</p>
+      {tier.guarantee && <p className="mt-5 border-l-2 border-accent pl-4 font-semibold leading-relaxed">{tier.guarantee}</p>}
+      <ul className="mt-6 space-y-3 border-t border-border pt-6">
+        {shown.map((item) => (
+          <IncludeItem key={item} item={item} />
+        ))}
+      </ul>
+      {rest.length > 0 && (
+        <details className="group mt-3">
+          <summary className="flex cursor-pointer list-none items-center gap-2 py-2 text-sm font-semibold text-primary [&::-webkit-details-marker]:hidden">
+            <span className="group-open:hidden">See everything included ({rest.length} more)</span>
+            <span className="hidden group-open:inline">Show less</span>
+          </summary>
+          <ul className="mt-3 space-y-3">
+            {rest.map((item) => (
+              <IncludeItem key={item} item={item} />
+            ))}
+          </ul>
+        </details>
+      )}
+      <div className="mt-auto pt-8">
+        <ButtonLink href={cta.href} variant={compact ? "secondary" : "primary"} {...(external ? { target: "_blank", rel: "noopener" } : {})}>
+          {cta.label}
+        </ButtonLink>
+      </div>
+    </article>
+  );
+}
+
+function IncludeItem({ item }: { item: string }) {
+  return (
+    <li className="flex gap-3">
+      <Mark kind="yes" />
+      <span>{item}</span>
+    </li>
   );
 }

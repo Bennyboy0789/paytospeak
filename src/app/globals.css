@@ -330,28 +330,6 @@
   }
 }
 
-.scroll-cue {
-  animation: scroll-cue 2.2s var(--ease-in-out-quint) infinite;
-}
-@keyframes scroll-cue {
-  0% {
-    transform: scaleY(0);
-    transform-origin: top;
-  }
-  45% {
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-  55% {
-    transform: scaleY(1);
-    transform-origin: bottom;
-  }
-  100% {
-    transform: scaleY(0);
-    transform-origin: bottom;
-  }
-}
-
 /* ------------------------------------------------------------------------ */
 /* Scroll-driven — progressive enhancement. Without support, all of this is  */
 /* simply static and fully visible.                                          */
@@ -690,5 +668,48 @@
   ::view-transition-new(*),
   ::view-transition-group(*) {
     animation: none !important;
+  }
+
+  /* Chapter numerals fill on scroll; held still, they show filled. */
+  .fill-in-view {
+    color: var(--color-accent);
+  }
+
+  /* The stage gallery can't drift, so its first row becomes a still grid in the gutter. */
+  .gallery-row {
+    margin-inline: auto;
+    max-width: 80rem;
+    padding-inline: 1.25rem;
+  }
+  .gallery-row + .gallery-row,
+  .gallery-row ul[aria-hidden="true"] {
+    display: none;
+  }
+  .gallery-row .marquee-track {
+    width: auto;
+  }
+  .gallery-row ul {
+    display: grid;
+    flex: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding: 0;
+  }
+  .gallery-row li {
+    height: auto;
+  }
+  @media (min-width: 640px) {
+    .gallery-row {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .gallery-row {
+      padding-inline: 3rem;
+    }
+    .gallery-row ul {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
   }
 }

@@ -9,8 +9,9 @@ const footerLinks = [...nav, { label: "Contact", href: applyHref }];
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-border bg-ink pt-20 lg:pt-28">
-      <Container className="relative grid gap-14 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
-        <div className="max-w-xs">
+      {/* Phones: two short columns (Explore, Follow), then Programs in two columns, so the footer stays short. */}
+      <Container className="relative grid grid-cols-2 gap-x-8 gap-y-12 md:gap-14 lg:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
+        <div className="col-span-2 max-w-xs md:col-span-1">
           <Link href="/" className="inline-block transition-opacity duration-300 hover:opacity-80">
             <Logo variant="stacked" className="h-24 w-auto" />
           </Link>
@@ -36,9 +37,9 @@ export function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Programs">
+        <nav aria-label="Programs" className="order-last col-span-2 md:order-none md:col-span-1">
           <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Programs</h2>
-          <ul className="mt-6 space-y-3">
+          <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 md:block md:space-y-3">
             {programs.map((p) => (
               <li key={p.href}>
                 <Link href={p.href} className="link-draw text-foreground/80 transition-colors hover:text-foreground">

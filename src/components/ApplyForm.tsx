@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useId, type ReactNode } from "react";
+import { type ReactNode, useActionState, useEffect, useId, useRef } from "react";
 import { applyAction, type FormState } from "@/app/actions";
 import { apply } from "@/content/apply";
 
@@ -15,6 +15,22 @@ export function ApplyForm() {
   const id = useId();
   const err = state.fieldErrors ?? {};
   const v = state.values ?? {};
+  const form = useRef<HTMLFormElement>(null);
+  const programField = useRef<HTMLSelectElement>(null);
+
+  // After a failed submit, take the reader to the first field that needs another look,
+  // which on a phone is often above the screen.
+  useEffect(() => {
+    if (state.fieldErrors) form.current?.querySelector<HTMLElement>("[aria-invalid=true]")?.focus();
+  }, [state]);
+
+  // Preselect the program a "?program=" link came from (the buttons on /coaching).
+  // Read here rather than on the server so /apply stays a static page.
+  useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("program");
+    const select = programField.current;
+    if (wanted && select && !v.program && fields.programs.some((p) => p.value === wanted)) select.value = wanted;
+  }, [v.program]);
 
   if (state.status === "success") {
     return (
@@ -25,7 +41,7 @@ export function ApplyForm() {
   }
 
   return (
-    <form action={action} noValidate className="space-y-7">
+    <form ref={form} action={action} noValidate className="space-y-7">
       <div aria-hidden="true" className="hidden">
         <label>
           Company <input type="text" name="company" tabIndex={-1} autoComplete="off" />
@@ -41,6 +57,21 @@ export function ApplyForm() {
         </Field>
       </div>
 
+      <Field id={`${id}-program`} label={fields.program} hint={fields.programHint}>
+        <div className="relative">
+          <select ref={programField} id={`${id}-program`} name="program" defaultValue={v.program ?? "not-sure"} aria-describedby={`${id}-program-hint`} className={`${inputClass} cursor-pointer appearance-none pr-12 [&>option]:bg-card`}>
+            {fields.programs.map((p) => (
+              <option key={p.value} value={p.value}>
+                {p.label}
+              </option>
+            ))}
+          </select>
+          <svg aria-hidden="true" viewBox="0 0 16 16" className="pointer-events-none absolute right-5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m4 6 4 4 4-4" />
+          </svg>
+        </div>
+      </Field>
+
       <Field id={`${id}-stage`} label={fields.stage} hint={fields.stageHint} error={err.stage}>
         <textarea id={`${id}-stage`} name="stage" defaultValue={v.stage} rows={6} required className={inputClass} {...invalid(err.stage, `${id}-stage`, true)} />
       </Field>
@@ -49,7 +80,9 @@ export function ApplyForm() {
         <input id={`${id}-link`} name="link" defaultValue={v.link} type="url" inputMode="url" placeholder="https://" className={inputClass} {...invalid(err.link, `${id}-link`, true)} />
       </Field>
 
-      <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+      <div>
+        <p className="text-sm text-muted-foreground">{fields.required}</p>
+        <div className="mt-4 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
         <button
           type="submit"
           disabled={pending}
@@ -57,9 +90,10 @@ export function ApplyForm() {
         >
           {pending ? "Sending…" : fields.submit}
         </button>
-        <p role="status" className="text-sm text-muted-foreground">
-          {state.status === "error" ? state.message : ""}
-        </p>
+          <p role="status" className="text-sm text-muted-foreground">
+            {state.status === "error" ? state.message : ""}
+          </p>
+        </div>
       </div>
     </form>
   );

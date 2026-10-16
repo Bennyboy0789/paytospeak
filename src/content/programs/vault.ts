@@ -1,3 +1,4 @@
+import chandelier from "@/assets/images/stage/stage-ballroom-chandelier.jpg";
 import { calendly, type Program } from "./types";
 
 /**
@@ -16,6 +17,7 @@ export const vault: Program = {
   eyebrow: "The Vault",
   headline: { lead: "Stop building it", highlight: "from scratch." },
   sub: "The Vault is the library of templates, scripts and samples Kevin uses in his own speaking business. Use his versions to make your own, and send proposals with confidence.",
+  photo: { src: chandelier, alt: "Kevin on stage under ballroom chandeliers, arm raised to the audience", position: "72% 50%" },
   blocks: [
     {
       kind: "text",
@@ -117,7 +119,7 @@ export const vault: Program = {
       ],
     },
   ],
-  cta: { label: "Talk to Kevin about the Vault", href: calendly.strategy },
+  cta: { label: "Talk to Kevin", href: calendly.strategy },
   wixPrices: [
     "\"'The Vault' without $4,500+ in value | $799\" and \"'The Vault' including $4,500+ in value | $999\" (/vault, PayPal embed d46abc_24b2c0544248403f4bf650994caf53d3.html)",
     "\"Regular investment for 'The Vault' is $999\"; payment plans \"available upon request\" (/vault)",

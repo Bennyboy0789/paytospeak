@@ -1,9 +1,9 @@
-import type { CSSProperties } from "react";
+import { type CSSProperties, Fragment } from "react";
 import type { Headline } from "@/content/shared";
 
 const sizes = {
-  hero: "text-[clamp(3rem,10.5vw,8.5rem)] leading-[0.9] tracking-tight",
-  page: "text-[clamp(2.75rem,8vw,6.25rem)] leading-[0.92] tracking-tight",
+  hero: "text-[clamp(3rem,10.5vw,7.5rem)] leading-[0.9] tracking-tight",
+  page: "text-[clamp(2.75rem,8vw,6.25rem)] leading-[0.95] tracking-tight",
   section: "text-4xl leading-[1.02] tracking-tight lg:text-6xl",
   small: "text-3xl leading-[1.05] tracking-tight lg:text-5xl",
 } as const;
@@ -25,7 +25,7 @@ export function Heading({ headline, as: Tag = "h2", size = "section", id, classN
 
   if (animate) {
     const lead = headline.lead.split(" ");
-    const highlight = headline.highlight?.split(" ") ?? [];
+    const highlight = words(headline.highlight);
     return (
       <Tag id={id} className={`font-display font-black text-balance ${sizes[size]} ${className}`}>
         {lead.map((w, i) => (
@@ -49,7 +49,7 @@ export function Heading({ headline, as: Tag = "h2", size = "section", id, classN
       ))}
       {headline.highlight && (
         <span className={highlightClass}>
-          {headline.highlight.split(" ").map((w, i) => (
+          {words(headline.highlight).map((w, i) => (
             <Word key={`h${i}`} word={w} />
           ))}
         </span>
@@ -58,13 +58,40 @@ export function Heading({ headline, as: Tag = "h2", size = "section", id, classN
   );
 }
 
+/**
+ * The highlight's first two words travel together (a non-breaking space inside one mask),
+ * so the blue phrase never starts with a lone word at the end of the line above.
+ */
+const NBSP = String.fromCharCode(0xa0);
+const APOSTROPHE = String.fromCharCode(0x2019);
+
+function words(phrase?: string) {
+  const w = phrase?.split(" ") ?? [];
+  return w.length > 2 ? [`${w[0]}${NBSP}${w[1]}`, ...w.slice(2)] : w;
+}
+
+/**
+ * Inter Tight's curly apostrophe carries wide side bearings that open a visible gap at
+ * display sizes ("Let ’s"), so it gets pulled in on both sides.
+ */
+function Apostrophes({ word }: { word: string }) {
+  const parts = word.split(APOSTROPHE);
+  if (parts.length === 1) return word;
+  return parts.map((part, i) => (
+    <Fragment key={i}>
+      {i > 0 && <span className="-mx-[0.045em]">{APOSTROPHE}</span>}
+      {part}
+    </Fragment>
+  ));
+}
+
 /** Without `i`, the word rises with its line as it scrolls into view (.word-scroll). */
 function Word({ word, i }: { word: string; i?: number }) {
   return (
     <>
       <span className="word-mask">
         <span className={i === undefined ? "word-scroll" : "word"} style={i === undefined ? undefined : ({ "--i": i } as CSSProperties)}>
-          {word}
+          <Apostrophes word={word} />
         </span>
       </span>{" "}
     </>

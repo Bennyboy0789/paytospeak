@@ -5,13 +5,14 @@ import { type StagePhoto, stagePhotos } from "@/content/stage";
 /**
  * Two rows of Kevin's action photos drifting in opposite directions, like the credentials
  * marquee. Each row is rendered twice for the loop; the second copy is hidden from assistive
- * tech, so every photo is announced once. Hover pauses a row; reduced motion holds them still.
+ * tech, so every photo is announced once. Hover pauses a row. With reduced motion the first
+ * row becomes a still grid inside the page gutter and the second is dropped (globals.css .gallery-row).
  */
 export function StageGallery({ className = "" }: { className?: string }) {
   return (
     <div className={`space-y-4 lg:space-y-6 ${className}`}>
       {stagePhotos.map((row, r) => (
-        <div key={r} className="marquee relative overflow-hidden">
+        <div key={r} className="marquee gallery-row relative overflow-hidden">
           <div
             className="marquee-track"
             style={{ "--marquee-duration": `${90 + r * 15}s`, animationDirection: r ? "reverse" : "normal" } as CSSProperties}

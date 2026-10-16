@@ -1,3 +1,4 @@
+import micHandsUp from "@/assets/images/stage/stage-mic-hands-up.jpg";
 import type { Headline } from "../shared";
 import { calendly, type Program } from "./types";
 
@@ -23,6 +24,7 @@ export const toastmasters: Program = {
   eyebrow: "Toastmasters",
   headline: { lead: "For Toastmasters", highlight: "thinking about going pro." } satisfies Headline,
   sub: "Kevin is a Toastmasters International Accredited Speaker and an NSA Certified Speaking Professional, one of only nine people worldwide to hold both. Here’s what he shares with fellow Toastmasters.",
+  photo: { src: micHandsUp, alt: "Kevin walking through a conference crowd with a microphone as attendees throw their hands up", position: "52% 50%" },
   blocks: [
     {
       kind: "text",
@@ -34,7 +36,7 @@ export const toastmasters: Program = {
     },
     {
       kind: "videos",
-      heading: "Kevin’s Accredited Speaker keynote",
+      heading: "Kevin’s Accredited Speaker talks",
       videos: [
         { youtubeId: "zisYulotgmw", title: "Kevin’s Accredited Speaker keynote (Toastmasters International)" },
         { youtubeId: "cXW5WZmwy-U", title: "Meet Accredited Speaker Kevin Snyder, interviewed by Radhi Spear" },
@@ -76,7 +78,7 @@ export const toastmasters: Program = {
     },
     {
       kind: "downloads",
-      heading: "Links",
+      heading: "Further reading and listening",
       files: [
         {
           label: "Book Kevin to speak",
@@ -115,6 +117,10 @@ export const toastmasters: Program = {
     },
   ],
   cta: { label: "Book a strategy session", href: calendly.strategy },
+  closing: {
+    headline: { lead: "Thinking about", highlight: "going pro?" },
+    body: "A short call with Kevin about where you are as a speaker and what the next step could be.",
+  },
   wixPrices: [
     "/accred (lower half, copied from the coaching page): Speaker Assessment “Only $499”; Speech Review “at an hourly coaching rate”.",
     "/copy-of-speaking-professionally-toast: club benefit “Over $2,500 in professional speaking resources” (value claim).",

@@ -1,3 +1,4 @@
+import ballroomHands from "@/assets/images/stage/ballroom-hands-raised.jpg";
 import { calendly, type Program } from "./types";
 
 /**
@@ -16,6 +17,7 @@ export const eventCalendar: Program = {
   eyebrow: "Event calendar",
   headline: { lead: "Find the events", highlight: "that book speakers." },
   sub: "The Paid Event Calendar is a monthly subscription to leads on conferences, expos and trainings that hire speakers, with the people who do the booking. Cancel any time.",
+  photo: { src: ballroomHands, alt: "Kevin among the tables of a packed ballroom as audience members raise their hands", position: "62% 50%" },
   blocks: [
     {
       kind: "text",
@@ -120,7 +122,7 @@ export const eventCalendar: Program = {
       ],
     },
   ],
-  cta: { label: "Talk to Kevin about the calendar", href: calendly.strategy },
+  cta: { label: "Talk to Kevin", href: calendly.strategy },
   wixPrices: [
     "PREMIUM $150/mo, SILVER $75/mo, STANDARD $25/mo, cancel any time (/paideventcalendar1, PayPal 4WDY6PK6J22MW, TKRQCSKY6YBQU, J5ZT6TVKMKS72)",
     "FAQ: \"We did create a $25 monthly subscription to provide a low-entry price point\" (/paideventcalendar1)",

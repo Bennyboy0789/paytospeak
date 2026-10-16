@@ -31,17 +31,17 @@ export default function AboutPage() {
     <>
       <section aria-labelledby="about-title" className="hero-scope relative -mt-18 overflow-hidden pt-18">
         <StageLights preset="hero" />
-        <Container className="hero-out relative grid items-center gap-14 py-20 lg:grid-cols-[1.4fr_1fr] lg:gap-20 lg:py-32">
+        <Container className="hero-out relative grid items-center gap-14 py-20 lg:grid-cols-[1.7fr_1fr] lg:gap-16 lg:py-28">
           <div>
             <div className="enter">
               <Eyebrow>{about.hero.eyebrow}</Eyebrow>
             </div>
-            <Heading as="h1" id="about-title" size="page" headline={about.hero.headline} animate className="mt-7" />
-            <p className="enter mt-10 max-w-2xl text-xl leading-relaxed text-foreground/80" style={{ "--d": "900ms" } as CSSProperties}>
+            <Heading as="h1" id="about-title" size="page" headline={about.hero.headline} animate className="mt-7 lg:text-[clamp(3rem,5.6vw,5.5rem)]" />
+            <p className="enter mt-10 max-w-2xl text-xl leading-relaxed text-pretty text-foreground/80" style={{ "--d": "900ms" } as CSSProperties}>
               {about.hero.sub}
             </p>
           </div>
-          <div className="enter relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-border lg:max-w-none" style={{ "--d": "250ms" } as CSSProperties}>
+          <div className="enter relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-border lg:max-w-none" style={{ "--d": "250ms" } as CSSProperties}>
             <Image
               src={portrait}
               alt="Dr. Kevin C. Snyder laughing, hand on his chest, in a vest and jeans"
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 <div className="max-w-2xl">
                   <h2 className="font-display text-3xl font-black tracking-tight text-balance lg:text-5xl">{chapter.title}</h2>
                   {chapter.body.map((para) => (
-                    <p key={para} className="mt-5 text-lg leading-relaxed text-foreground/85">
+                    <p key={para} className="mt-5 text-lg leading-relaxed text-pretty text-foreground/85">
                       {para}
                     </p>
                   ))}
@@ -85,8 +85,9 @@ export default function AboutPage() {
                 </div>
               </article>
               {photos[i] && (
-                <div className="reveal-clip parallax relative mt-24 aspect-[16/9] overflow-hidden rounded-3xl lg:mt-36 lg:aspect-[21/9]">
-                  <Image src={photos[i].src} alt={photos[i].alt} fill placeholder="blur" sizes="(min-width: 1280px) 80rem, 100vw" className="object-cover" />
+                // From lg the photo starts at the text column, so it never cuts across the timeline rail.
+                <div className="reveal-clip parallax relative mt-24 aspect-[16/9] overflow-hidden rounded-3xl lg:mt-36 lg:ml-[20rem]">
+                  <Image src={photos[i].src} alt={photos[i].alt} fill placeholder="blur" sizes="(min-width: 1280px) 54rem, (min-width: 1024px) calc(100vw - 26rem), 100vw" className="object-cover" />
                 </div>
               )}
             </li>
@@ -95,7 +96,7 @@ export default function AboutPage() {
       </Section>
 
       <Section labelledBy="about-cta-title">
-        <div className="reveal flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+        <div className="reveal flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
           <Heading id="about-cta-title" headline={about.cta.headline} />
           <ButtonLink href="/coaching" magnetic>
             {about.cta.label}

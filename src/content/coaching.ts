@@ -1,3 +1,4 @@
+import { calendly } from "./programs/types";
 import type { Headline } from "./shared";
 
 export type Pillar = { title: string; body: string };
@@ -24,7 +25,16 @@ export type Pillar = { title: string; body: string };
  */
 export type Offer = {
   format: string;
-  tiers: { name: string; price?: string; cadence?: string; summary: string; guarantee?: string; includes: string[] }[];
+  tiers: {
+    name: string;
+    price?: string;
+    cadence?: string;
+    summary: string;
+    guarantee?: string;
+    includes: string[];
+    /** The tier's button. Defaults to "Apply" on /apply. */
+    cta?: { label: string; href: string };
+  }[];
 };
 
 export const coaching = {
@@ -91,6 +101,7 @@ export const coaching = {
         {
           name: "10-session program",
           price: "$12,500",
+          cta: { label: "Apply for 10 sessions", href: "/apply?program=10-session" },
           cadence: "Ten sessions",
           summary:
             "Kevin’s most complete 1:1 program, for speakers who are all in. Ten sessions, weekly or every other week, customizing his five-module Paid to $peak model into your own speaking business, with Kevin reviewing your work between every session. Plan on 2 to 3 hours of assignments a week.",
@@ -116,6 +127,7 @@ export const coaching = {
         {
           name: "5-session program",
           price: "$7,500",
+          cta: { label: "Apply for 5 sessions", href: "/apply?program=5-session" },
           cadence: "Five sessions",
           summary:
             "The same personal approach in a shorter program, weekly or every other week, with more limited access to Kevin between sessions and shorter access to the included resources.",
@@ -131,8 +143,10 @@ export const coaching = {
           ],
         },
         {
-          name: "Hourly coaching and 3-hour bundles",
+          // Non-breaking hyphen, so the name never breaks as "3-" / "hour".
+          name: "Hourly coaching and 3‑hour bundles",
           cadence: "One hour, or a bundle of three",
+          cta: { label: "Book an hour", href: calendly.hourly },
           summary: "Focused, flexible time with Kevin on whatever you need most, without committing to a full program.",
           includes: [
             "Book a single hour or a 3-hour bundle",
@@ -145,6 +159,7 @@ export const coaching = {
         {
           name: "Speaker Assessment",
           cadence: "Written review and a coaching call",
+          cta: { label: "Apply for an assessment", href: "/apply?program=assessment" },
           summary:
             "For speakers who aren’t getting consistent bookings. Kevin reviews all your materials from a meeting planner’s point of view and shows you what to change.",
           includes: [
@@ -161,6 +176,7 @@ export const coaching = {
         {
           name: "Speech Review",
           cadence: "Booked as hourly coaching",
+          cta: { label: "Book a speech review", href: calendly.hourly },
           summary:
             "Have a high-stakes speech coming up? Kevin helps you prepare properly and deliver it well, so you make the most of the opportunity.",
           includes: [
@@ -183,7 +199,7 @@ export const coaching = {
   apply: {
     eyebrow: "Apply",
     headline: { lead: "Tell Kevin", highlight: "where you are." } satisfies Headline,
-    body: "A short application so Kevin can see where you are and what you need next.",
+    body: "A few questions about your speaking so far, and what you want from it next.",
     cta: "Apply for coaching",
   },
 } as const;

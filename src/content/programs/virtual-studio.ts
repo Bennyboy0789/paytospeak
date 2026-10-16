@@ -1,3 +1,4 @@
+import colorScreen from "@/assets/images/stage/stage-color-screen.jpg";
 import { calendly, type Program } from "./types";
 
 /** Virtual studio and tech coaching: studio setup coaching, the free equipment list, and tech-tip videos. */
@@ -13,6 +14,7 @@ export const virtualStudio: Program = {
   eyebrow: "Virtual studio and tech coaching",
   headline: { lead: "Present like a professional,", highlight: "on screen and on stage." },
   sub: "Whether you’re delivering virtual keynotes, leading online workshops, recording videos or podcasts, or meeting prospective clients online, your setup reflects your professionalism. It can be the difference between getting overlooked and getting booked.",
+  photo: { src: colorScreen, alt: "Kevin on a stage washed in rainbow light, pointing out to the audience", position: "66% 50%" },
   blocks: [
     {
       kind: "text",
@@ -94,7 +96,7 @@ export const virtualStudio: Program = {
       ],
     },
   ],
-  cta: { label: "Book a virtual studio session", href: calendly.virtualStudio },
+  cta: { label: "Book a studio session", href: calendly.virtualStudio },
   investment: "Coaching by the hour or in a 3-hour bundle. The strategy session is complimentary.",
   wixPrices: [
     "No rates on the October 2026 /virtualandtechsolutions rewrite. Earlier: $250/hour or $650 for a 3-hour bundle (/virtualandtechsolutions)",

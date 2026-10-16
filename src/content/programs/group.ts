@@ -86,11 +86,21 @@ export const group: Program = {
       ],
     },
     {
-      kind: "text",
+      kind: "list",
       heading: "Upcoming cohort",
+      intro: "Each session is a full 90 minutes live with Kevin on Zoom, Mondays at 12 p.m. Eastern (9 a.m. Pacific), unless a better time emerges for the cohort.",
+      items: [
+        "Session 1: Monday, November 2",
+        "Session 2: Monday, November 9",
+        "Session 3: Monday, November 16",
+        "Session 4: Monday, November 23",
+        "Session 5: Monday, November 30",
+      ],
+    },
+    {
+      kind: "text",
+      heading: "Recordings, and what comes after",
       body: [
-        "Session 1: Monday, November 2. Session 2: Monday, November 9. Session 3: Monday, November 16. Session 4: Monday, November 23. Session 5: Monday, November 30.",
-        "Each session is a full 90 minutes live with Kevin on Zoom, Mondays at 12 p.m. Eastern (9 a.m. Pacific), unless a better time emerges for the cohort.",
         "Can’t make a session? That’s fine. Every session is recorded, and you can send your questions in advance so Kevin can answer them during the Q&A.",
         "After the final session on November 30, you continue with Kevin’s Speaker Mastermind and coaching sessions for ongoing support.",
       ],

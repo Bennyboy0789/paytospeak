@@ -52,13 +52,14 @@ export async function applyAction(_prev: FormState, formData: FormData): Promise
   const email = String(formData.get("email") ?? "").trim();
   const stage = String(formData.get("stage") ?? "").trim();
   const link = String(formData.get("link") ?? "").trim();
+  const program = String(formData.get("program") ?? "").trim();
 
   const fieldErrors: Record<string, string> = {};
   if (!name) fieldErrors.name = "Tell Kevin your name.";
   if (!EMAIL.test(email)) fieldErrors.email = "Enter a valid email address.";
   if (stage.length < 20) fieldErrors.stage = "A few sentences, please. It helps Kevin read where you are.";
   if (link && !URL.canParse(link.startsWith("http") ? link : `https://${link}`)) fieldErrors.link = "That doesn’t look like a link.";
-  const values = { name, email, stage, link };
+  const values = { name, email, stage, link, program };
   if (Object.keys(fieldErrors).length) {
     return { status: "error", message: "A couple of fields need another look.", fieldErrors, values };
   }

@@ -20,45 +20,59 @@ export default function ApplyPage() {
   return (
     <section aria-labelledby="apply-title" className="relative -mt-18 overflow-hidden pt-18">
       <StageLights preset="hero" />
-      <Container className="relative grid gap-14 py-16 lg:grid-cols-[1fr_1.3fr] lg:gap-24 lg:py-32">
-        <div className="lg:sticky lg:top-32 lg:self-start">
+      {/* Phones read intro, form, then the extras; from lg the intro and extras share the left column. */}
+      <Container className="relative grid gap-12 py-16 lg:grid-cols-[1fr_1.3fr] lg:gap-x-24 lg:gap-y-0 lg:py-28">
+        <div className="lg:col-start-1 lg:row-start-1">
           <div className="enter">
             <Eyebrow>{apply.hero.eyebrow}</Eyebrow>
           </div>
-          <Heading as="h1" id="apply-title" size="page" headline={apply.hero.headline} animate className="mt-7" />
-          <p className="enter mt-8 text-lg leading-relaxed text-foreground/80" style={delay(500)}>
+          <Heading as="h1" id="apply-title" size="page" headline={apply.hero.headline} animate className="mt-7 lg:text-[clamp(3rem,5.2vw,5rem)]" />
+          <p className="enter mt-8 text-lg leading-relaxed text-pretty text-foreground/80" style={delay(500)}>
             {apply.hero.sub}
           </p>
-          <div className="enter mt-10 border-t border-border pt-8" style={delay(600)}>
+        </div>
+
+        <div className="enter border-beam rounded-[2rem] bg-card p-6 sm:p-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start lg:p-12" style={delay(300)}>
+          <ApplyForm />
+        </div>
+
+        <div className="lg:col-start-1 lg:row-start-2">
+          <div className="enter border-t border-border pt-8 lg:mt-10" style={delay(600)}>
             <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">{apply.values.heading}</h2>
-            <p className="mt-3 font-display text-xl font-bold tracking-tight">{apply.values.items.join(" · ")}</p>
-            <p className="mt-2 text-sm text-muted-foreground">{apply.values.note}</p>
+            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 font-display text-xl font-bold">
+              {apply.values.items.map((value) => (
+                <li key={value} className="flex items-center gap-2.5">
+                  <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
+                  {value}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-sm text-muted-foreground">{apply.values.note}</p>
           </div>
           <dl className="enter mt-8 grid gap-5 text-sm sm:grid-cols-2" style={delay(650)}>
             <div>
               <dt className="text-muted-foreground">{apply.contact.emailLabel}</dt>
-              <dd className="mt-1">
-                <a href={`mailto:${apply.contact.email}`} className="link-draw font-semibold text-primary">
+              <dd>
+                <a href={`mailto:${apply.contact.email}`} className="link-draw inline-block py-1.5 font-semibold text-primary">
                   {apply.contact.email}
                 </a>
               </dd>
             </div>
             <div>
               <dt className="text-muted-foreground">{apply.contact.callLabel}</dt>
-              <dd className="mt-1">
-                <a href={calendly.strategy} target="_blank" rel="noopener" className="link-draw font-semibold text-primary">
+              <dd>
+                <a href={calendly.strategy} target="_blank" rel="noopener" className="link-draw inline-block py-1.5 font-semibold text-primary">
                   {apply.contact.callCta}
                 </a>
               </dd>
             </div>
           </dl>
-          <ul className="enter mt-10 space-y-2 border-t border-border pt-8 text-sm text-muted-foreground" style={delay(650)}>
-            <li>CSP &middot; AS &middot; {credentials.rarity}</li>
+          <ul className="enter mt-10 space-y-2 border-t border-border pt-8 text-sm leading-relaxed text-pretty text-muted-foreground" style={delay(650)}>
+            <li>
+              {credentials.csp} and {credentials.as}. {credentials.rarity}
+            </li>
             <li>{stats.map((s) => `${s.value} ${s.label}`).join(" · ")}</li>
           </ul>
-        </div>
-        <div className="enter border-beam rounded-[2rem] bg-card p-7 sm:p-10 lg:p-12" style={delay(300)}>
-          <ApplyForm />
         </div>
       </Container>
     </section>

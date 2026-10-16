@@ -7,12 +7,16 @@ import { YouTube } from "@/components/YouTube";
 // exactly the brand scale from docs/BRAND.md.
 const components: MDXComponents = {
   h2: (props) => <h2 className="mt-14 font-display text-3xl font-black tracking-tight text-balance" {...props} />,
-  h3: (props) => <h3 className="mt-10 font-display text-xl font-bold tracking-tight" {...props} />,
-  p: (props) => <p className="mt-6 text-lg leading-relaxed text-foreground/85" {...props} />,
+  h3: (props) => <h3 className="mt-12 font-display text-2xl font-black tracking-[-0.01em] text-balance" {...props} />,
+  p: (props) => <p className="mt-5 text-lg leading-relaxed text-pretty text-foreground/85" {...props} />,
   ul: (props) => <ul className="mt-6 list-disc space-y-3 pl-6 text-lg leading-relaxed text-foreground/85 marker:text-accent" {...props} />,
   ol: (props) => <ol className="mt-6 list-decimal space-y-3 pl-6 text-lg leading-relaxed text-foreground/85 marker:text-accent" {...props} />,
+  // The quote's paragraphs come through the `p` above, so the quote styles them directly.
   blockquote: (props) => (
-    <blockquote className="mt-8 border-l-2 border-accent pl-6 font-display text-2xl font-bold tracking-tight text-foreground" {...props} />
+    <blockquote
+      className="mt-10 border-l-2 border-accent pl-6 [&>p]:mt-3 [&>p]:font-display [&>p]:text-xl [&>p]:font-bold [&>p]:leading-snug [&>p]:text-foreground [&>p:first-child]:mt-0 lg:[&>p]:text-2xl"
+      {...props}
+    />
   ),
   a: ({ href = "", ...props }) =>
     href.startsWith("/") ? (

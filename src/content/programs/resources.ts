@@ -1,3 +1,4 @@
+import allHands from "@/assets/images/stage/all-hands-balloons.jpg";
 import type { Headline } from "../shared";
 import type { Program } from "./types";
 
@@ -28,9 +29,11 @@ export const resources: Program = {
   eyebrow: "Free resources",
   headline: { lead: "Free tools", highlight: "for speakers." } satisfies Headline,
   sub: "Worksheets, checklists and real samples from Kevin’s own speaking business. No sign-up. Download what you need, fill it in, and use it as you build.",
+  photo: { src: allHands, alt: "Kevin on stage at a company all-hands meeting, arms raised, with balloons and a large screen", position: "38% 50%" },
   blocks: [
     {
       kind: "downloads",
+      id: "worksheets",
       heading: "Module worksheets",
       intro:
         "One worksheet for each module of Kevin’s first book, PAID to $PEAK: How to Become a Professional Speaker. Read the module, then work through the questions.",
@@ -106,9 +109,10 @@ export const resources: Program = {
     },
     {
       kind: "downloads",
-      heading: "Thinking about coaching?",
-      intro: "If you’d like Kevin’s help working through any of this, start here.",
+      heading: "Keep going",
       files: [
+        { label: "The book", href: "/book", note: "The worksheets go with Kevin’s first book, PAID to $PEAK. The book page also has news of Paid to $peak 2.0." },
+        { label: "The blog", href: "/blog", note: "Years of Kevin’s articles on fees, outreach, TEDx and virtual speaking." },
         {
           label: "Coaching application",
           href: "/files/Coaching_Application.pdf",
@@ -116,17 +120,13 @@ export const resources: Program = {
         },
       ],
     },
-    {
-      kind: "downloads",
-      heading: "Keep going",
-      files: [
-        { label: "The book", href: "/book", note: "The worksheets go with Kevin’s first book, PAID to $PEAK. The book page also has news of Paid to $peak 2.0." },
-        { label: "The blog", href: "/blog", note: "Years of Kevin’s articles on fees, outreach, TEDx and virtual speaking." },
-        { label: "Apply for coaching", href: "/apply", note: "When you want a second set of eyes on your plan. Kevin will tell you honestly where you are and what to do next." },
-      ],
-    },
   ],
-  cta: { label: "Apply for coaching", href: "/apply" },
+  cta: { label: "Get the worksheets", href: "#worksheets" },
+  closing: {
+    headline: { lead: "Want a second set of eyes", highlight: "on your plan?" },
+    body: "Kevin will tell you honestly where you are and what to do next. It starts with a short application.",
+    cta: { label: "Apply for coaching", href: "/apply" },
+  },
   wixPrices: [
     "The Vault pitch on /bookfiles: “You’ll also receive $2,500+ in discounts”, “1-year access to my Association Directory ($899 value)”, “Two 30-minute coaching calls ($249 value)”, “5 recorded webinars I have personally purchased ($225 value)”.",
     "Speaking Business Checklist PDF (published): “Is your speaking set up like a business to earn $1,500, $2,500, and $3,500+ per speech?” (fee framing, not a price).",

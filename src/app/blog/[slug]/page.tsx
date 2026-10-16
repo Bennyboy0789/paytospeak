@@ -6,8 +6,10 @@ import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { Eyebrow } from "@/components/Section";
-import { adjacentPosts, formatDate, getPost, posts } from "@/content/posts";
-import { site } from "@/lib/site";
+import portrait from "@/assets/images/stage/portrait-vest.jpg";
+import { formatDate, getPost, posts, relatedPosts } from "@/content/posts";
+import { stats } from "@/content/shared";
+import { applyHref, site } from "@/lib/site";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -29,7 +31,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
   const post = getPost(slug);
   if (!post) notFound();
   const { default: Body } = await import(`@/content/posts/${slug}.mdx`);
-  const { newer, older } = adjacentPosts(slug);
+  const related = relatedPosts(slug);
 
   return (
     <article aria-labelledby="post-title">
@@ -46,7 +48,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
       />
       <div aria-hidden="true" className="read-progress" />
       <div className="mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 lg:py-24">
-        <Link href="/blog" className="group enter inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
+        <Link href="/blog" className="group enter -my-2 inline-flex items-center gap-2 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
           <span aria-hidden="true" className="transition-transform duration-500 ease-out-expo group-hover:-translate-x-1">&larr;</span> All posts
         </Link>
         <div className="enter mt-10" style={{ "--d": "120ms" } as CSSProperties}>
@@ -62,32 +64,59 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
             <Image src={post.image.src} alt={post.image.alt} fill placeholder="blur" priority sizes="(min-width: 768px) 48rem, 100vw" className="object-cover" />
           </div>
         )}
-        <div className="mt-6">
+        {/* About 68 characters a line for long reads; the title and hero image keep the full width. */}
+        <div className="mt-6 max-w-[42rem]">
           <Body />
         </div>
-        {(newer || older) && (
-          <nav aria-label="More posts" className="mt-20 grid gap-4 border-t border-border pt-10 sm:grid-cols-2">
-            {older && (
-              <Link href={`/blog/${older.slug}`} className="group rounded-2xl border border-border p-6 transition-colors hover:border-accent/60">
-                <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">&larr; Older</span>
-                <span className="mt-2 block font-display text-lg font-bold tracking-tight text-balance group-hover:text-primary">{older.title}</span>
-              </Link>
-            )}
-            {newer && (
-              <Link href={`/blog/${newer.slug}`} className="group rounded-2xl border border-border p-6 text-right transition-colors hover:border-accent/60 sm:col-start-2">
-                <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Newer &rarr;</span>
-                <span className="mt-2 block font-display text-lg font-bold tracking-tight text-balance group-hover:text-primary">{newer.title}</span>
-              </Link>
-            )}
+        <aside aria-labelledby="author-title" className="reveal border-beam mt-20 rounded-3xl bg-card p-7 sm:p-10">
+          <div className="flex items-center gap-5">
+            <Image src={portrait} alt="" placeholder="blur" sizes="4.5rem" className="size-18 shrink-0 rounded-full object-cover object-[50%_25%]" />
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Written by</p>
+              <p id="author-title" className="mt-1 font-display text-2xl font-black tracking-[-0.01em]">
+                {site.parent.name}
+              </p>
+            </div>
+          </div>
+          <p className="mt-6 text-lg leading-relaxed text-pretty text-foreground/80">
+            {stats[0].value} years speaking professionally, in front of {stats[1].value} audiences. Kevin now coaches aspiring and emerging speakers on the
+            business behind the talk.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <ButtonLink href="/coaching">See the coaching program</ButtonLink>
+            <ButtonLink href={applyHref} variant="secondary">
+              Apply for coaching
+            </ButtonLink>
+          </div>
+        </aside>
+
+        {related.length > 0 && (
+          <nav aria-labelledby="related-title" className="mt-20">
+            <h2 id="related-title" className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+              Keep reading
+            </h2>
+            <ul className="mt-6 border-t border-border">
+              {related.map((p) => (
+                <li key={p.slug} className="border-b border-border">
+                  <Link href={`/blog/${p.slug}`} className="group flex items-center justify-between gap-6 py-6">
+                    <span>
+                      <time dateTime={p.date} className="text-sm text-muted-foreground">
+                        {formatDate(p.date)}
+                      </time>
+                      <span className="mt-1 block font-display text-xl font-black tracking-[-0.01em] text-balance transition-colors group-hover:text-primary">{p.title}</span>
+                    </span>
+                    <span aria-hidden="true" className="text-primary transition-transform duration-500 ease-out-expo group-hover:translate-x-1">
+                      &rarr;
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ButtonLink href="/blog" variant="tertiary" className="mt-6">
+              All posts
+            </ButtonLink>
           </nav>
         )}
-        <footer className="reveal border-beam mt-20 rounded-3xl bg-card p-8 lg:p-12">
-          <p className="font-display text-2xl font-black tracking-tight">Want Kevin in your corner?</p>
-          <p className="mt-2 text-foreground/80">Coaching for aspiring and emerging speakers.</p>
-          <ButtonLink href="/coaching" variant="tertiary" className="mt-5">
-            See the coaching program
-          </ButtonLink>
-        </footer>
       </div>
     </article>
   );

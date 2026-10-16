@@ -1,3 +1,4 @@
+import type { Headline } from "./shared";
 import type { StaticImageData } from "next/image";
 import firstEdition from "@/assets/images/book-paid-to-speak-first-edition.jpg";
 
@@ -38,5 +39,11 @@ export const book = {
     imageAlt: "Cover of PAID to $PEAK: How to Become a Professional Speaker, by Dr. Kevin C. Snyder",
     // DRAFT(kc): confirm how 2.0 relates to the first book before launch.
     body: "Kevin first wrote about the speaking business in PAID to $PEAK: How to Become a Professional Speaker. Paid to $peak 2.0 is his new book on the systems and strategies behind a speaking career.",
+  },
+  // DRAFT(kc): closing band. No new facts: Kevin coaches on these systems now (docs/CONTENT.md).
+  closing: {
+    headline: { lead: "Don’t want to wait", highlight: "for the book?" } satisfies Headline,
+    body: "Kevin coaches aspiring and emerging speakers on the same systems today, one to one and in groups.",
+    cta: "See the coaching program",
   },
 } as const;

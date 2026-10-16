@@ -39,6 +39,14 @@ export const tedx: Program = {
       ],
     },
     {
+      kind: "text",
+      heading: "TEDx is highly competitive",
+      body: [
+        "With 2,500+ TEDx events each year around the world, and the right preparation and strategy, your future TEDx talk can become a powerful springboard for your speaking career.",
+        "A TEDx talk gives you a global platform to share your message, build your credibility, and open doors to future speaking engagements. Your idea and your story deserve to be heard.",
+      ],
+    },
+    {
       kind: "options",
       heading: "Three TEDx coaching options",
       intro: "Find the right level of support for where you are with TEDx. Payment plans are available on every option.",
@@ -83,6 +91,7 @@ export const tedx: Program = {
             "Feedback between sessions",
             "The TEDx selection guarantee",
           ],
+          cta: { label: "Book an Intensive call", href: calendly.tedxIntensive },
         },
       ],
     },
@@ -98,14 +107,6 @@ export const tedx: Program = {
       heading: "Watch Kevin’s TEDx talk",
       intro: "Kevin’s TEDxCapeMay talk, the story behind his book PURE Vulnerability.",
       videos: [{ youtubeId: "GbJaPqqV3A4", title: "Recovery from depression, eating disorder and sexual assault as a male | Kevin Snyder | TEDxCapeMay" }],
-    },
-    {
-      kind: "text",
-      heading: "TEDx is highly competitive",
-      body: [
-        "With 2,500+ TEDx events each year around the world, and the right preparation and strategy, your future TEDx talk can become a powerful springboard for your speaking career.",
-        "A TEDx talk gives you a global platform to share your message, build your credibility, and open doors to future speaking engagements. Your idea and your story deserve to be heard.",
-      ],
     },
     {
       kind: "downloads",

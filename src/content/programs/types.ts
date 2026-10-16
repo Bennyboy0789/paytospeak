@@ -20,10 +20,12 @@ export type Program = {
   sub: string;
   /** One line beside the hero button, e.g. "$297 to $7,500. Payment plans available." */
   investment?: string;
-  /** A wide action photo under the hero. */
-  photo?: { src: StaticImageData; alt: string };
+  /** An action photo of Kevin beside the hero (under it on phones). `position` is the CSS object-position. */
+  photo?: { src: StaticImageData; alt: string; position?: string };
   blocks: ProgramBlock[];
   cta: { label: string; href: string };
+  /** Overrides for the closing "Next step" card, for pages that don't sell anything. */
+  closing?: { headline?: Headline; body?: string; cta?: { label: string; href: string } };
   /**
    * Every price seen on Wix, with where it was seen. A record only: the prices shown on
    * the page are `investment` and each option's `price`, from Kevin's 2026 charts.
@@ -35,15 +37,18 @@ export type Program = {
   todo: string[];
 };
 
-export type ProgramBlock =
+/** `id` makes a block an in-page link target, e.g. a hero button to "#worksheets". */
+export type ProgramBlock = { id?: string } & (
   | { kind: "text"; heading?: string; body: string[] }
   | { kind: "list"; heading?: string; intro?: string; items: string[] }
   | { kind: "options"; heading?: string; intro?: string; options: ProgramOption[] }
-  | { kind: "steps"; heading?: string; intro?: string; steps: { title: string; body: string }[] }
+  /** `catalogue` lays the items out as unnumbered cards, for lists that aren't a sequence. */
+  | { kind: "steps"; heading?: string; intro?: string; catalogue?: boolean; steps: { title: string; body: string }[] }
   | { kind: "videos"; heading?: string; intro?: string; videos: { youtubeId: string; title: string }[] }
   /** Files under /files show a download icon; any other link shows an arrow. */
   | { kind: "downloads"; heading?: string; intro?: string; files: { label: string; href: string; note?: string }[] }
-  | { kind: "faq"; heading?: string; items: { q: string; a: string }[] };
+  | { kind: "faq"; heading?: string; items: { q: string; a: string }[] }
+);
 
 export type ProgramOption = {
   name: string;
@@ -55,6 +60,10 @@ export type ProgramOption = {
   guarantee?: string;
   summary?: string;
   includes: string[];
+  /** What this option leaves out. Shown muted, with a dash rather than a check. */
+  excludes?: string[];
+  /** The option's own button. Defaults to the program's `cta`. */
+  cta?: { label: string; href: string };
 };
 
 /** Kevin's booking links, as used on the Wix site. */

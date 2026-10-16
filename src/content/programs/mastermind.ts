@@ -76,7 +76,8 @@ export const mastermind: Program = {
           format: "Included with qualifying programs",
           price: "Complimentary",
           summary: "Speaker Mastermind membership is included for qualifying Paid to $peak coaching clients.",
-          includes: ["Included with Kevin’s qualifying coaching programs", "See the options on the coaching page"],
+          includes: ["Included with Kevin’s qualifying coaching programs"],
+          cta: { label: "See coaching options", href: "/coaching" },
         },
       ],
     },
@@ -115,7 +116,7 @@ export const mastermind: Program = {
       ],
     },
   ],
-  cta: { label: "Talk to Kevin about the Mastermind", href: calendly.strategy },
+  cta: { label: "Talk to Kevin", href: calendly.strategy },
   wixPrices: [
     "Monthly $50, cancel any time; Annual $475; complimentary for Kevin's qualifying coaching clients (2026 \"Speaker Mastermind Enrollment Options\" graphic and PayPal DFUGW699GBHFY / J9KKN2HJ6Q2PG on /mastermind). Shown on the page.",
     "Older: \"Trial Speaker Mastermind Group - $19\" (/copy-of-paid-to-usdpeak-book); \"MASTERMIND GROUP $999\" (2019 chart PDF)",

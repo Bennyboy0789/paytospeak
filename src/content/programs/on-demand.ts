@@ -1,3 +1,4 @@
+import blueCurtain from "@/assets/images/stage/stage-blue-curtain.jpg";
 import { calendly, type Program } from "./types";
 
 /**
@@ -18,6 +19,7 @@ export const onDemand: Program = {
   eyebrow: "On demand",
   headline: { lead: "Kevin’s system,", highlight: "on your schedule." },
   sub: "The Paid to $peak online course walks you through Kevin’s speaking business model in five video modules. The webinar series goes deeper on the parts most speakers have to learn the hard way. Watch when you want, where you want, as often as you want.",
+  photo: { src: blueCurtain, alt: "Kevin on stage in front of a blue curtain, arms out mid-story", position: "50% 30%" },
   blocks: [
     {
       kind: "text",
@@ -111,6 +113,7 @@ export const onDemand: Program = {
     {
       kind: "steps",
       heading: "The Paid to $peak webinar series",
+      catalogue: true,
       intro: "Recorded webinars from Kevin’s virtual studio on the business of speaking: how to launch into paid speaking, run the business, and get the most from every contract. The webinars are 60-minute recordings, and most come with the slide deck so you can follow along and take notes. Buy a single webinar or the whole series. The full series includes a 30-minute one-on-one coaching call with Kevin.",
       steps: [
         {
@@ -168,7 +171,7 @@ export const onDemand: Program = {
       ],
     },
   ],
-  cta: { label: "Talk to Kevin about the course", href: calendly.strategy },
+  cta: { label: "Talk to Kevin", href: calendly.strategy },
   wixPrices: [
     "Online course: PLUS $450, BASIC $350 (/onlinecourse and /onlinecoursedetails page text, PayPal Smart Buttons: PLUS(+) Course 450 USD, Basic Course 350 USD)",
     "Online course: \"$497 One-Time Payment\" (current coaching comparison chart image on /coachingoptions)",

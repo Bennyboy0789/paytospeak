@@ -39,13 +39,13 @@ export default function BookPage() {
       <section aria-labelledby="book-title" className="hero-scope relative -mt-18 overflow-hidden pt-18">
         <StageLights preset="hero" />
         <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 size-[44rem] translate-x-1/3 -translate-y-1/3 rounded-full bg-accent/10 blur-3xl" />
-        <Container className="hero-out relative grid items-center gap-16 py-16 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-28 lg:py-32">
-          <div className="order-2 md:order-1">
+        <Container className="hero-out relative grid items-center gap-16 py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-28 lg:py-32">
+          <div>
             <div className="enter">
               <Eyebrow>{hero.eyebrow}</Eyebrow>
             </div>
             <Heading as="h1" id="book-title" size="hero" headline={{ lead: book.title }} animate className="mt-7" />
-            <p className="enter mt-8 max-w-xl text-lg leading-relaxed text-foreground/80 lg:text-xl" style={delay(400)}>
+            <p className="enter mt-8 max-w-xl text-lg leading-relaxed text-pretty text-foreground/80 lg:text-xl" style={delay(400)}>
               {hero.sub}
             </p>
 
@@ -57,7 +57,7 @@ export default function BookPage() {
               </div>
             </div>
           </div>
-          <div className="enter order-1 mx-auto w-full max-w-[16rem] md:order-2 md:max-w-none" style={delay(200)}>
+          <div className="enter mx-auto w-full max-w-[14rem] sm:max-w-[18rem] lg:max-w-none" style={delay(200)}>
             <BookCover priority />
           </div>
         </Container>
@@ -77,7 +77,7 @@ export default function BookPage() {
             <h2 id="first-edition-title" className="sr-only">
               The first book
             </h2>
-            <p className="mt-5 font-display text-2xl font-bold leading-snug tracking-tight lg:text-3xl">{firstEdition.body}</p>
+            <p className="mt-5 font-display text-xl font-bold leading-snug text-pretty lg:text-2xl">{firstEdition.body}</p>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/80">
               {firstBook.body.map((p) => (
                 <p key={p}>{p}</p>
@@ -96,11 +96,12 @@ export default function BookPage() {
         </div>
 
         {/* The five modules, carried over from the Wix book pages */}
-        <ol className="reveal-stagger mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {/* Five cards: 2 + 2 + 1 wide on tablets, 3 + 2 on desktop, so no row ends with a gap. */}
+        <ol className="reveal-stagger mt-20 grid gap-4 sm:grid-cols-2 sm:[&>li:last-child]:col-span-2 lg:grid-cols-6 lg:[&>li]:col-span-2 lg:[&>li:nth-child(n+4)]:col-span-3">
           {firstBook.modules.map((m) => (
             <li key={m.number} className="rounded-2xl border border-border bg-background p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Module {m.number}</p>
-              <h3 className="mt-3 font-display text-lg font-black leading-snug tracking-tight">{m.title}</h3>
+              <h3 className="mt-3 font-display text-lg font-black leading-snug tracking-[-0.01em] text-balance">{m.title}</h3>
               <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
                 {m.topics.map((t) => (
                   <li key={t}>{t}</li>
@@ -126,6 +127,18 @@ export default function BookPage() {
               ))}
             </ul>
           </Placeholder>
+        </div>
+      </Section>
+
+      <Section labelledBy="book-cta-title">
+        <div className="reveal flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
+          <div className="max-w-3xl">
+            <Heading id="book-cta-title" headline={book.closing.headline} />
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-foreground/80">{book.closing.body}</p>
+          </div>
+          <ButtonLink href="/coaching" magnetic>
+            {book.closing.cta}
+          </ButtonLink>
         </div>
       </Section>
     </>

@@ -18,7 +18,7 @@ type SectionProps = {
 
 export function Section({ children, tone = "background", id, className = "", labelledBy, compact }: SectionProps) {
   return (
-    <section id={id} aria-labelledby={labelledBy} className={`relative ${tones[tone]} ${compact ? "py-20 lg:py-28" : "py-24 lg:py-40"} ${className}`}>
+    <section id={id} aria-labelledby={labelledBy} className={`relative ${tones[tone]} ${compact ? "py-20 lg:py-28" : "py-24 lg:py-32"} ${className}`}>
       <Container>{children}</Container>
     </section>
   );

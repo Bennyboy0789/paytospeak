@@ -20,9 +20,12 @@ export function BookCover({ className = "", priority }: { className?: string; pr
   ) : (
     <div className={`${frame} flex flex-col bg-[radial-gradient(120%_80%_at_50%_0%,var(--color-secondary)_0%,var(--color-background)_70%)] p-[9%]`} role="img" aria-label={`${book.plainTitle}: cover coming soon`}>
       <div aria-hidden="true" className="flex flex-1 flex-col">
-        <Logo variant="stacked" className="h-auto w-full" />
-        <p className="mt-[6%] font-display text-[34cqw] font-black leading-none tracking-tight text-accent">2.0</p>
-        <p className="mt-auto text-[3.6cqw] font-semibold uppercase tracking-widest text-foreground/70">{site.parent.name}</p>
+        {/* Title block centred in the space above the author line, so the cover has no empty half. */}
+        <div className="my-auto">
+          <Logo variant="stacked" className="h-auto w-full" />
+          <p className="mt-[6%] font-display text-[40cqw] font-black leading-none tracking-tight text-accent">2.0</p>
+        </div>
+        <p className="border-t border-foreground/15 pt-[5%] text-[3.6cqw] font-semibold uppercase tracking-widest text-foreground/70">{site.parent.name}</p>
       </div>
       <Sheen />
     </div>

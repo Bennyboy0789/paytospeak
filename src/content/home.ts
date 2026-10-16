@@ -40,7 +40,8 @@ export const home = {
     eyebrow: "About Kevin",
     headline: {
       lead: "A kid who didn’t believe in himself",
-      highlight: "became a speaker a million people saw.",
+      // Non-breaking space: keeps "a million" together so "a" never dangles at a line end.
+      highlight: "became a speaker a million people saw.",
     } satisfies Headline,
     body: "From childhood depression to television game-show winner to keynote speaker and belief researcher, Kevin’s path wasn’t a straight line. That’s exactly why he can teach it. He built the ShiftThinker™ framework from 20 years on stage and turned it into a system other speakers can learn.",
     cta: "Read Kevin’s story",

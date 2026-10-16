@@ -1,3 +1,4 @@
+import workshopRoom from "@/assets/images/stage/workshop-room.jpg";
 import { calendly, type Program } from "./types";
 
 /** Mentorship: monthly Pro Speaker, Emerging and Aspiring levels. */
@@ -13,6 +14,7 @@ export const mentorship: Program = {
   eyebrow: "Mentorship",
   headline: { lead: "Mentorship is", highlight: "different from coaching." },
   sub: "Mentorship gives you regular time with Kevin to ask whatever you need, on an agenda you set. It’s built for speakers who already have some experience, or who have finished one of Kevin’s coaching programs and want continued support.",
+  photo: { src: workshopRoom, alt: "Kevin leading a workshop in a bright city meeting room, hand raised", position: "40% 50%" },
   blocks: [
     {
       kind: "text",
@@ -50,8 +52,8 @@ export const mentorship: Program = {
             "Up to two mentorship sessions a month, typically 60 to 90 minutes",
             "You decide the agenda: questions, your speech and presentation design, paid engagements, TEDx and more",
             "Kevin reviews your work and gives feedback in the moment, during the session",
-            "No review of work between sessions",
           ],
+          excludes: ["No review of work between sessions"],
         },
         {
           name: "Aspiring",
@@ -61,9 +63,9 @@ export const mentorship: Program = {
           includes: [
             "One 50-minute mentorship session a month",
             "You decide the agenda",
-            "No review of work or touchpoint access outside the session",
             "Kevin recommends reading his book, PAID to $PEAK, and bringing your questions to each session",
           ],
+          excludes: ["No review of work or touchpoint access outside the session"],
         },
       ],
     },

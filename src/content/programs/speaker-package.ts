@@ -1,3 +1,4 @@
+import stageTruss from "@/assets/images/stage/stage-truss.jpg";
 import { calendly, type Program } from "./types";
 
 /** The Ultimate Speaker Package: website, demo video, marketing packet and book, with Kevin managing the project. */
@@ -13,6 +14,7 @@ export const speakerPackage: Program = {
   eyebrow: "Ultimate Speaker Package",
   headline: { lead: "Everything planners ask to see,", highlight: "in one package." },
   sub: "A speaker website, a demo video, a marketing packet and a published book, made by the designers, videographers and publishers who do Kevin’s own work. Kevin coaches you through it and manages the project from start to finish.",
+  photo: { src: stageTruss, alt: "Kevin speaking on a stage framed by lighting truss, audience in the foreground", position: "62% 50%" },
   blocks: [
     {
       kind: "text",
@@ -38,7 +40,6 @@ export const speakerPackage: Program = {
       options: [
         {
           name: "Starter",
-          format: "Option 1",
           includes: [
             "3 coaching sessions and 2 project management sessions",
             "Landing page website",
@@ -50,7 +51,6 @@ export const speakerPackage: Program = {
         },
         {
           name: "Serious",
-          format: "Option 2",
           includes: [
             "3 coaching sessions and 2 project management sessions",
             "Upgraded website with a blog",
@@ -63,7 +63,6 @@ export const speakerPackage: Program = {
         },
         {
           name: "Professional",
-          format: "Option 3",
           includes: [
             "5 coaching sessions and 5 project management sessions",
             "Premium speaker website",

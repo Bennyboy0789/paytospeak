@@ -35,7 +35,7 @@ export function Credentials() {
               <li key={f.name}>
                 <div className="flex h-10 items-end lg:h-12">
                   {f.logo ? (
-                    <Image src={f.logo.src} alt={f.name} sizes="200px" className={`w-auto max-w-full object-contain object-left opacity-75 ${f.logo.className}`} />
+                    <Image src={f.logo.src} alt={f.name} sizes="16rem" className={`w-auto max-w-full object-contain object-left opacity-75 ${f.logo.className}`} />
                   ) : (
                     <span className="font-display text-lg font-black leading-none tracking-tight text-foreground/75 lg:text-xl">{f.name}</span>
                   )}
@@ -62,8 +62,11 @@ function Odometer({ value }: { value: string }) {
       <span aria-hidden="true" className="inline-flex">
         {[...value].map((ch, i) =>
           /\d/.test(ch) ? (
-            <span key={i} className="inline-block h-[1em] overflow-hidden">
-              <span className="digit-strip flex flex-col" style={{ transform: `translateY(-${Number(ch)}em)` } as CSSProperties}>
+            // The hidden copy of the real digit sizes the slot, so a narrow "1" doesn't sit in a
+            // slot as wide as a "0" (which read as "1 ,500"). The rolling strip is centred over it.
+            <span key={i} className="relative inline-block h-[1em] overflow-hidden">
+              <span className="invisible">{ch}</span>
+              <span className="digit-strip absolute inset-x-0 top-0 flex flex-col items-center" style={{ transform: `translateY(-${Number(ch)}em)` } as CSSProperties}>
                 {"0123456789".split("").map((d) => (
                   <span key={d} className="h-[1em]">
                     {d}

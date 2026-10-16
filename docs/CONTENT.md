@@ -244,10 +244,14 @@ audiences. He is an NSA Certified Speaking Professional and a Toastmasters
 Accredited Speaker, one of only nine people worldwide to hold both. The advice
 you get is what he does on Monday.
 
-**Apply panel:** A short application so Kevin can see where you are and what you need next.
+**Apply panel:** A few questions about your speaking so far, and what you want from it next.
+**Tier buttons:** "Apply for 10 sessions", "Apply for 5 sessions" (to `/apply?program=…`, which preselects the
+program), "Book an hour" and "Book a speech review" (Kevin's hourly Calendly), "Apply for an assessment".
 
 ### Book page
 **Notify:** Leave your email and you'll hear when the book is available.
+**Closing band:** Don't want to wait *for the book?* Kevin coaches aspiring and emerging speakers on the
+same systems today, one to one and in groups. Button: See the coaching program.
 **Where it started:** Kevin first wrote about the speaking business in *PAID to
 $PEAK: How to Become a Professional Speaker*. Paid to $peak 2.0 is his new book on
 the systems and strategies behind a speaking career.
@@ -257,12 +261,30 @@ first edition's cover on kevincsnyder.com.)
 ### About page
 Each chapter carries one or two sentences built only from verified facts, plus a
 visible `TODO(kc)` asking for Kevin's own account:
-1. **The kid who didn't believe in himself.** Grew up in North Carolina; childhood depression.
+1. **Growing up in North Carolina.** Grew up in North Carolina; childhood depression. (Retitled so it
+   doesn't repeat the page headline, which already says "A kid who didn't believe in himself".)
 2. **A game show, a stage, and a question about belief.** `TODO(kc):` show name, year, research detail.
-3. **ShiftThinker™.** `TODO(kc):` one or two sentences in Kevin's words.
+3. **The ShiftThinker™ framework.** `TODO(kc):` one or two sentences in Kevin's words.
 4. **Why he coaches.** Credentials + "Now he coaches aspiring and emerging speakers
    on the system behind that career." `TODO(kc):` why, in his words.
 
 ### Blog post footer
-Want Kevin in your corner? Coaching for aspiring and emerging speakers.
+**Written by Dr. Kevin C. Snyder.** 20 years speaking professionally, in front of 1,500+ audiences. Kevin
+now coaches aspiring and emerging speakers on the business behind the talk. Buttons: See the coaching
+program, Apply for coaching. Then "Keep reading": three related posts, matched on title words.
+
+### 404 page
+**Eyebrow:** 404. **Headline:** This page *isn't on the program.* The link may be from the old site, or
+the page may have moved. Here's where most people are headed. Buttons: See the coaching program, Go to
+the home page. Links: Coaching, The blog, Free resources.
+
+### Program pages (closing cards)
+- **/resources:** Want a second set of eyes *on your plan?* Kevin will tell you honestly where you are and
+  what to do next. It starts with a short application. (Its hero button now jumps to the worksheets.)
+- **/toastmasters:** Thinking about *going pro?* A short call with Kevin about where you are as a speaker
+  and what the next step could be.
+- **/coaching/group:** the cohort dates are a list; the paragraphs after them sit under "Recordings, and
+  what comes after".
+- **Apply form:** a "What are you interested in?" field (A best guess is fine. Kevin will tell you what
+  fits.) and "Everything is required except the link."
 

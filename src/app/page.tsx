@@ -19,7 +19,6 @@ import { YouTube } from "@/components/YouTube";
 import { book } from "@/content/book";
 import { coaching } from "@/content/coaching";
 import { home } from "@/content/home";
-import { credentials } from "@/content/shared";
 import { applyHref, site } from "@/lib/site";
 
 const { hero, problem, system, about, stage, newsletter } = home;
@@ -69,7 +68,7 @@ export default function Home() {
       >
         {/* Two layers cut from one photo: the softened stage screen, and Kevin in front of it.
             Both share the same frame and crop, so at rest he sits exactly where the photo had him. */}
-        <div className="hero-photo-out absolute inset-x-0 top-0 h-[56svh] overflow-hidden lg:inset-y-0 lg:left-auto lg:right-0 lg:h-auto lg:w-[64%]">
+        <div className="hero-photo-out absolute inset-x-0 top-10 h-[56svh] lg:top-0 overflow-hidden lg:inset-y-0 lg:left-auto lg:right-0 lg:h-auto lg:w-[64%]">
           <Image
             src={stagePlate}
             alt=""
@@ -94,16 +93,16 @@ export default function Home() {
         </div>
         <StageLights preset="hero" />
 
-        <Container className="hero-out relative flex flex-1 flex-col justify-end pb-12 pt-[30svh] lg:justify-center lg:py-24">
+        <Container className="hero-out relative flex flex-1 flex-col justify-end pb-12 pt-[30svh] lg:justify-center lg:py-16">
           <div className="max-w-4xl">
             <div className="enter" style={delay(0)}>
               <Eyebrow>{hero.eyebrow}</Eyebrow>
             </div>
             <Heading as="h1" id="hero-title" size="hero" headline={hero.headline} animate className="mt-7" />
-            <p className="enter mt-8 max-w-xl text-lg leading-relaxed text-foreground/80 lg:text-xl" style={delay(650)}>
+            <p className="enter mt-7 max-w-xl text-lg leading-relaxed text-pretty text-foreground/80 lg:text-xl" style={delay(650)}>
               {hero.sub}
             </p>
-            <div className="enter mt-10 flex flex-wrap items-center gap-4" style={delay(800)}>
+            <div className="enter mt-9 flex flex-wrap items-center gap-4" style={delay(800)}>
               <ButtonLink href={applyHref} magnetic>
                 {hero.primaryCta}
               </ButtonLink>
@@ -114,17 +113,6 @@ export default function Home() {
           </div>
         </Container>
 
-        <Container className="enter-fade relative hidden items-end justify-between pb-10 lg:flex" >
-          <p className="max-w-xs text-xs uppercase leading-relaxed tracking-[0.2em] text-muted-foreground">
-            CSP &middot; AS &middot; {credentials.rarity}
-          </p>
-          <div aria-hidden="true" className="flex flex-col items-center gap-3 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-            Scroll
-            <span className="relative h-14 w-px overflow-hidden bg-border">
-              <span className="scroll-cue absolute inset-0 bg-accent" />
-            </span>
-          </div>
-        </Container>
       </section>
 
       <Marquee />
@@ -145,7 +133,7 @@ export default function Home() {
                 </span>
                 <div>
                   <h3 className="font-display text-2xl font-black tracking-tight transition-transform duration-700 ease-out-expo group-hover:translate-x-2 lg:text-4xl">{p.title}</h3>
-                  <p className="mt-3 text-lg leading-relaxed text-foreground/75">{p.body}</p>
+                  <p className="mt-3 text-lg leading-relaxed text-pretty text-foreground/75">{p.body}</p>
                 </div>
               </li>
             ))}
@@ -154,7 +142,7 @@ export default function Home() {
       </Section>
 
       {/* Statement + about */}
-      <section aria-labelledby="about-title" className="relative overflow-hidden border-y border-border bg-ink py-24 lg:py-40">
+      <section aria-labelledby="about-title" className="relative overflow-hidden border-y border-border bg-ink py-24 lg:py-32">
         <StageLights />
         <Container className="relative">
           <Eyebrow>{about.eyebrow}</Eyebrow>
@@ -173,9 +161,6 @@ export default function Home() {
             </div>
             <div className="reveal">
               <p className="text-xl leading-relaxed text-foreground/85 lg:text-2xl lg:leading-relaxed">{about.body}</p>
-              <p className="mt-8 border-l-2 border-accent pl-5 text-sm text-muted-foreground">
-                CSP &middot; AS &middot; {credentials.rarity}
-              </p>
               <ButtonLink href="/about" variant="tertiary" className="mt-10 text-lg">
                 {about.cta}
               </ButtonLink>
@@ -185,9 +170,9 @@ export default function Home() {
       </section>
 
       {/* On stage: Kevin's action photos and demo video */}
-      <section aria-labelledby="stage-title" className="relative overflow-hidden py-24 lg:py-40">
+      <section aria-labelledby="stage-title" className="relative overflow-hidden py-24 lg:py-32">
         <Container>
-          <div className="reveal flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div className="reveal flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <div className="max-w-3xl">
               <Eyebrow>{stage.eyebrow}</Eyebrow>
               <Heading id="stage-title" headline={stage.headline} className="mt-6" />
@@ -207,12 +192,12 @@ export default function Home() {
 
       {/* The system */}
       <Section tone="card" labelledBy="system-title">
-        <div className="reveal flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div className="reveal flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div className="max-w-3xl">
             <Eyebrow>{system.eyebrow}</Eyebrow>
             <Heading id="system-title" headline={system.headline} className="mt-6" />
           </div>
-          <ButtonLink href="/coaching" variant="tertiary" className="shrink-0 self-start text-lg md:self-auto">
+          <ButtonLink href="/coaching" variant="tertiary" className="shrink-0 self-start text-lg lg:self-auto">
             {system.cta}
           </ButtonLink>
         </div>
@@ -223,7 +208,7 @@ export default function Home() {
       </Section>
 
       {/* Book */}
-      <section aria-labelledby="book-title" className="relative overflow-hidden border-y border-border bg-ink py-24 lg:py-40">
+      <section aria-labelledby="book-title" className="relative overflow-hidden border-y border-border bg-ink py-24 lg:py-32">
         <StageLights preset="hero" />
         <Container className="relative grid items-center gap-16 md:grid-cols-[minmax(0,20rem)_1fr] lg:gap-28">
           <BookCover className="reveal mx-auto w-full max-w-[15rem] md:max-w-none" />
