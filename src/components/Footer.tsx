@@ -8,7 +8,7 @@ const footerLinks = [...nav, { label: "Contact", href: applyHref }];
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-border bg-ink pt-20 lg:pt-28">
+    <footer className="border-t border-border bg-ink pt-20 pb-10 lg:pt-28 lg:pb-12">
       {/* Phones: two short columns (Explore, Follow), then Programs in two columns, so the footer stays short. */}
       <Container className="relative grid grid-cols-2 gap-x-8 gap-y-12 md:gap-14 lg:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
         <div className="col-span-2 max-w-xs md:col-span-1">
@@ -76,12 +76,6 @@ export function Footer() {
           &copy; <CopyrightYear /> {site.parent.name}. All rights reserved.
         </p>
       </Container>
-
-      {/* Oversized wordmark, cut off by the bottom edge. Masked from the logo file so it stays the real mark. */}
-      <div
-        aria-hidden="true"
-        className="reveal mx-auto mt-10 aspect-[931.65/134] w-[108%] max-w-none -translate-x-[4%] translate-y-[22%] bg-gradient-to-b from-white/[0.09] to-transparent [mask:url(/logo-paidtospeak.svg)_center/contain_no-repeat]"
-      />
     </footer>
   );
 }
