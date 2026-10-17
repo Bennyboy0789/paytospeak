@@ -134,7 +134,7 @@ That license covers **tone, structure, and clarity**. It does **not** cover fact
   AA contrast minimum. This is a gate, not a nice-to-have — see `AGENTS.md`.
 - **Analytics:** leave a documented slot for GA4. Do not hardcode a measurement ID;
   read from `process.env.NEXT_PUBLIC_GA_ID` and render nothing if unset.
-- **Env vars:** `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GA_ID`, `MAILCHIMP_*` (see
+- **Env vars:** `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GA_ID`, `MAILCHIMP_*`, `RESEND_API_KEY` (applications; see
   `.env.local.example`). Never commit `.env.local`.
 
 ---

@@ -8,6 +8,7 @@ import { StageLights } from "@/components/StageLights";
 import { apply } from "@/content/apply";
 import { calendly } from "@/content/programs/types";
 import { credentials, stats } from "@/content/shared";
+import { applicationsOpen } from "@/lib/email";
 
 export const metadata: Metadata = {
   title: apply.meta.title,
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 const delay = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
 export default function ApplyPage() {
+  const open = applicationsOpen();
   return (
     <section aria-labelledby="apply-title" className="relative -mt-18 overflow-hidden pt-18">
       <StageLights preset="hero" />
@@ -29,7 +31,7 @@ export default function ApplyPage() {
           </div>
           <Heading as="h1" id="apply-title" size="page" headline={apply.hero.headline} animate className="mt-7 lg:text-[clamp(3rem,5.2vw,5rem)]" />
           <p className="enter mt-8 text-lg leading-relaxed text-pretty text-foreground/80" style={delay(500)}>
-            {apply.open ? apply.hero.sub : apply.closed.body}
+            {open ? apply.hero.sub : apply.closed.body}
           </p>
         </div>
 
@@ -37,7 +39,7 @@ export default function ApplyPage() {
           className="enter border-beam rounded-[2rem] bg-card p-6 sm:p-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start lg:p-12"
           style={delay(300)}
         >
-          {apply.open ? (
+          {open ? (
             <ApplyForm />
           ) : (
             <div>
@@ -68,7 +70,7 @@ export default function ApplyPage() {
             </ul>
             <p className="mt-3 text-sm text-muted-foreground">{apply.values.note}</p>
           </div>
-          {apply.open && (
+          {open && (
             <dl className="enter mt-8 grid gap-5 text-sm sm:grid-cols-2" style={delay(650)}>
               <div>
                 <dt className="text-muted-foreground">{apply.contact.emailLabel}</dt>

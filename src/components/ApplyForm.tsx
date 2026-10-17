@@ -3,6 +3,7 @@
 import { type ReactNode, useActionState, useEffect, useId, useRef } from "react";
 import { applyAction, type FormState } from "@/app/actions";
 import { apply } from "@/content/apply";
+import { calendly } from "@/content/programs/types";
 import { track } from "@/lib/track";
 
 const initial: FormState = { status: "idle", message: "" };
@@ -39,9 +40,15 @@ export function ApplyForm() {
 
   if (state.status === "success") {
     return (
-      <p role="status" className="rounded-2xl border border-accent/40 bg-accent/10 px-6 py-5">
-        {state.message}
-      </p>
+      <div role="status" className="rounded-2xl border border-accent/40 bg-accent/10 px-6 py-5">
+        <p>{state.message}</p>
+        <p className="mt-3 text-sm text-muted-foreground">
+          {fields.sooner}{" "}
+          <a href={calendly.strategy} target="_blank" rel="noopener" className="link-draw font-semibold text-primary">
+            {apply.contact.callCta}
+          </a>
+        </p>
+      </div>
     );
   }
 
@@ -58,43 +65,85 @@ export function ApplyForm() {
           <input id={`${id}-name`} name="name" defaultValue={v.name} autoComplete="name" required className={inputClass} {...invalid(err.name, `${id}-name`)} />
         </Field>
         <Field id={`${id}-email`} label={fields.email} error={err.email}>
-          <input id={`${id}-email`} name="email" type="email" defaultValue={v.email} autoComplete="email" required className={inputClass} {...invalid(err.email, `${id}-email`)} />
+          <input
+            id={`${id}-email`}
+            name="email"
+            type="email"
+            defaultValue={v.email}
+            autoComplete="email"
+            required
+            className={inputClass}
+            {...invalid(err.email, `${id}-email`)}
+          />
         </Field>
       </div>
 
       <Field id={`${id}-program`} label={fields.program} hint={fields.programHint}>
         <div className="relative">
-          <select ref={programField} id={`${id}-program`} name="program" defaultValue={v.program ?? "not-sure"} aria-describedby={`${id}-program-hint`} className={`${inputClass} cursor-pointer appearance-none pr-12 [&>option]:bg-card`}>
+          <select
+            ref={programField}
+            id={`${id}-program`}
+            name="program"
+            defaultValue={v.program ?? "not-sure"}
+            aria-describedby={`${id}-program-hint`}
+            className={`${inputClass} cursor-pointer appearance-none pr-12 [&>option]:bg-card`}
+          >
             {fields.programs.map((p) => (
               <option key={p.value} value={p.value}>
                 {p.label}
               </option>
             ))}
           </select>
-          <svg aria-hidden="true" viewBox="0 0 16 16" className="pointer-events-none absolute right-5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 16 16"
+            className="pointer-events-none absolute right-5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <path d="m4 6 4 4 4-4" />
           </svg>
         </div>
       </Field>
 
       <Field id={`${id}-stage`} label={fields.stage} hint={fields.stageHint} error={err.stage}>
-        <textarea id={`${id}-stage`} name="stage" defaultValue={v.stage} rows={6} required className={inputClass} {...invalid(err.stage, `${id}-stage`, true)} />
+        <textarea
+          id={`${id}-stage`}
+          name="stage"
+          defaultValue={v.stage}
+          rows={6}
+          required
+          className={inputClass}
+          {...invalid(err.stage, `${id}-stage`, true)}
+        />
       </Field>
 
       <Field id={`${id}-link`} label={fields.link} hint={fields.linkHint} error={err.link}>
-        <input id={`${id}-link`} name="link" defaultValue={v.link} type="url" inputMode="url" placeholder="https://" className={inputClass} {...invalid(err.link, `${id}-link`, true)} />
+        <input
+          id={`${id}-link`}
+          name="link"
+          defaultValue={v.link}
+          type="url"
+          inputMode="url"
+          placeholder="https://"
+          className={inputClass}
+          {...invalid(err.link, `${id}-link`, true)}
+        />
       </Field>
 
       <div>
         <p className="text-sm text-muted-foreground">{fields.required}</p>
         <div className="mt-4 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-        <button
-          type="submit"
-          disabled={pending}
-          className="cursor-pointer rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition duration-500 ease-out-expo hover:-translate-y-0.5 hover:shadow-amber-lg disabled:opacity-60"
-        >
-          {pending ? "Sending…" : fields.submit}
-        </button>
+          <button
+            type="submit"
+            disabled={pending}
+            className="cursor-pointer rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wide text-accent-foreground shadow-amber transition duration-500 ease-out-expo hover:-translate-y-0.5 hover:shadow-amber-lg disabled:opacity-60"
+          >
+            {pending ? "Sending…" : fields.submit}
+          </button>
           <p role="status" className="text-sm text-muted-foreground">
             {state.status === "error" ? state.message : ""}
           </p>

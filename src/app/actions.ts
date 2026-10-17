@@ -1,5 +1,7 @@
 "use server";
 
+import { apply } from "@/content/apply";
+import { sendApplication } from "@/lib/email";
 import { subscribe } from "@/lib/mailchimp";
 
 export type FormState = {
@@ -41,7 +43,12 @@ export async function subscribeAction(_prev: FormState, formData: FormData): Pro
   }
   switch (result.reason) {
     case "invalid":
-      return { status: "error", message: "MailChimp didn’t accept that address. Check it and try again.", fieldErrors: { email: "Check this address." }, values: { email } };
+      return {
+        status: "error",
+        message: "MailChimp didn’t accept that address. Check it and try again.",
+        fieldErrors: { email: "Check this address." },
+        values: { email },
+      };
     case "not-configured":
       return { status: "error", message: "Sign-up isn’t connected yet. Please check back soon.", values: { email } };
     default:
@@ -68,11 +75,17 @@ export async function applyAction(_prev: FormState, formData: FormData): Promise
     return { status: "error", message: "A couple of fields need another look.", fieldErrors, values };
   }
 
-  // TODO(kc): where do applications go — email, MailChimp, or a form service?
-  // Until that's decided, say so honestly instead of pretending it was sent.
+  const programLabel = apply.fields.programs.find((p) => p.value === program)?.label ?? "Not sure yet";
+  const result = await sendApplication({ name, email, program: programLabel, stage, link });
+  if (result.ok) {
+    return { status: "success", message: `Thanks, ${name}. Your application is with Kevin, and he’ll reply by email.` };
+  }
   return {
     status: "error",
-    message: "Online applications aren’t switched on yet. Please check back soon.",
+    message:
+      result.reason === "not-configured"
+        ? "Online applications aren’t switched on yet. Please email Kevin instead."
+        : "Something went wrong on our end and your application didn’t send. Please try again in a minute, or email Kevin.",
     values,
   };
 }

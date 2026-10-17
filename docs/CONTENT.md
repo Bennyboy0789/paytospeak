@@ -312,10 +312,12 @@ nothing until `src/content/testimonials.ts` has real, consented entries.
 stage. What he teaches speakers is the business side: his five-module Paid to $peak model. (Was: "turned
 it into a system other speakers can learn", which presented ShiftThinker™ as the coaching curriculum.)
 
-### Apply page while the form is off
-`apply.open` is `false` until applications have somewhere to go, so /apply shows "Start with a strategy
-session" and a Book a strategy session button (Kevin's strategy-session Calendly) instead of the form. The
-sub line reuses the program pages' closing copy. Set `open: true` once `applyAction` is wired.
+### Apply page
+Applications are emailed to kevin@kevincsnyder.com (Ben, 2026-10-16) through Resend, with the applicant
+as reply-to. Until `RESEND_API_KEY` is set in Vercel, /apply shows "Start with a strategy session" and a
+Book a strategy session button instead of the form; the sub line reuses the program pages' closing copy.
+**After sending (DRAFT(kc)):** Thanks, [name]. Your application is with Kevin, and he'll reply by email.
+Want to talk sooner? Book a strategy session.
 
 ### Blog
 - **Past-offer note** on 29 older posts that describe an offer as it was then (list in
