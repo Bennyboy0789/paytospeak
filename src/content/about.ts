@@ -55,7 +55,7 @@ const chapters: Chapter[] = [
     eyebrow: "The framework",
     title: "The ShiftThinker™ framework.",
     body: [
-      "Out of that research and 20 years on stage, Kevin built the ShiftThinker™ Framework, the thinking behind his keynotes for corporate, college and youth audiences.",
+      "Out of that research and more than 25 years on stage, Kevin built the ShiftThinker™ Framework, the thinking behind his keynotes for corporate, college and youth audiences.",
       "A ShiftThinker™ believes boldly, thinks differently and takes meaningful action, and isn’t defined by fear, failure or self-doubt.",
     ],
     quote: "The most important story you’ll ever believe is the one you tell yourself.",
@@ -65,8 +65,8 @@ const chapters: Chapter[] = [
     title: "Why he coaches.",
     body: [
       "Kevin is the first to say he isn’t a natural speaker. After years of hiring speakers for his own campus events, he wanted to share his story too. He presented conference breakouts and spoke on campuses for free, and the invitations grew. Getting paid was another matter, and his biggest mistake, he says, was trying to figure it out on his own.",
-      "So he hired a speaker coach to learn the business of speaking. With that guidance, structure and accountability, the paid keynotes followed.",
-      "Today he has spoken to more than 1,500 audiences across corporate, college and youth markets. He is an NSA Certified Speaking Professional and a Toastmasters Accredited Speaker, one of only nine people worldwide to hold both. It’s why he wrote PAID to $PEAK, and why he coaches.",
+      "So he hired a speaker coach to learn the business of speaking. With that guidance, structure and accountability, he was booking paid keynotes within six months. A year later, speaking had replaced his university salary.",
+      "Today he has spoken to more than a million people across 1,500+ audiences, in all 50 states and several countries, and on multiple TEDx stages. He is an NSA Certified Speaking Professional and a Toastmasters Accredited Speaker, one of only nine people worldwide to hold both. It’s why he wrote PAID to $PEAK, and why he coaches.",
     ],
     quote: "Most speakers don’t make it when they try to do it alone. I wish I had hired a coach much sooner.",
   },
@@ -76,7 +76,7 @@ export const about = {
   meta: {
     title: "About Kevin",
     description:
-      "Dr. Kevin C. Snyder, CSP, AS, has spent 20 years on stage. Here is why he now coaches aspiring and emerging speakers.",
+      "Dr. Kevin C. Snyder, CSP, AS, has spent more than 25 years on stage. Here is why he now coaches aspiring and emerging speakers.",
   },
   hero: {
     eyebrow: "About Kevin",

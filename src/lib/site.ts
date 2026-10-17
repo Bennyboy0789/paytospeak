@@ -4,11 +4,13 @@ export const site = {
   plainName: "Paid to Speak",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://paidtospeak.biz").replace(/\/$/, ""),
   description:
-    "Speaker coaching from Dr. Kevin C. Snyder, CSP. 20 years on stage, now teaching aspiring and emerging speakers the system behind a booked career.",
+    "Speaker coaching from Dr. Kevin C. Snyder, CSP. 25+ years on stage, now teaching aspiring and emerging speakers the system behind a booked career.",
   parent: {
     name: "Dr. Kevin C. Snyder",
     url: "https://kevincsnyder.com",
   },
+  // As kevincsnyder.com lists them, the master for facts (Ben, 2026-10-16).
+  contact: { email: "kevin@kevincsnyder.com", phone: "+1 (919) 633-9931", tel: "+19196339931" },
   social: [
     { label: "Facebook", href: "https://www.facebook.com/KevinCSnyderSpeaker" },
     { label: "Instagram", href: "https://www.instagram.com/KevinCSnyder/" },

@@ -97,7 +97,7 @@ marquee text use solid fills.
 
 ## Voice
 
-Kevin is a 20-year stage veteran who coaches speakers. He is warm, direct, and
+Kevin is a 25-year stage veteran who coaches speakers. He is warm, direct, and
 generous — the guy who tells you the truth because he wants you booked.
 
 **Sounds like:**

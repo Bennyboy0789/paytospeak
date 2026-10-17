@@ -4,7 +4,7 @@ import { Fragment } from "react";
 // credentials strip as real text, so the ticker is hidden from assistive tech.
 const items = [
   "Certified Speaking Professional",
-  "20 years on stage",
+  "25+ years on stage",
   "Accredited Speaker",
   "1,500+ audiences",
   "ShiftThinker™",

@@ -27,6 +27,8 @@ export const firstEdition = {
   body: [
     "When Kevin started speaking, he had no strategy, and he nearly quit more than once. PAID to $PEAK lays out the process he learned the hard way.",
     "It walks through the business of speaking in five modules: defining your goals and your signature story, building your program, finding speaking opportunities, setting your fee, and keeping bookings consistent.",
+    // From kevincsnyder.com/coaching, the master for facts (Ben, 2026-10-16).
+    "It’s the exact system Kevin used to land 11 keynotes in 6 months, secure multiple state conferences, and build a six-figure speaking business in less than one year.",
   ],
   formats: [
     {

@@ -36,6 +36,8 @@ there is **no** `tailwind.config.js`; theme tokens live in `@theme` inside
 - **Never fabricate facts.** No invented credentials, clients, testimonials, or
   audience numbers. Missing detail → write `TODO(kc): <what you need>` and keep going.
   Kevin is a real person with real, verifiable credentials. This is a liability line.
+- **kevincsnyder.com is the master for facts** (Ben, 2026-10-16). Anything Kevin states there
+  (numbers, quotes, clients, contact details) is safe to use, and it wins any disagreement.
 - **Match the parent brand.** Don't invent a new palette or type system.
 - **`ShiftThinker™`** — always with the trademark symbol, exact capitalization.
 - **No emoji.** No exclamation marks. **No em dashes** in site copy. No "unlock / transform / elevate / journey."

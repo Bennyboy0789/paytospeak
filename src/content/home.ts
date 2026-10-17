@@ -6,7 +6,7 @@ export const home = {
     // TODO(kc): confirm hero headline direction. Alternative under review:
     // "Build a speaking career, not just a great talk."
     headline: { lead: "You have a message.", highlight: "Let’s get it booked." } satisfies Headline,
-    sub: "Kevin Snyder has spent 20 years on stage, in front of 1,500+ audiences and a million people. He now coaches aspiring and emerging speakers on the system behind it.",
+    sub: "Kevin Snyder has spent more than 25 years on stage, in front of 1,500+ audiences and a million people. He now coaches aspiring and emerging speakers on the system behind it.",
     primaryCta: "Apply for coaching",
     secondaryCta: "See how it works",
   },
@@ -44,7 +44,7 @@ export const home = {
       highlight: "became a speaker a million people saw.",
     } satisfies Headline,
     // DRAFT(kc): last two sentences reworded 16 Oct so ShiftThinker™ isn't presented as the coaching curriculum.
-    body: "From childhood depression to television game-show winner to keynote speaker and belief researcher, Kevin’s path wasn’t a straight line. That’s exactly why he can teach it. He built the ShiftThinker™ framework from 20 years on stage. What he teaches speakers is the business side: his five-module Paid to $peak model.",
+    body: "From childhood depression to television game-show winner to keynote speaker and belief researcher, Kevin’s path wasn’t a straight line. That’s exactly why he can teach it. He built the ShiftThinker™ framework from more than 25 years on stage. What he teaches speakers is the business side: his five-module Paid to $peak model.",
     cta: "Read Kevin’s story",
   },
 
@@ -53,7 +53,7 @@ export const home = {
   stage: {
     eyebrow: "On stage",
     headline: { lead: "1,500+ audiences.", highlight: "Here are a few." } satisfies Headline,
-    body: "Twenty years of corporate, college and youth audiences, in rooms of every size. This is what booked speaking looks like.",
+    body: "More than 25 years of corporate, college and youth audiences, in rooms of every size. This is what booked speaking looks like.",
     video: {
       heading: "Watch Kevin’s demo video",
       body: "Kevin’s own speaking samples. Is this what you want to do?",
@@ -70,7 +70,7 @@ export const home = {
 
   newsletter: {
     eyebrow: "Stay sharp",
-    headline: { lead: "Speaker tips,", highlight: "every other week." } satisfies Headline,
+    headline: { lead: "Speaker tips,", highlight: "once a month." } satisfies Headline,
     body: "Kevin sends one practical idea for building a speaking career. No fluff.",
   },
 } as const;

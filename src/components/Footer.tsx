@@ -22,6 +22,18 @@ export function Footer() {
             </a>
             .
           </p>
+          <ul className="mt-6 space-y-2 text-sm">
+            <li>
+              <a href={`mailto:${site.contact.email}`} className="link-draw text-foreground/80 transition-colors hover:text-foreground">
+                {site.contact.email}
+              </a>
+            </li>
+            <li>
+              <a href={`tel:${site.contact.tel}`} className="link-draw text-foreground/80 transition-colors hover:text-foreground">
+                {site.contact.phone}
+              </a>
+            </li>
+          </ul>
         </div>
 
         <nav aria-label="Footer">
@@ -67,7 +79,6 @@ export function Footer() {
               </a>
             </li>
           </ul>
-          {/* TODO(kc): confirm contact email and phone for the coaching brand (see docs/CONTENT.md). */}
         </div>
       </Container>
 

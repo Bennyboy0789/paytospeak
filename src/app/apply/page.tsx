@@ -58,7 +58,22 @@ export default function ApplyPage() {
         </div>
 
         <div className="lg:col-start-1 lg:row-start-2">
-          <div className="enter border-t border-border pt-8 lg:mt-10" style={delay(600)}>
+          {open && (
+            <div className="enter lg:mt-10" style={delay(550)}>
+              <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">{apply.next.heading}</h2>
+              <ol className="mt-5 space-y-4">
+                {apply.next.steps.map((step, i) => (
+                  <li key={step} className="flex gap-4 leading-relaxed">
+                    <span aria-hidden="true" className="numeral font-display text-2xl font-black leading-none tracking-tight">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-foreground/85">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+          <div className="enter mt-10 border-t border-border pt-8" style={delay(600)}>
             <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">{apply.values.heading}</h2>
             <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 font-display text-xl font-bold">
               {apply.values.items.map((value) => (

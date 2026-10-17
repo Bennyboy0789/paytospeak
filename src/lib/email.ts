@@ -14,23 +14,14 @@ export function applicationsOpen() {
   return Boolean(process.env.RESEND_API_KEY);
 }
 
-export type Application = { name: string; email: string; program: string; stage: string; link: string };
+/** `answers` are question and answer pairs, in the form's order. `summary` goes in the subject line. */
+export type Application = { name: string; email: string; summary: string; answers: [question: string, answer: string][] };
 
 export async function sendApplication(a: Application): Promise<{ ok: true } | { ok: false; reason: "not-configured" | "failed" }> {
   const key = process.env.RESEND_API_KEY;
   if (!key) return { ok: false, reason: "not-configured" };
 
-  const text = [
-    `Name: ${a.name}`,
-    `Email: ${a.email}`,
-    `Interested in: ${a.program}`,
-    `Link: ${a.link || "(none)"}`,
-    "",
-    "Where they are with speaking right now:",
-    a.stage,
-    "",
-    "Reply to this email to answer them directly.",
-  ].join("\n");
+  const text = [...a.answers.flatMap(([q, answer]) => [q, answer, ""]), "Reply to this email to answer them directly."].join("\n");
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -39,7 +30,7 @@ export async function sendApplication(a: Application): Promise<{ ok: true } | { 
       from: FROM,
       to: [TO],
       reply_to: a.email,
-      subject: `Coaching application: ${a.name} (${a.program})`,
+      subject: `Coaching application: ${a.name} (${a.summary})`,
       text,
     }),
   });

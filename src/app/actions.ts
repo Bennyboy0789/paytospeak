@@ -59,26 +59,68 @@ export async function subscribeAction(_prev: FormState, formData: FormData): Pro
 export async function applyAction(_prev: FormState, formData: FormData): Promise<FormState> {
   if (formData.get("company")) return { status: "success", message: "Thanks." };
 
-  const name = String(formData.get("name") ?? "").trim();
-  const email = String(formData.get("email") ?? "").trim();
-  const stage = String(formData.get("stage") ?? "").trim();
-  const link = String(formData.get("link") ?? "").trim();
-  const program = String(formData.get("program") ?? "").trim();
+  const f = apply.fields;
+  const one = (key: string) => String(formData.get(key) ?? "").trim();
+  // Only answers that are one of the form's own options; multi-selects travel as one per line.
+  const pick = (key: string, allowed: readonly string[]) =>
+    formData
+      .getAll(key)
+      .map(String)
+      .filter((x) => allowed.includes(x));
+
+  const name = one("name");
+  const email = one("email");
+  const phone = one("phone");
+  const level = pick("level", f.level.options)[0] ?? "";
+  const vision = pick("vision", f.vision.options);
+  const programs = pick(
+    "programs",
+    f.programs.options.map((o) => o.value),
+  );
+  const challenge = one("challenge");
+  const year = one("year");
+  const years = one("years");
+  const investment = pick("investment", f.investment.options)[0] ?? "";
+  const notes = one("notes");
+  const from = one("from").slice(0, 40);
 
   const fieldErrors: Record<string, string> = {};
   if (!name) fieldErrors.name = "Tell Kevin your name.";
   if (!EMAIL.test(email)) fieldErrors.email = "Enter a valid email address.";
-  if (stage.length < 20) fieldErrors.stage = "A few sentences, please. It helps Kevin read where you are.";
-  if (link && !URL.canParse(link.startsWith("http") ? link : `https://${link}`)) fieldErrors.link = "That doesn’t look like a link.";
-  const values = { name, email, stage, link, program };
+  if (!level) fieldErrors.level = "Choose the one that fits best.";
+  if (!vision.length) fieldErrors.vision = "Choose at least one.";
+  if (!programs.length) fieldErrors.programs = "Choose at least one. “Not sure yet” is fine.";
+  if (!challenge) fieldErrors.challenge = "A sentence or two is enough.";
+  if (!year) fieldErrors.year = "Where would you like to be in a year?";
+  if (!years) fieldErrors.years = "And in three years?";
+  if (!investment) fieldErrors.investment = "Choose the one that fits best.";
+  const values = { name, email, phone, level, vision: vision.join("\n"), programs: programs.join("\n"), challenge, year, years, investment, notes };
   if (Object.keys(fieldErrors).length) {
-    return { status: "error", message: "A couple of fields need another look.", fieldErrors, values };
+    return { status: "error", message: "A few questions need another look.", fieldErrors, values };
   }
 
-  const programLabel = apply.fields.programs.find((p) => p.value === program)?.label ?? "Not sure yet";
-  const result = await sendApplication({ name, email, program: programLabel, stage, link });
+  const programLabels = programs.map((p) => f.programs.options.find((o) => o.value === p)?.label ?? p);
+  const result = await sendApplication({
+    name,
+    email,
+    summary: programLabels.join(", "),
+    answers: [
+      [f.name, name],
+      [f.email, email],
+      [f.phone, phone || "(not given)"],
+      [f.level.label, level],
+      [f.vision.label, vision.join("; ")],
+      [f.programs.label, programLabels.join("; ")],
+      ["Came from the button for", from || "(the general Apply button)"],
+      [f.challenge, challenge],
+      [`${f.success.label} ${f.success.year}`, year],
+      [`${f.success.label} ${f.success.threeYears}`, years],
+      [f.investment.label, investment],
+      [f.notes, notes || "(nothing)"],
+    ],
+  });
   if (result.ok) {
-    return { status: "success", message: `Thanks, ${name}. Your application is with Kevin, and he’ll reply by email.` };
+    return { status: "success", message: `Thanks, ${name}. Your application is with Kevin, and his team will respond within one business day.` };
   }
   return {
     status: "error",

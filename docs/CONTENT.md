@@ -15,18 +15,40 @@ this file. If the two disagree, **this file wins**.
 4. `ShiftThinker™`: always with the trademark symbol, always capitalized exactly.
 5. **No em dashes** in any site copy. Use a period, comma, or colon instead.
 
+### kevincsnyder.com is the master (Ben, 2026-10-16)
+
+Kevin's speaker site, kevincsnyder.com, is the master source for facts, numbers, quotes and
+contact details. Anything it states is safe to use here, and where this file or the site
+disagrees with it, it wins. Brought over on 16 Oct: 25+ years on stage (was 20), all 50 states
+and several countries, the audience split by market, his results after hiring a coach, the first
+book's results, the client logos, Ali Ingersoll's video testimonial, four event-planner quotes,
+the coaching application's questions and reply time, his phone number, and a monthly newsletter
+(was every other week). Quotes are copied word for word; ones with an em dash, an exclamation
+mark or a banned word are skipped rather than edited.
+
 ### Verified facts (safe to use)
 
 - Dr. Kevin C. Snyder — keynote speaker, author, coach
 - **CSP** — NSA Certified Speaking Professional
 - **AS** — Toastmasters International Accredited Speaker
 - One of only **nine people worldwide** holding both CSP and AS
-- **20 years** speaking professionally
-- **1,500+** audiences, **1M+** people reached
+- **25+ years** on stage (kevincsnyder.com home page; was "20 years" until 16 Oct)
+- **1,500+** audiences, **1M+** people reached, in **all 50 states and several countries**
+- Audiences by market: 640+ corporate, 420+ higher education, 180+ associations, 260+ K-12 and youth
+- Spoken for (logos on the site): Bank of America, Prudential, Toshiba, Anheuser-Busch, BlueCross
+  BlueShield, U.S. Air Force, National Association of Realtors, Duke, Purdue, Michigan State, UT Austin
+- CSP: fewer than 15% of professional speakers earn it. AS: one of fewer than 100 speakers in history
+- Amazon best-seller status for his books; multiple TEDx talks; organized TEDx events; has coached
+  dozens of TEDx speakers; served aboard Semester at Sea; preparing a Guinness World Record attempt
+  for the longest speech
+- After hiring a coach: paid keynotes within six months; replaced his university salary a year later
+- The first book's system: 11 keynotes in 6 months, multiple state conferences, a six-figure speaking
+  business in less than one year
+- Contact: kevin@kevincsnyder.com, +1 (919) 633-9931
 - Four books: *Think Differently*, *PURE Vulnerability*, *PAID to $PEAK*, *Speechless*
 - Fifth book in progress: *Paid to $peak 2.0* (systems & strategies for speakers)
 - Coaches aspiring and emerging speakers
-- ~2,000 opted-in subscribers to a bi-weekly speaker-tip email
+- ~2,000 opted-in subscribers to a monthly speaker-tip email (kevincsnyder.com says monthly)
 - Involved with NSA (National Speakers Association)
 - Grew up in North Carolina; speaks across corporate, college, and youth markets
 
@@ -47,10 +69,8 @@ and his own posts on this blog.
 - Quotes: "The most important story you'll ever believe is the one you tell yourself." and
   "Most speakers don't make it when they try to do it alone. I wish I had hired a coach much sooner."
 
-Held back until Ben or Kevin OKs them: his own results after hiring a coach ("paid keynote
-opportunities within six months", "replaced my university salary" a year later), and claims
-outside the verified list on that site ("all 50 states", Amazon best-seller, "fewer than 100"
-Accredited Speakers, the Guinness attempt, Semester at Sea). The reader quotes on
+These were held back until 16 Oct; with kevincsnyder.com as the master they are now verified
+(see the list above). The reader quotes on
 kevincsnyder.com/coaching read as summaries, not quotes, so they are not testimonials.
 - **Featured on** (the "Featured on" row in the credentials strip, checked 2026-10-15):
   TEDx talks at TEDxWakeForestU (his blog post "How to get on the TEDx stage") and
@@ -64,7 +84,7 @@ kevincsnyder.com/coaching read as summaries, not quotes, so they are not testimo
 - Any coaching price, tier or guarantee that isn't in Kevin's 2026 coaching charts or his
   October 2026 page refresh (those are published as he states them, Ben 2026-10-15),
   and any enrollment count
-- Any testimonial quote or named client
+- Any testimonial quote or named client that isn't on kevincsnyder.com
 - Specific income or booking results attributed to coaching
 - The Paid to $peak logo **vector** file (not yet received — a raster copy was pulled from the Wix site, see `docs/BRAND.md`)
 
@@ -304,8 +324,10 @@ offer and Kevin's options chart. The guarantee question is left out until Kevin 
 - Which option is right for me? Start with the comparison at the top of this page. If you're still not
   sure, that's what a strategy session is for: Kevin will tell you what fits.
 
-**Testimonials:** a "From Kevin's clients" section (*Speakers who did the work.*) is built but renders
-nothing until `src/content/testimonials.ts` has real, consented entries.
+**Testimonials (16 Oct, from kevincsnyder.com):** *From coaching to speaking career momentum.* Ali
+Ingersoll's video (Ms. Wheelchair America, keynote speaker, author), then "What event planners say about
+Kevin": four quotes word for word (Jackie Asekhauno, AICPA; Janet Davis, SHRM; Rich Nicols, Institute of
+Internal Auditors; Stephanie Wolf, Prudential). Data in `src/content/testimonials.ts`.
 
 ### Home page
 **About section, last two sentences (16 Oct):** He built the ShiftThinker™ framework from 20 years on
@@ -314,9 +336,12 @@ it into a system other speakers can learn", which presented ShiftThinker™ as t
 
 ### Apply page
 Applications are emailed to kevin@kevincsnyder.com (Ben, 2026-10-16) through Resend, with the applicant
-as reply-to. Until `RESEND_API_KEY` is set in Vercel, /apply shows "Start with a strategy session" and a
+as reply-to. The questions, and the line "This short application takes about 3 to 5 minutes. Kevin's
+team responds within one business day.", are Kevin's own from kevincsnyder.com/coaching/apply (16 Oct).
+**What happens next (DRAFT(kc)):** Send the application. It takes about 3 to 5 minutes. / Kevin's team
+responds within one business day. / You talk with Kevin to see if coaching is the right fit. Until `RESEND_API_KEY` is set in Vercel, /apply shows "Start with a strategy session" and a
 Book a strategy session button instead of the form; the sub line reuses the program pages' closing copy.
-**After sending (DRAFT(kc)):** Thanks, [name]. Your application is with Kevin, and he'll reply by email.
+**After sending (DRAFT(kc)):** Thanks, [name]. Your application is with Kevin, and his team will respond within one business day.
 Want to talk sooner? Book a strategy session.
 
 ### Blog

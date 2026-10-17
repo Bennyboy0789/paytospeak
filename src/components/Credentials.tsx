@@ -3,9 +3,9 @@ import type { CSSProperties } from "react";
 import asBadge from "@/assets/images/badge-as.png";
 import cspBadge from "@/assets/images/badge-csp.png";
 import { Container } from "@/components/Section";
-import { credentials, featuredIn, stats } from "@/content/shared";
+import { audiencesByMarket, credentials, featuredIn, spokenFor, stats } from "@/content/shared";
 
-/** Proof strip: the two designations, the verified numbers, and where Kevin has been featured. */
+/** Proof strip: the two designations, the verified numbers, where Kevin has been featured, and who he has spoken for. */
 export function Credentials() {
   return (
     <section aria-label="Kevin’s credentials" className="relative overflow-hidden border-y border-border bg-card">
@@ -29,7 +29,7 @@ export function Credentials() {
       </Container>
       <Container className="relative border-t border-border py-8 lg:py-10">
         <div className="reveal flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14">
-          <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.22em] text-accent">Featured on</p>
+          <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.22em] text-accent lg:w-44">Featured on</p>
           <ul className="grid grid-cols-2 items-end gap-x-6 gap-y-8 sm:grid-cols-4 lg:flex-1 lg:gap-10">
             {featuredIn.map((f) => (
               <li key={f.name}>
@@ -41,6 +41,21 @@ export function Credentials() {
                   )}
                 </div>
                 <span className="mt-2 block text-xs text-muted-foreground">{f.note}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Container>
+      <Container className="relative border-t border-border py-8 lg:py-10">
+        <div className="reveal flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-14">
+          <div className="shrink-0 lg:w-44">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Kevin has spoken for</p>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{audiencesByMarket.map((m) => `${m.value} ${m.label}`).join(" · ")} audiences</p>
+          </div>
+          <ul className="flex flex-1 flex-wrap items-center gap-x-10 gap-y-7 lg:gap-x-12">
+            {spokenFor.map((c) => (
+              <li key={c.name} className={c.phone === false ? "max-sm:hidden" : undefined}>
+                <Image src={c.logo} alt={c.name} sizes="12rem" className={`w-auto opacity-70 transition-opacity duration-500 hover:opacity-100 ${c.className}`} />
               </li>
             ))}
           </ul>

@@ -21,9 +21,9 @@ export const vault: Program = {
   blocks: [
     {
       kind: "text",
-      heading: "Twenty years of paperwork, ready to use",
+      heading: "25 years of paperwork, ready to use",
       body: [
-        "Kevin built the Vault from 20 years of speaking professionally, including the mistakes that cost him. It holds the documents behind his business: the proposals, agreements and invoices, the outreach and follow-up emails, the scripts and checklists.",
+        "Kevin built the Vault from more than 25 years of speaking professionally, including the mistakes that cost him. It holds the documents behind his business: the proposals, agreements and invoices, the outreach and follow-up emails, the scripts and checklists.",
         "One of the most useful pieces is Kevin’s current speaking agreement, including its force majeure clause for cancelled events. You get a copy.",
         "Kevin used to share the Vault only with his one-on-one coaching clients. He opened it up for speakers who aren’t ready for coaching and for aspiring speakers who are serious about building the business.",
       ],

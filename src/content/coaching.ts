@@ -48,7 +48,7 @@ export const coaching = {
     eyebrow: "Coaching",
     headline: { lead: "Work with", highlight: "Kevin." } satisfies Headline,
     // DRAFT(kc): new copy — tone only, no claims. Review with Kevin.
-    sub: "Coaching for speakers who are good in the room and ready to build the business behind the talk, from someone who has spent 20 years doing exactly that.",
+    sub: "Coaching for speakers who are good in the room and ready to build the business behind the talk, from someone who has spent more than 25 years doing exactly that.",
     imageCaption: "The view Kevin works toward with every speaker he coaches.",
   },
 
@@ -193,7 +193,7 @@ export const coaching = {
     eyebrow: "Why Kevin",
     headline: { lead: "Coached by someone", highlight: "still doing the work." } satisfies Headline,
     // DRAFT(kc): framing copy; every fact in it is from the verified list.
-    body: "Kevin has spent 20 years on professional stages: corporate, college, and youth audiences. He is an NSA Certified Speaking Professional and a Toastmasters Accredited Speaker, one of only nine people worldwide to hold both. The advice you get is what he does on Monday.",
+    body: "Kevin has spent more than 25 years on professional stages: corporate, college, and youth audiences. He is an NSA Certified Speaking Professional and a Toastmasters Accredited Speaker, one of only nine people worldwide to hold both. The advice you get is what he does on Monday.",
   },
 
   // DRAFT(kc): new copy, logged in docs/CONTENT.md. Every fact is from this page's own offer
